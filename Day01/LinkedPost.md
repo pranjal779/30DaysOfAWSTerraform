@@ -17,11 +17,11 @@ Even though I already had familiarity with Terraform and Infrastructure as Code,
 
 3. Why Infrastructure as Code?
 IaC helps solve several challenges in modern infrastructure management:
-👉 Faster provisioning
-👉 Consistent environments
-👉 Version control for infrastructure
-👉 Reduced human errors
-👉 Ability to replicate environments easily
+- 👉 Faster provisioning
+- 👉 Consistent environments
+- 👉 Version control for infrastructure
+- 👉 Reduced human errors
+- 👉 Ability to replicate environments easily
 
 4. Enterprise Environment Example:
 Large organizations usually maintain multiple environments:
