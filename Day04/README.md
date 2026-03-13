@@ -183,3 +183,16 @@ After successful $ terraform applying you will notice the local statefile does n
 
 
 https://www.youtube.com/watch?v=YsEdrl9O5os&t=324s 
+
+<img width="1867" height="1147" alt="Screenshot 2026-03-13 005704" src="https://github.com/user-attachments/assets/cf41b10e-607e-49b2-a56a-d292936a401f" />
+<img width="1885" height="1086" alt="Screenshot 2026-03-13 010016" src="https://github.com/user-attachments/assets/27c9ec61-6b24-4c22-978e-7789a42aa5d2" />
+<img width="1132" height="972" alt="Screenshot 2026-03-13 010208" src="https://github.com/user-attachments/assets/3bbea716-3d11-435c-80c3-656a3330e3ae" />
+<img width="860" height="791" alt="Screenshot 2026-03-13 011820" src="https://github.com/user-attachments/assets/c14b1390-dd4d-45eb-9d80-19ce00bebd0c" />
+<img width="1216" height="427" alt="Screenshot 2026-03-13 011350" src="https://github.com/user-attachments/assets/1926e15e-93da-4486-9fd9-ebd7bda9dfc9" />
+<img width="693" height="462" alt="Screenshot 2026-03-13 011403" src="https://github.com/user-attachments/assets/8fc864a1-805a-4d9f-a8f9-e3b629977f35" />
+<img width="1078" height="506" alt="Screenshot 2026-03-13 011438" src="https://github.com/user-attachments/assets/764de275-6b42-4c00-bd00-40b3774be5bf" />
+<img width="677" height="273" alt="Screenshot 2026-03-13 011545" src="https://github.com/user-attachments/assets/f2e0e9d9-0d35-4736-9bbc-042babbea2d1" />
+<img width="1595" height="706" alt="Screenshot 2026-03-13 011711" src="https://github.com/user-attachments/assets/0c3cbe98-a1fa-46a7-b81c-8c3fd4c6a240" />
+<img width="330" height="72" alt="Screenshot 2026-03-13 012003" src="https://github.com/user-attachments/assets/595332d2-5952-4db0-ae4b-55fe7b8498f1" />
+
+
