@@ -10,13 +10,13 @@ A typical Terraform project may look like this:
 
 terraform-project/
 
-├── main.tf
-├── variables.tf
-├── outputs.tf
-├── providers.tf
-├── terraform.tfvars
-├── backend.tf
-└── modules/
+├── main.tf  
+├── variables.tf  
+├── outputs.tf  
+├── providers.tf  
+├── terraform.tfvars  
+├── backend.tf  
+└── modules/  
 
 ### Purpose of Each File
 
