@@ -1,0 +1,209 @@
+# ==============================
+# Example 5: postcondition
+# Use Case: Ensure S3 bucket has required tags after creation
+# ==============================
+
+resource "aws_s3_bucket" "compliance_bucket" {
+  bucket = "compliance-bucket-${var.environment}-${var.region}"
+
+  tags = {
+    Name       = "Compliance Validated Bucket"
+    Demo       = "postcondition"
+    Compliance = "SOC2"
+  }
+
+  # Lifecycle Rule: Validate bucket has required tags after creation
+  # This ensures compliance with organizational tagging policies
+  lifecycle {
+    postcondition {
+      condition     = contains(keys(var.tags_sets_s3), "Compliance")
+      error_message = "ERROR: Bucket must have a 'Compliance' tag for audit purposes!"
+    }
+
+    postcondition {
+      condition     = contains(keys(var.tags_sets_s3), "Environment")
+      error_message = "ERROR: Bucket must have an 'Environment' tag!"
+    }
+  }
+}
+
+
+ terraform plan
+data.aws_region.current: Reading...                                                                                                                             
+data.aws_region.current: Read complete after 0s [id=us-east-1]                                                                                                  
+                                                                                                                                                                
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform planned the following actions, but then encountered a problem:
+
+  # aws_s3_bucket.compliance_bucket will be created
+  + resource "aws_s3_bucket" "compliance_bucket" {
+      + acceleration_status         = (known after apply)
+      + acl                         = (known after apply)
+      + arn                         = (known after apply)
+      + bucket                      = "compliance-bucket-preprod-us-east-1"
+      + bucket_domain_name          = (known after apply)
+      + bucket_namespace            = (known after apply)
+      + bucket_prefix               = (known after apply)
+      + bucket_region               = (known after apply)
+      + bucket_regional_domain_name = (known after apply)
+      + force_destroy               = false
+      + hosted_zone_id              = (known after apply)
+      + id                          = (known after apply)
+      + object_lock_enabled         = (known after apply)
+      + policy                      = (known after apply)
+      + region                      = "us-east-1"
+      + request_payer               = (known after apply)
+      + tags                        = {
+          + "Compliance" = "SOC2"
+          + "Demo"       = "postcondition"
+          + "Name"       = "Compliance Validated Bucket"
+        }
+      + tags_all                    = {
+          + "Compliance" = "SOC2"
+          + "Demo"       = "postcondition"
+          + "Name"       = "Compliance Validated Bucket"
+        }
+      + website_domain              = (known after apply)
+      + website_endpoint            = (known after apply)
+
+      + cors_rule (known after apply)
+
+      + grant (known after apply)
+
+      + lifecycle_rule (known after apply)
+
+      + logging (known after apply)
+
+      + object_lock_configuration (known after apply)
+
+      + replication_configuration (known after apply)
+
+      + server_side_encryption_configuration (known after apply)
+
+      + versioning (known after apply)
+
+      + website (known after apply)
+    }
+
+Plan: 1 to add, 0 to change, 0 to destroy.
+╷
+│ Error: Resource postcondition failed
+│
+│   on main.tf line 203, in resource "aws_s3_bucket" "compliance_bucket":
+│  203:       condition     = contains(keys(var.tags_sets_s3), "Compliance")
+│     ├────────────────
+│     │ var.tags_sets_s3 is map of string with 3 elements
+│
+│ ERROR: Bucket must have a 'Compliance' tag for audit purposes!
+╵
+╷
+│ Error: Resource postcondition failed
+│
+│   on main.tf line 208, in resource "aws_s3_bucket" "compliance_bucket":
+│  208:       condition     = contains(keys(var.tags_sets_s3), "Environment")
+│     ├────────────────
+│     │ var.tags_sets_s3 is map of string with 3 elements
+│
+│ ERROR: Bucket must have an 'Environment' tag!
+╵
+
+
+--------------
+
+# ==============================
+# Example 5: postcondition
+# Use Case: Ensure S3 bucket has required tags after creation
+# ==============================
+
+resource "aws_s3_bucket" "compliance_bucket" {
+  bucket = "compliance-bucket-${var.environment}-${var.region}"
+
+  tags = {
+    Name       = "Compliance Validated Bucket"
+    Demo       = "postcondition"
+    Compliance = "SOC2"
+  }
+
+  # Lifecycle Rule: Validate bucket has required tags after creation
+  # This ensures compliance with organizational tagging policies
+  lifecycle {
+    postcondition {
+      condition     = contains(keys(var.tags_condition_s3), "Compliance")
+      error_message = "ERROR: Bucket must have a 'Compliance' tag for audit purposes!"
+    }
+
+    postcondition {
+      condition     = contains(keys(var.tags_condition_s3), "Environment")
+      error_message = "ERROR: Bucket must have an 'Environment' tag!"
+    }
+  }
+}
+
+
+
+ terraform plan
+data.aws_region.current: Reading...                                                                                                                             
+data.aws_region.current: Read complete after 0s [id=us-east-1]                                                                                                  
+
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # aws_s3_bucket.compliance_bucket will be created
+  + resource "aws_s3_bucket" "compliance_bucket" {
+      + acceleration_status         = (known after apply)
+      + acl                         = (known after apply)
+      + arn                         = (known after apply)
+      + bucket                      = "compliance-bucket-preprod-us-east-1"
+      + bucket_domain_name          = (known after apply)
+      + bucket_namespace            = (known after apply)
+      + bucket_prefix               = (known after apply)
+      + bucket_region               = (known after apply)
+      + bucket_regional_domain_name = (known after apply)
+      + force_destroy               = false
+      + hosted_zone_id              = (known after apply)
+      + id                          = (known after apply)
+      + object_lock_enabled         = (known after apply)
+      + policy                      = (known after apply)
+      + region                      = "us-east-1"
+      + request_payer               = (known after apply)
+      + tags                        = {
+          + "Compliance" = "SOC2"
+          + "Demo"       = "postcondition"
+          + "Name"       = "Compliance Validated Bucket"
+        }
+      + tags_all                    = {
+          + "Compliance" = "SOC2"
+          + "Demo"       = "postcondition"
+          + "Name"       = "Compliance Validated Bucket"
+        }
+      + website_domain              = (known after apply)
+      + website_endpoint            = (known after apply)
+
+      + cors_rule (known after apply)
+
+      + grant (known after apply)
+
+      + lifecycle_rule (known after apply)
+
+      + logging (known after apply)
+
+      + object_lock_configuration (known after apply)
+
+      + replication_configuration (known after apply)
+
+      + server_side_encryption_configuration (known after apply)
+
+      + versioning (known after apply)
+
+      + website (known after apply)
+    }
+
+Plan: 1 to add, 0 to change, 0 to destroy.
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── 
+
+Note: You didn't use the -out option to save this plan, so Terraform can't guarantee to take exactly these actions if you run "terraform apply" now.

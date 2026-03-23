@@ -1,0 +1,189 @@
+# ==============================
+# Example 4: precondition
+# Use Case: Ensure we're deploying in an allowed region
+# ==============================
+
+resource "aws_s3_bucket" "regional_validation" {
+  bucket = "validated-region-bucket-precondition_practice"
+
+  tags = {
+    Name = "Region Validated Bucket"
+    Demo = "precondition"
+  }
+
+  # Lifecycle Rule: Validate region before creating resource
+  # This prevents resource creation in unauthorized regions
+  # According to the Documentation: [Argument Reference](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket#argument-reference)
+  # lifecycle_rule - is Optional and Deprecated - refer notes in readme
+  lifecycle {
+    precondition {
+      condition     = contains(var.allowed_regions, data.aws_region.current.name)
+      error_message = "ERROR: This resource can only be created in allowed regions: ${join(", ", var.allowed_regions)}. Current region: ${data.aws_region.current.name}"
+    }
+  }
+}
+
+
+ terraform plan
+╷                                                                                                                                                               
+│ Error: Unknown variable                                                                                                                                       
+│ 
+│   on main.tf line 177, in resource "aws_s3_bucket" "regional_validation":
+│  177:       condition     = contains(var.allowed_regions, data.aws_region.current.name)
+│ 
+│ There is no variable named "var".
+╵
+╷
+│ Error: Unknown variable
+│ 
+│   on main.tf line 177, in resource "aws_s3_bucket" "regional_validation":
+│  177:       condition     = contains(var.allowed_regions, data.aws_region.current.name)
+│ 
+│ There is no variable named "data".
+╵
+╷
+│ Error: Reference to undeclared resource
+│
+│   on main.tf line 177, in resource "aws_s3_bucket" "regional_validation":
+│  177:       condition     = contains(var.allowed_regions, data.aws_region.current.name)
+│
+│ A data resource "aws_region" "current" has not been declared in the root module.
+╵
+╷
+│ Error: Unknown variable
+│
+│   on main.tf line 178, in resource "aws_s3_bucket" "regional_validation":
+│  178:       error_message = "ERROR: This resource can only be created in allowed regions: ${join(", ", var.allowed_regions)}. Current region: ${data.aws_region.current.name}"
+│
+│ There is no variable named "var".
+╵
+╷
+│ Error: Unknown variable
+│
+│   on main.tf line 178, in resource "aws_s3_bucket" "regional_validation":
+│  178:       error_message = "ERROR: This resource can only be created in allowed regions: ${join(", ", var.allowed_regions)}. Current region: ${data.aws_region.current.name}"
+│
+│ There is no variable named "data".
+╵
+╷
+│ Error: Reference to undeclared resource
+│
+│   on main.tf line 178, in resource "aws_s3_bucket" "regional_validation":
+│  178:       error_message = "ERROR: This resource can only be created in allowed regions: ${join(", ", var.allowed_regions)}. Current region: ${data.aws_region.current.name}"
+│
+│ A data resource "aws_region" "current" has not been declared in the root module.
+
+
+---------------
+
+in main.tf:
+# ==============================
+# Example 4: precondition
+# Use Case: Ensure we're deploying in an allowed region
+# ==============================
+
+resource "aws_s3_bucket" "regional_validation" {
+  bucket = "validated-region-bucket-precondition_practice"
+
+  tags = {
+    Name = "Region Validated Bucket"
+    Demo = "precondition"
+  }
+
+  # Lifecycle Rule: Validate region before creating resource
+  # This prevents resource creation in unauthorized regions
+  # According to the Documentation: [Argument Reference](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket#argument-reference)
+  # lifecycle_rule - is Optional and Deprecated - refer notes in readme
+  lifecycle {
+    precondition {
+      condition     = contains(var.allowed_regions, data.aws_region.current.name)
+      error_message = "ERROR: This resource can only be created in allowed regions: ${join(", ", var.allowed_regions)}. Current region: ${data.aws_region.current.name}"
+    }
+  }
+}
+
+
+in variable.tf:
+variable "allowed_instance_type" {
+  description = "List of Allowed Virtual Instances type"
+  # type        = set(string) # you will get some kind of error
+  type    = list(string)
+  default = ["t3.micro", "t3.small", "t3.medium"]
+}
+
+data "aws_region" "current" {}
+
+
+
+ terraform plan
+data.aws_region.current: Reading...                                                                                                                             
+data.aws_region.current: Read complete after 0s [id=us-east-1]                                                                                                  
+                                                                                                                                                                
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # aws_s3_bucket.regional_validation will be created
+  + resource "aws_s3_bucket" "regional_validation" {
+      + acceleration_status         = (known after apply)
+      + acl                         = (known after apply)
+      + arn                         = (known after apply)
+      + bucket                      = "validated-region-bucket-precondition_practice"
+      + bucket_domain_name          = (known after apply)
+      + bucket_namespace            = (known after apply)
+      + bucket_prefix               = (known after apply)
+      + bucket_region               = (known after apply)
+      + bucket_regional_domain_name = (known after apply)
+      + force_destroy               = false
+      + hosted_zone_id              = (known after apply)
+      + id                          = (known after apply)
+      + object_lock_enabled         = (known after apply)
+      + policy                      = (known after apply)
+      + region                      = "us-east-1"
+      + request_payer               = (known after apply)
+      + tags                        = {
+          + "Demo" = "precondition"
+          + "Name" = "Region Validated Bucket"
+        }
+      + tags_all                    = {
+          + "Demo" = "precondition"
+          + "Name" = "Region Validated Bucket"
+        }
+      + website_domain              = (known after apply)
+      + website_endpoint            = (known after apply)
+
+      + cors_rule (known after apply)
+
+      + grant (known after apply)
+
+      + lifecycle_rule (known after apply)
+
+      + logging (known after apply)
+
+      + object_lock_configuration (known after apply)
+
+      + replication_configuration (known after apply)
+
+      + server_side_encryption_configuration (known after apply)
+
+      + versioning (known after apply)
+
+      + website (known after apply)
+    }
+
+Plan: 1 to add, 0 to change, 0 to destroy.
+╷
+│ Warning: Deprecated attribute
+│
+│   on main.tf line 177, in resource "aws_s3_bucket" "regional_validation":
+│  177:       condition     = contains(var.allowed_regions, data.aws_region.current.name)
+│
+│ The attribute "name" is deprecated. Refer to the provider documentation for details.
+│
+│ (and one more similar warning elsewhere)
+╵
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── 
+
+Note: You didn't use the -out option to save this plan, so Terraform can't guarantee to take exactly these actions if you run "terraform apply" now.
