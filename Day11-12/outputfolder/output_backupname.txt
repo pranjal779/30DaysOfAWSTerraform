@@ -1,0 +1,146 @@
+ terraform plan
+
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # aws_s3_bucket.day-11-12-bucket will be created
+  + resource "aws_s3_bucket" "day-11-12-bucket" {
+      + acceleration_status         = (known after apply)
+      + acl                         = (known after apply)
+      + arn                         = (known after apply)
+      + bucket                      = "12_projectbucketnaming-long-long-name-wcaps+spaces..."
+      + bucket_domain_name          = (known after apply)
+      + bucket_namespace            = (known after apply)
+      + bucket_prefix               = (known after apply)
+      + bucket_region               = (known after apply)
+      + bucket_regional_domain_name = (known after apply)
+      + force_destroy               = false
+      + hosted_zone_id              = (known after apply)
+      + id                          = (known after apply)
+      + object_lock_enabled         = (known after apply)
+      + policy                      = (known after apply)
+      + region                      = "us-east-1"
+      + request_payer               = (known after apply)
+      + tags                        = {
+          + "Environment"  = "practice"
+          + "Name"         = "s3tags"
+          + "createdby"    = "me"
+          + "createdwhere" = "vscode"
+        }
+      + tags_all                    = {
+          + "Environment"  = "practice"
+          + "Name"         = "s3tags"
+          + "createdby"    = "me"
+          + "createdwhere" = "vscode"
+        }
+      + website_domain              = (known after apply)
+      + website_endpoint            = (known after apply)
+
+      + cors_rule (known after apply)
+
+      + grant (known after apply)
+
+      + lifecycle_rule (known after apply)
+
+      + logging (known after apply)
+
+      + object_lock_configuration (known after apply)
+
+      + replication_configuration (known after apply)
+
+      + server_side_encryption_configuration (known after apply)
+
+      + versioning (known after apply)
+
+      + website (known after apply)
+    }
+
+Plan: 1 to add, 0 to change, 0 to destroy.
+
+Changes to Outputs:
+  + instance_size          = "t2.micro"
+  + port_list              = [
+      + "80",
+      + "44",
+      + "8080",
+      + "3306",
+    ]
+  + sg_rules               = [
+      + {
+          + description = "Allow traffic on port 80"
+          + name        = "port-80"
+          + port        = "80"
+        },
+      + {
+          + description = "Allow traffic on port 44"
+          + name        = "port-44"
+          + port        = "44"
+        },
+      + {
+          + description = "Allow traffic on port 8080"
+          + name        = "port-8080"
+          + port        = "8080"
+        },
+      + {
+          + description = "Allow traffic on port 3306"
+          + name        = "port-3306"
+          + port        = "3306"
+        },
+    ]
+
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+Note: You didn't use the -out option to save this plan, so Terraform can't guarantee to take exactly these actions if you run "terraform apply" now.
+
+   pwsh MEM: 73% | 10/13GB   9s 975ms  (base) 
+╭─ ♥ 00:16 |             Day11-12 
+╰─ 
+
+
+│ Error: Invalid value for variable
+│ 
+│   on terraform.tfvars line 3:
+│    3: backup_name   = "daily-backup"
+│     ├────────────────
+│     │ var.backup_name is "daily-backup"
+│ 
+│ Backup name must end with '_backup'
+│ 
+│ This was checked by the validation rule at variable.tf:76,3-13.
+╵
+
+   pwsh MEM: 65% | 9/13GB   6s 71ms  (base) 
+╭─ ♥ 00:17 |             Day11-12 
+╰─ 
+
+│ Error: Invalid value for variable
+│ 
+│   on terraform.tfvars line 3:
+│    3: backup_name   = "daily-backup"
+│     ├────────────────
+│     │ var.backup_name is "daily-backup"
+│ 
+│ Backup name must end with '_backup'
+│ 
+│ This was checked by the validation rule at variable.tf:76,3-13.
+╵
+
+   pwsh MEM: 72% | 9/13GB   6s 389ms  (base) 
+╭─ ♥ 00:39 |             Day11-12 
+╰─ 
+
+
+
+# Local unique_location
+
+ terraform plan | select-String "unique_location"
+
+  + unique_location        = [
+
+
+
+ terraform plan | select-String -A5 "unique_location"
+Select-String: A parameter cannot be found that matches parameter name 'A5'.
+

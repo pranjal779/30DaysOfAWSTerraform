@@ -1,0 +1,76 @@
+╭─   pran779  mnt/../../../../../../Day11-12                                                                     1m 23.604s   12:05:35 
+╰─ $ terraform plan | grep unique_locations
+╷
+│ Error: Retrieving AWS account details: validating provider credentials: retrieving caller identity from STS: operation error STS: GetCallerIdentity, https response error StatusCode: 403, RequestID: 298eac3e-1990-469e-b453-9e430e6a941e, api error InvalidClientTokenId: The security token included in the request is invalid.
+│ 
+│   with provider["registry.terraform.io/hashicorp/aws"],
+│   on providers.tf line 11, in provider "aws":
+│   11: provider "aws" {
+│ 
+╵
+
+╭─   pran779  mnt/../../../../../../Day11-12                                                                         51.93s   12:08:40 
+╰─ $ aws configure
+AWS Access Key ID:
+AWS Secret Access Key:
+Default region name:
+Default output format:
+
+╭─   pran779  mnt/../../../../../../Day11-12                                                                         13.38s   12:09:22 
+╰─ $ terraform plan
+
+Changes to Outputs:
+  + all_locations          = [
+      + "us-east-1",
+      + "us-west-2",
+      + "us-east-1",
+      + "us-west-1",
+    ]
+  + credentials            = (sensitive value)
+  + instance_size          = "t2.micro"
+  + port_list              = [
+      + "80",
+      + "44",
+      + "8080",
+      + "3306",
+    ]
+  + sg_rules               = [
+      + {
+          + description = "Allow traffic on port 80"
+          + name        = "port-80"
+          + port        = "80"
+        },
+      + {
+          + description = "Allow traffic on port 44"
+          + name        = "port-44"
+          + port        = "44"
+        },
+      + {
+          + description = "Allow traffic on port 8080"
+          + name        = "port-8080"
+          + port        = "8080"
+        },
+      + {
+          + description = "Allow traffic on port 3306"
+          + name        = "port-3306"
+          + port        = "3306"
+        },
+    ]
+  + unique_location        = [
+      + "us-east-1",
+      + "us-west-1",
+      + "us-west-2",
+    ]
+
+You can apply this plan to save these new output values to the Terraform state, without changing any real infrastructure.
+╷
+│ Error: Retrieving AWS account details: validating provider credentials: retrieving caller identity from STS: operation error STS: GetCallerIdentity, https response error StatusCode: 403, RequestID: 265702ed-e4ee-469e-8c1b-636a5a6bb57d, api error InvalidClientTokenId: The security token included in the request is invalid.
+│ 
+│   with provider["registry.terraform.io/hashicorp/aws"],
+│   on providers.tf line 11, in provider "aws":
+│   11: provider "aws" {
+│ 
+╵
+
+╭─   pran779  mnt/../../../../../../Day11-12                                                                        51.597s   12:10:20 
+╰─ $ 

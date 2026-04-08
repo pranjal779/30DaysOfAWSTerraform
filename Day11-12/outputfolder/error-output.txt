@@ -1,0 +1,27 @@
+  mnt/../../../../../../Day11-12 terraform plan
+╷
+│ Error: Reference to undeclared resource
+│
+│   on output.tf line 2, in output "formatted_project_name":
+│    2:   value = locals.formatted_project_name
+│
+│ A managed resource "locals" "formatted_project_name" has not been declared in the root module.
+╵
+ WSL at  ♥ 15:02:13  CPU: 5.43% | RAM: 0/6GB  
+  mnt/../../../../../../Day11-12   touch providers.tf
+ WSL at  ♥ 15:02:46  CPU: 5.42% | RAM: 0/6GB  
+  mnt/../../../../../../Day11-12 terraform plan
+╷
+│ Error: Inconsistent dependency lock file
+│
+│ The following dependency selections recorded in the lock file are inconsistent with the current configuration:
+│   - provider registry.terraform.io/hashicorp/aws: required by this configuration but no version is selected
+│
+│ To make the initial dependency selections that will initialize the dependency lock file, run:
+│   terraform init
+╵
+ WSL at  ♥ 15:06:15  CPU: 5.42% | RAM: 0/6GB  
+  mnt/../../../../../../Day11-12  
+
+
+ 

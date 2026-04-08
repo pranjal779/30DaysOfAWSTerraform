@@ -1,0 +1,17 @@
+ terraform plan | Select-String "positive_cost" -Context 0,5
+╷
+│ Error: Reference to undeclared input variable
+│ 
+│   on main.tf line 37, in locals:
+│   37:   positive_cost = abs(var.monthly_costs)
+│ 
+│ An input variable with the name "monthly_costs" has not been declared. This variable can be declared with a variable "monthly_costs" {} block.
+╵
+ terraform plan | Select-String "positive_cost" -Context 0,5
+
+>   + positive_cost          = [
+        + 50,
+        + 100,
+        + 75,
+        + 200,
+      ]
