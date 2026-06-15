@@ -32,6 +32,9 @@
 - 14:28
 
 
+<img width="2402" height="1217" alt="image" src="https://github.com/user-attachments/assets/c02dbf7c-8ba4-4a72-8fe9-72a9fa79088d" />
+<img width="2385" height="1220" alt="image" src="https://github.com/user-attachments/assets/81abfcf8-0ff0-455b-a711-5fe0b45a8317" />
+- 14:46
 
 
 
