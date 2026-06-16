@@ -1,5 +1,7 @@
 # [15/30 - AWS VPC Peering Using Terraform - Mini project](https://youtu.be/WGt000THDmQ?si=30szPmbk_RvYkqmx)
 
+[lesson github](https://github.com/piyushsachdeva/Terraform-Full-Course-Aws/tree/main/lessons/day15)
+
 <img width="2545" height="1312" alt="image" src="https://github.com/user-attachments/assets/befcca5d-336e-44fe-a26f-917005c7f13b" />
 <img width="502" height="1035" alt="image" src="https://github.com/user-attachments/assets/bb003bd6-05e1-4cc5-b596-e3421413922c" />
 <img width="490" height="952" alt="image" src="https://github.com/user-attachments/assets/f713beda-6130-48b4-a04a-f41959421ae8" />
@@ -36,12 +38,35 @@
 <img width="2385" height="1220" alt="image" src="https://github.com/user-attachments/assets/81abfcf8-0ff0-455b-a711-5fe0b45a8317" />
 - 14:46
 
+<img width="450" height="557" alt="image" src="https://github.com/user-attachments/assets/a56dbaf7-76ae-440c-8fbe-babfdb3629d9" />
+<img width="2527" height="1216" alt="image" src="https://github.com/user-attachments/assets/2b10ca19-869d-4f34-bffc-fa9e3b477576" />
+<img width="2507" height="1207" alt="image" src="https://github.com/user-attachments/assets/ec8639c8-e824-491c-a246-f488122e7f01" />
+<img width="2526" height="1197" alt="image" src="https://github.com/user-attachments/assets/1642f1c9-850f-4877-b41f-6fa71ea52ecf" />
+<img width="2517" height="1200" alt="image" src="https://github.com/user-attachments/assets/bd765408-7f52-44b8-81da-f454ec763e33" />
+<img width="2527" height="1215" alt="image" src="https://github.com/user-attachments/assets/f9fc4140-3f05-4424-809e-383599a55931" />
+<img width="1407" height="696" alt="image" src="https://github.com/user-attachments/assets/b59e9ed9-d53a-4262-a5da-a66942d1a9cc" />
+
+[reference 1 for Data Source for AZ](https://github.com/hashicorp/terraform-provider-aws/blob/main/website/docs/d/availability_zones.html.markdown)   
+[reference 2 for Data Source for AZ](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/availability_zones)   
+[Terraform Data Sources – How They Are Utilized](https://spacelift.io/blog/terraform-data-sources-how-they-are-utilised)  
+[How to Use Data Sources for Availability Zone Discovery in Terraform](https://oneuptime.com/blog/post/2026-02-23-terraform-availability-zone-discovery/view)   
+
+
+## Additional Resources
+
+- [AWS VPC Peering Documentation](https://docs.aws.amazon.com/vpc/latest/peering/)  
+- [Terraform AWS Provider](https://registry.terraform.io/providers/hashicorp/aws/latest/docs)
+- [VPC Peering Best Practices](https://docs.aws.amazon.com/vpc/latest/peering/vpc-peering-basics.html)
 
 
 
+[Data Source: aws_ami - for owners](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/ami#example-usage)  
+- owners - (Optional) List of AMI owners to limit search. Valid values: an AWS account ID, self (the current account), or an AWS owner alias (e.g., amazon, aws-marketplace, microsoft).
+<img width="1346" height="877" alt="image" src="https://github.com/user-attachments/assets/90882c76-06c9-4a85-be82-1d2fed210dec" />
 
+- 24:29
+<img width="2525" height="1207" alt="image" src="https://github.com/user-attachments/assets/c55ac279-c82e-4c29-a9bc-f2dd152ccf1a" />
+<img width="2522" height="1197" alt="image" src="https://github.com/user-attachments/assets/c04bc95f-96ef-46bf-ad92-00ff0ec92a47" />
 
-
-
-
+<img width="1207" height="886" alt="image" src="https://github.com/user-attachments/assets/23034726-b875-4d78-853e-89f502dc0c41" />
 
