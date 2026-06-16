@@ -70,3 +70,6 @@
 
 <img width="1207" height="886" alt="image" src="https://github.com/user-attachments/assets/23034726-b875-4d78-853e-89f502dc0c41" />
 
+- 29:03
+<img width="2516" height="1210" alt="image" src="https://github.com/user-attachments/assets/dd32e63d-bb95-4b43-8421-a6d186a277de" />
+
