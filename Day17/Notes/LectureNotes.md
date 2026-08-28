@@ -1,5 +1,9 @@
 [Day17 github Link](https://github.com/piyushsachdeva/Terraform-Full-Course-Aws/tree/main/lessons/day17)
 
+[other submission reference 01](https://github.com/Prajwal8651/terraform-practice/tree/main/lessons/day17)
+
+[other submission reference 02](https://github.com/Ramana175/30DaysOfAWSTerraform)
+
 <img width="1813" height="1212" alt="image" src="https://github.com/user-attachments/assets/901198b9-8435-4934-8848-cbf689122486" />
 <img width="2302" height="1210" alt="image" src="https://github.com/user-attachments/assets/01c1eaaf-1f7c-4361-83fc-b72b335332ce" />
 <img width="2217" height="1180" alt="image" src="https://github.com/user-attachments/assets/9c8cae98-9cf6-42e8-84a4-e4498cff6451" />
