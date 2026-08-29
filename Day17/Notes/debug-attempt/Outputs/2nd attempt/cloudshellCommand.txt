@@ -1,0 +1,11 @@
+
+~ $ aws s3 rm s3://elasticbeanstalk-us-east-1-357715920231 --recursive
+~ $ aws s3 rb s3://elasticbeanstalk-us-east-1-357715920231
+remove_bucket failed: s3://elasticbeanstalk-us-east-1-357715920231 An error occurred (AccessDenied) when calling the DeleteBucket operation: User: arn:aws:iam::357715920231:user/IAMjelloUSER is not authorized to perform: s3:DeleteBucket on resource: "arn:aws:s3:::elasticbeanstalk-us-east-1-357715920231" with an explicit deny in a resource-based policy
+~ $ aws s3 rm s3://elasticbeanstalk-us-east-1-357715920231 --recursive~ $ aws s3 rm s3://elasticbeanstalk-us-east-1-357715920231 --recursive
+~ $ aws s3 rb s3://elasticbeanstalk-us-east-1-357715920231                                                                                                                                                                                                                   
+remove_bucket failed: s3://elasticbeanstalk-us-east-1-357715920231 An error occurred (AccessDenied) when calling the DeleteBucket operation: User: arn:aws:iam::357715920231:user/IAMjelloUSER is not authorized to perform: s3:DeleteBucket on resource: "arn:aws:s3:::elasticbeanstalk-us-east-1-357715920231" with an explicit deny in a resource-based policy
+~ $ aws s3api delete-bucket-policy --bucket elasticbeanstalk-us-east-1-357715920231
+~ $ aws s3 rm s3://elasticbeanstalk-us-east-1-357715920231 --recursive
+~ $ aws s3 rb s3://elasticbeanstalk-us-east-1-357715920231
+remove_bucket: elasticbeanstalk-us-east-1-357715920231

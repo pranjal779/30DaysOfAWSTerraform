@@ -1,0 +1,361 @@
+ terraform apply
+data.aws_caller_identity.current: Reading...
+aws_elastic_beanstalk_application.app: Refreshing state... [id=my-app-bluegreen]
+aws_iam_role.eb_service_role: Refreshing state... [id=my-app-bluegreen-eb-service-role]
+aws_iam_role.eb_ec2_role: Refreshing state... [id=my-app-bluegreen-eb-ec2-role]
+data.aws_caller_identity.current: Read complete after 0s [id=357715920231]
+aws_s3_bucket.app_versions: Refreshing state... [id=my-app-bluegreen-version-357715920231]
+aws_iam_role_policy_attachment.eb_worker_tier: Refreshing state... [id=my-app-bluegreen-eb-ec2-role-20260828150100984000000002]
+aws_iam_role_policy_attachment.eb_web_tier: Refreshing state... [id=my-app-bluegreen-eb-ec2-role-20260828150101271300000003]
+aws_iam_role_policy_attachment.eb_multicontainer_docker: Refreshing state... [id=my-app-bluegreen-eb-ec2-role-20260828150100709700000001]
+aws_iam_instance_profile.eb_ec2_profile: Refreshing state... [id=my-app-bluegreen-eb-ec2-profile]
+aws_iam_role_policy_attachment.eb_service_managed_updates: Refreshing state... [id=my-app-bluegreen-eb-service-role-20260828152354790000000001]
+aws_iam_role_policy_attachment.eb_service_health: Refreshing state... [id=my-app-bluegreen-eb-service-role-20260828152355224400000002]
+aws_s3_bucket_public_access_block.app_versions: Refreshing state... [id=my-app-bluegreen-version-357715920231]
+aws_s3_object.app_v1: Refreshing state... [id=app-v1.zip]
+aws_s3_object.app_v2: Refreshing state... [id=app-v2.zip]
+aws_elastic_beanstalk_application_version.v1: Refreshing state... [id=my-app-bluegreen-v1]
+aws_elastic_beanstalk_application_version.v2: Refreshing state... [id=my-app-bluegreen-v2]
+
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # aws_elastic_beanstalk_environment.blue will be created
+  + resource "aws_elastic_beanstalk_environment" "blue" {
+      + all_settings           = (known after apply)
+      + application            = "my-app-bluegreen"
+      + arn                    = (known after apply)
+      + autoscaling_groups     = (known after apply)
+      + cname                  = (known after apply)
+      + cname_prefix           = (known after apply)
+      + endpoint_url           = (known after apply)
+      + id                     = (known after apply)
+      + instances              = (known after apply)
+      + launch_configurations  = (known after apply)
+      + load_balancers         = (known after apply)
+      + name                   = "my-app-bluegreen-blue"
+      + platform_arn           = (known after apply)
+      + queues                 = (known after apply)
+      + solution_stack_name    = "64bit Amazon Linux 2023 v6.2.0 running Node.js 20"
+      + tags                   = {
+          + "Environment" = "blue"
+          + "ManagedBy"   = "Terraform"
+          + "Owner"       = "Pranjello"
+          + "Project"     = "BlueGreenDeployment"
+          + "Role"        = "production"
+        }
+      + tags_all               = {
+          + "Environment" = "blue"
+          + "ManagedBy"   = "Terraform"
+          + "Owner"       = "Pranjello"
+          + "Project"     = "BlueGreenDeployment"
+          + "Role"        = "production"
+        }
+      + tier                   = "WebServer"
+      + triggers               = (known after apply)
+      + version_label          = "my-app-bluegreen-v1"
+      + wait_for_ready_timeout = "20m"
+
+      + setting {
+          + name      = "BatchSize"
+          + namespace = "aws:elasticbeanstalk:command"
+          + value     = "50"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "BatchSizeType"
+          + namespace = "aws:elasticbeanstalk:command"
+          + value     = "Percentage"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "DeploymentPolicy"
+          + namespace = "aws:elasticbeanstalk:command"
+          + value     = "Rolling"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "ENVIRONMENT"
+          + namespace = "aws:elasticbeanstalk:application:environment"
+          + value     = "blue"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "EnvironmentType"
+          + namespace = "aws:elasticbeanstalk:environment"
+          + value     = "LoadBalanced"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "HealthCheckPath"
+          + namespace = "aws:elasticbeanstalk:environment:process:default"
+          + value     = "/"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "IamInstanceProfile"
+          + namespace = "aws:autoscaling:launchconfiguration"
+          + value     = "my-app-bluegreen-eb-ec2-profile"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "InstanceType"
+          + namespace = "aws:autoscaling:launchconfiguration"
+          + value     = "t3.micro"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "LoadBalancerType"
+          + namespace = "aws:elasticbeanstalk:environment"
+          + value     = "application"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "ManagedActionsEnabled"
+          + namespace = "aws:elasticbeanstalk:managedactions"
+          + value     = "false"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "MaxSize"
+          + namespace = "aws:autoscaling:asg"
+          + value     = "2"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "MinSize"
+          + namespace = "aws:autoscaling:asg"
+          + value     = "1"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "Port"
+          + namespace = "aws:elasticbeanstalk:environment:process:default"
+          + value     = "8080"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "Protocol"
+          + namespace = "aws:elasticbeanstalk:environment:process:default"
+          + value     = "HTTP"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "ServiceRole"
+          + namespace = "aws:elasticbeanstalk:environment"
+          + value     = "my-app-bluegreen-eb-service-role"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "SystemType"
+          + namespace = "aws:elasticbeanstalk:healthreporting:system"
+          + value     = "enhanced"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "VERSION"
+          + namespace = "aws:elasticbeanstalk:application:environment"
+          + value     = "1.0"
+            # (1 unchanged attribute hidden)
+        }
+    }
+
+  # aws_elastic_beanstalk_environment.green will be created
+  + resource "aws_elastic_beanstalk_environment" "green" {
+      + all_settings           = (known after apply)
+      + application            = "my-app-bluegreen"
+      + arn                    = (known after apply)
+      + autoscaling_groups     = (known after apply)
+      + cname                  = (known after apply)
+      + cname_prefix           = (known after apply)
+      + endpoint_url           = (known after apply)
+      + id                     = (known after apply)
+      + instances              = (known after apply)
+      + launch_configurations  = (known after apply)
+      + load_balancers         = (known after apply)
+      + name                   = "my-app-bluegreen-green"
+      + platform_arn           = (known after apply)
+      + queues                 = (known after apply)
+      + solution_stack_name    = "64bit Amazon Linux 2023 v6.2.0 running Node.js 20"
+      + tags                   = {
+          + "Environment" = "green"
+          + "ManagedBy"   = "Terraform"
+          + "Owner"       = "Pranjello"
+          + "Project"     = "BlueGreenDeployment"
+          + "Role"        = "staging"
+        }
+      + tags_all               = {
+          + "Environment" = "green"
+          + "ManagedBy"   = "Terraform"
+          + "Owner"       = "Pranjello"
+          + "Project"     = "BlueGreenDeployment"
+          + "Role"        = "staging"
+        }
+      + tier                   = "WebServer"
+      + triggers               = (known after apply)
+      + version_label          = "my-app-bluegreen-v2"
+      + wait_for_ready_timeout = "20m"
+
+      + setting {
+          + name      = "BatchSize"
+          + namespace = "aws:elasticbeanstalk:command"
+          + value     = "50"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "BatchSizeType"
+          + namespace = "aws:elasticbeanstalk:command"
+          + value     = "Percentage"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "DeploymentPolicy"
+          + namespace = "aws:elasticbeanstalk:command"
+          + value     = "Rolling"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "ENVIRONMENT"
+          + namespace = "aws:elasticbeanstalk:application:environment"
+          + value     = "green"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "EnvironmentType"
+          + namespace = "aws:elasticbeanstalk:environment"
+          + value     = "LoadBalanced"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "HealthCheckPath"
+          + namespace = "aws:elasticbeanstalk:environment:process:default"
+          + value     = "/"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "IamInstanceProfile"
+          + namespace = "aws:autoscaling:launchconfiguration"
+          + value     = "my-app-bluegreen-eb-ec2-profile"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "InstanceType"
+          + namespace = "aws:autoscaling:launchconfiguration"
+          + value     = "t3.micro"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "LoadBalancerType"
+          + namespace = "aws:elasticbeanstalk:environment"
+          + value     = "application"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "ManagedActionsEnabled"
+          + namespace = "aws:elasticbeanstalk:managedactions"
+          + value     = "false"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "MaxSize"
+          + namespace = "aws:autoscaling:asg"
+          + value     = "2"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "MinSize"
+          + namespace = "aws:autoscaling:asg"
+          + value     = "1"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "Port"
+          + namespace = "aws:elasticbeanstalk:environment:process:default"
+          + value     = "8080"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "Protocol"
+          + namespace = "aws:elasticbeanstalk:environment:process:default"
+          + value     = "HTTP"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "ServiceRole"
+          + namespace = "aws:elasticbeanstalk:environment"
+          + value     = "my-app-bluegreen-eb-service-role"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "SystemType"
+          + namespace = "aws:elasticbeanstalk:healthreporting:system"
+          + value     = "enhanced"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "VERSION"
+          + namespace = "aws:elasticbeanstalk:application:environment"
+          + value     = "2.0"
+            # (1 unchanged attribute hidden)
+        }
+    }
+
+Plan: 2 to add, 0 to change, 0 to destroy.
+
+Changes to Outputs:
+  + blue_environment_cname  = (known after apply)
+  + blue_environment_url    = (known after apply)
+  + green_environment_cname = (known after apply)
+  + green_environment_url   = (known after apply)
+  + instructions            = (known after apply)
+
+Do you want to perform these actions?
+  Terraform will perform the actions described above.
+  Only 'yes' will be accepted to approve.
+
+  Enter a value: yes
+
+aws_elastic_beanstalk_environment.blue: Creating...
+aws_elastic_beanstalk_environment.green: Creating...
+╷
+│ Error: creating Elastic Beanstalk Environment (my-app-bluegreen-blue): operation error Elastic Beanstalk: CreateEnvironment, https response error StatusCode: 400, RequestID: abda9732-e48b-43ee-9d84-8745b5453f59, api error InvalidParameterValue: No Solution Stack named '64bit Amazon Linux 2023 v6.2.0 running Node.js 20' found.
+│ 
+│   with aws_elastic_beanstalk_environment.blue,
+│   on blue-environment.tf line 22, in resource "aws_elastic_beanstalk_environment" "blue":
+│   22: resource "aws_elastic_beanstalk_environment" "blue" {
+│ 
+╵
+╷
+│ Error: creating Elastic Beanstalk Environment (my-app-bluegreen-green): operation error Elastic Beanstalk: CreateEnvironment, https response error StatusCode: 400, RequestID: 30bb8426-3a24-43ad-9d3e-3a804f576c72, api error InvalidParameterValue: No Solution Stack named '64bit Amazon Linux 2023 v6.2.0 running Node.js 20' found.
+│ 
+│   with aws_elastic_beanstalk_environment.green,
+│   on green-environment.tf line 22, in resource "aws_elastic_beanstalk_environment" "green":
+│   22: resource "aws_elastic_beanstalk_environment" "green" {
+│ 
+╵
+
+   pwsh MEM: 73% | 10/13GB   14s 501ms  (base) 
+╭─ ♥ 21:17 |             Day17 
+╰─ 
+
+
+--------
+
+╷
+│ Error: creating Elastic Beanstalk Environment (my-app-bluegreen-blue): operation error Elastic Beanstalk: CreateEnvironment, https response error StatusCode: 400, RequestID: 07ee6e0e-a8f2-43fe-81e8-a8c44f58d62a, api error InvalidParameterValue: No Solution Stack named '64bit Amazon Linux 2023 v6.2.0 running Node.js 20' found.
+│ 
+│   with aws_elastic_beanstalk_environment.blue,
+│   on blue-environment.tf line 22, in resource "aws_elastic_beanstalk_environment" "blue":
+│   22: resource "aws_elastic_beanstalk_environment" "blue" {
+│ 
+╵
+╷
+│ Error: creating Elastic Beanstalk Environment (my-app-bluegreen-green): operation error Elastic Beanstalk: CreateEnvironment, https response error StatusCode: 400, RequestID: 6ad6a223-262c-414d-9165-656d74b9feb8, api error InvalidParameterValue: No Solution Stack named '64bit Amazon Linux 2023 v6.2.0 running Node.js 20' found.
+│ 
+│   with aws_elastic_beanstalk_environment.green,
+│   on green-environment.tf line 22, in resource "aws_elastic_beanstalk_environment" "green":
+│   22: resource "aws_elastic_beanstalk_environment" "green" {
+│ 
+╵

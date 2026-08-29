@@ -1,0 +1,15 @@
+╷
+│ Error: creating Elastic Beanstalk Environment (my-app-bluegreen-blue): operation error Elastic Beanstalk: CreateEnvironment, https response error StatusCode: 400, RequestID: 315c7c41-13ec-47ae-ac4b-876f7232865b, api error InvalidParameterValue: No Solution Stack named '64bit Amazon Linux 2023 v6.2.0 running Node.js 20' found.
+│ 
+│   with aws_elastic_beanstalk_environment.blue,
+│   on blue-environment.tf line 22, in resource "aws_elastic_beanstalk_environment" "blue":
+│   22: resource "aws_elastic_beanstalk_environment" "blue" {
+│ 
+╵
+╷
+│ Error: creating Elastic Beanstalk Environment (my-app-bluegreen-green): operation error Elastic Beanstalk: CreateEnvironment, https response error StatusCode: 400, RequestID: 1b7aa2f6-80f9-4e85-885b-5378dfe103d6, api error InvalidParameterValue: No Solution Stack named '64bit Amazon Linux 2023 v6.2.0 running Node.js 20' found.
+│ 
+│   with aws_elastic_beanstalk_environment.green,
+│   on green-environment.tf line 22, in resource "aws_elastic_beanstalk_environment" "green":
+│   22: resource "aws_elastic_beanstalk_environment" "green" {
+│ 

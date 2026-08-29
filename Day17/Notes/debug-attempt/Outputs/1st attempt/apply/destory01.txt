@@ -1,0 +1,425 @@
+╷
+│ Error: creating Elastic Beanstalk Environment (my-app-bluegreen-blue): operation error Elastic Beanstalk: CreateEnvironment, https response error StatusCode: 400, RequestID: cfd52b17-a518-4691-a60e-386ed0c9d719, api error InvalidParameterValue: No Solution Stack named '64bit Amazon Linux 2023 v6.2.0 running Node.js 20' found.
+│ 
+│   with aws_elastic_beanstalk_environment.blue,
+│   on blue-environment.tf line 22, in resource "aws_elastic_beanstalk_environment" "blue":
+│   22: resource "aws_elastic_beanstalk_environment" "blue" {
+│ 
+╵
+╷
+│ Error: creating Elastic Beanstalk Environment (my-app-bluegreen-green): operation error Elastic Beanstalk: CreateEnvironment, https response error StatusCode: 400, RequestID: 2044f6c6-b712-41ae-a901-ea4aca64a827, api error InvalidParameterValue: No Solution Stack named '64bit Amazon Linux 2023 v6.2.0 running Node.js 20' found.
+│ 
+│   with aws_elastic_beanstalk_environment.green,
+│   on green-environment.tf line 22, in resource "aws_elastic_beanstalk_environment" "green":
+│   22: resource "aws_elastic_beanstalk_environment" "green" {
+│ 
+╵
+ terraform destroy --auto-approve
+data.aws_caller_identity.current: Reading...
+aws_elastic_beanstalk_application.app: Refreshing state... [id=my-app-bluegreen]
+aws_iam_role.eb_service_role: Refreshing state... [id=my-app-bluegreen-eb-service-role]
+aws_iam_role.eb_ec2_role: Refreshing state... [id=my-app-bluegreen-eb-ec2-role]
+data.aws_caller_identity.current: Read complete after 0s [id=357715920231]
+aws_s3_bucket.app_versions: Refreshing state... [id=my-app-bluegreen-version-357715920231]
+aws_iam_role_policy_attachment.eb_web_tier: Refreshing state... [id=my-app-bluegreen-eb-ec2-role-20260828181649551500000005]
+aws_iam_role_policy_attachment.eb_multicontainer_docker: Refreshing state... [id=my-app-bluegreen-eb-ec2-role-20260828181648968500000001]
+aws_iam_role_policy_attachment.eb_worker_tier: Refreshing state... [id=my-app-bluegreen-eb-ec2-role-20260828181649344600000004]
+aws_iam_instance_profile.eb_ec2_profile: Refreshing state... [id=my-app-bluegreen-eb-ec2-profile]
+aws_iam_role_policy_attachment.eb_service_managed_updates: Refreshing state... [id=my-app-bluegreen-eb-service-role-20260828181649256300000003]
+aws_iam_role_policy_attachment.eb_service_health: Refreshing state... [id=my-app-bluegreen-eb-service-role-20260828181649007600000002]
+aws_s3_bucket_public_access_block.app_versions: Refreshing state... [id=my-app-bluegreen-version-357715920231]
+aws_s3_object.app_v2: Refreshing state... [id=app-v2.zip]
+aws_s3_object.app_v1: Refreshing state... [id=app-v1.zip]
+aws_elastic_beanstalk_application_version.v1: Refreshing state... [id=my-app-bluegreen-v1]
+aws_elastic_beanstalk_application_version.v2: Refreshing state... [id=my-app-bluegreen-v2]
+
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+  - destroy
+
+Terraform will perform the following actions:
+
+  # aws_elastic_beanstalk_application.app will be destroyed
+  - resource "aws_elastic_beanstalk_application" "app" {
+      - arn         = "arn:aws:elasticbeanstalk:us-east-1:357715920231:application/my-app-bluegreen" -> null
+      - description = "Blue-Green Deployment Demo Application" -> null
+      - id          = "my-app-bluegreen" -> null
+      - name        = "my-app-bluegreen" -> null
+      - tags        = {
+          - "Environment" = "Demo"
+          - "ManagedBy"   = "Terraform"
+          - "Owner"       = "Pranjello"
+          - "Project"     = "BlueGreenDeployment"
+        } -> null
+      - tags_all    = {
+          - "Environment" = "Demo"
+          - "ManagedBy"   = "Terraform"
+          - "Owner"       = "Pranjello"
+          - "Project"     = "BlueGreenDeployment"
+        } -> null
+    }
+
+  # aws_elastic_beanstalk_application_version.v1 will be destroyed
+  - resource "aws_elastic_beanstalk_application_version" "v1" {
+      - application  = "my-app-bluegreen" -> null
+      - arn          = "arn:aws:elasticbeanstalk:us-east-1:357715920231:applicationversion/my-app-bluegreen/my-app-bluegreen-v1" -> null
+      - bucket       = "my-app-bluegreen-version-357715920231" -> null
+      - description  = "Application Version 1.0 - Initial Release" -> null
+      - force_delete = false -> null
+      - id           = "my-app-bluegreen-v1" -> null
+      - key          = "app-v1.zip" -> null
+      - name         = "my-app-bluegreen-v1" -> null
+      - process      = false -> null
+      - tags         = {
+          - "Environment" = "Demo"
+          - "ManagedBy"   = "Terraform"
+          - "Owner"       = "Pranjello"
+          - "Project"     = "BlueGreenDeployment"
+        } -> null
+      - tags_all     = {
+          - "Environment" = "Demo"
+          - "ManagedBy"   = "Terraform"
+          - "Owner"       = "Pranjello"
+          - "Project"     = "BlueGreenDeployment"
+        } -> null
+    }
+
+  # aws_elastic_beanstalk_application_version.v2 will be destroyed
+  - resource "aws_elastic_beanstalk_application_version" "v2" {
+      - application  = "my-app-bluegreen" -> null
+      - arn          = "arn:aws:elasticbeanstalk:us-east-1:357715920231:applicationversion/my-app-bluegreen/my-app-bluegreen-v2" -> null
+      - bucket       = "my-app-bluegreen-version-357715920231" -> null
+      - description  = "Application Version 2.0 - New Feature Release" -> null
+      - force_delete = false -> null
+      - id           = "my-app-bluegreen-v2" -> null
+      - key          = "app-v2.zip" -> null
+      - name         = "my-app-bluegreen-v2" -> null
+      - process      = false -> null
+      - tags         = {
+          - "Environment" = "Demo"
+          - "ManagedBy"   = "Terraform"
+          - "Owner"       = "Pranjello"
+          - "Project"     = "BlueGreenDeployment"
+        } -> null
+      - tags_all     = {
+          - "Environment" = "Demo"
+          - "ManagedBy"   = "Terraform"
+          - "Owner"       = "Pranjello"
+          - "Project"     = "BlueGreenDeployment"
+        } -> null
+    }
+
+  # aws_iam_instance_profile.eb_ec2_profile will be destroyed
+  - resource "aws_iam_instance_profile" "eb_ec2_profile" {
+      - arn         = "arn:aws:iam::357715920231:instance-profile/my-app-bluegreen-eb-ec2-profile" -> null
+      - create_date = "2026-08-28T18:16:50Z" -> null
+      - id          = "my-app-bluegreen-eb-ec2-profile" -> null
+      - name        = "my-app-bluegreen-eb-ec2-profile" -> null
+      - path        = "/" -> null
+      - role        = "my-app-bluegreen-eb-ec2-role" -> null
+      - tags        = {
+          - "Environment" = "Demo"
+          - "ManagedBy"   = "Terraform"
+          - "Owner"       = "Pranjello"
+          - "Project"     = "BlueGreenDeployment"
+        } -> null
+      - tags_all    = {
+          - "Environment" = "Demo"
+          - "ManagedBy"   = "Terraform"
+          - "Owner"       = "Pranjello"
+          - "Project"     = "BlueGreenDeployment"
+        } -> null
+      - unique_id   = "AIPAVGSMHYVTSSBOUDTYM" -> null
+        # (1 unchanged attribute hidden)
+    }
+
+  # aws_iam_role.eb_ec2_role will be destroyed
+  - resource "aws_iam_role" "eb_ec2_role" {
+      - arn                   = "arn:aws:iam::357715920231:role/my-app-bluegreen-eb-ec2-role" -> null
+      - assume_role_policy    = jsonencode(
+            {
+              - Statement = [
+                  - {
+                      - Action    = "sts:AssumeRole"
+                      - Effect    = "Allow"
+                      - Principal = {
+                          - Service = "ec2.amazonaws.com"
+                        }
+                    },
+                ]
+              - Version   = "2012-10-17"
+            }
+        ) -> null
+      - create_date           = "2026-08-28T18:16:48Z" -> null
+      - force_detach_policies = false -> null
+      - id                    = "my-app-bluegreen-eb-ec2-role" -> null
+      - managed_policy_arns   = [
+          - "arn:aws:iam::aws:policy/AWSElasticBeanstalkMulticontainerDocker",
+          - "arn:aws:iam::aws:policy/AWSElasticBeanstalkWebTier",
+          - "arn:aws:iam::aws:policy/AWSElasticBeanstalkWorkerTier",
+        ] -> null
+      - max_session_duration  = 3600 -> null
+      - name                  = "my-app-bluegreen-eb-ec2-role" -> null
+      - path                  = "/" -> null
+      - tags                  = {
+          - "Environment" = "Demo"
+          - "ManagedBy"   = "Terraform"
+          - "Owner"       = "Pranjello"
+          - "Project"     = "BlueGreenDeployment"
+        } -> null
+      - tags_all              = {
+          - "Environment" = "Demo"
+          - "ManagedBy"   = "Terraform"
+          - "Owner"       = "Pranjello"
+          - "Project"     = "BlueGreenDeployment"
+        } -> null
+      - unique_id             = "AROAVGSMHYVT3TEOHKQQX" -> null
+        # (3 unchanged attributes hidden)
+    }
+
+  # aws_iam_role.eb_service_role will be destroyed
+  - resource "aws_iam_role" "eb_service_role" {
+      - arn                   = "arn:aws:iam::357715920231:role/my-app-bluegreen-eb-service-role" -> null
+      - assume_role_policy    = jsonencode(
+            {
+              - Statement = [
+                  - {
+                      - Action    = "sts:AssumeRole"
+                      - Effect    = "Allow"
+                      - Principal = {
+                          - Service = "elasticbeanstalk.amazonaws.com"
+                        }
+                    },
+                ]
+              - Version   = "2012-10-17"
+            }
+        ) -> null
+      - create_date           = "2026-08-28T18:16:48Z" -> null
+      - force_detach_policies = false -> null
+      - id                    = "my-app-bluegreen-eb-service-role" -> null
+      - managed_policy_arns   = [
+          - "arn:aws:iam::aws:policy/AWSElasticBeanstalkManagedUpdatesCustomerRolePolicy",
+          - "arn:aws:iam::aws:policy/service-role/AWSElasticBeanstalkEnhancedHealth",
+        ] -> null
+      - max_session_duration  = 3600 -> null
+      - name                  = "my-app-bluegreen-eb-service-role" -> null
+      - path                  = "/" -> null
+      - tags                  = {
+          - "Environment" = "Demo"
+          - "ManagedBy"   = "Terraform"
+          - "Owner"       = "Pranjello"
+          - "Project"     = "BlueGreenDeployment"
+        } -> null
+      - tags_all              = {
+          - "Environment" = "Demo"
+          - "ManagedBy"   = "Terraform"
+          - "Owner"       = "Pranjello"
+          - "Project"     = "BlueGreenDeployment"
+        } -> null
+      - unique_id             = "AROAVGSMHYVT37VXBA57H" -> null
+        # (3 unchanged attributes hidden)
+    }
+
+  # aws_iam_role_policy_attachment.eb_multicontainer_docker will be destroyed
+  - resource "aws_iam_role_policy_attachment" "eb_multicontainer_docker" {
+      - id         = "my-app-bluegreen-eb-ec2-role-20260828181648968500000001" -> null
+      - policy_arn = "arn:aws:iam::aws:policy/AWSElasticBeanstalkMulticontainerDocker" -> null
+      - role       = "my-app-bluegreen-eb-ec2-role" -> null
+    }
+
+  # aws_iam_role_policy_attachment.eb_service_health will be destroyed
+  - resource "aws_iam_role_policy_attachment" "eb_service_health" {
+      - id         = "my-app-bluegreen-eb-service-role-20260828181649007600000002" -> null
+      - policy_arn = "arn:aws:iam::aws:policy/service-role/AWSElasticBeanstalkEnhancedHealth" -> null
+      - role       = "my-app-bluegreen-eb-service-role" -> null
+    }
+
+  # aws_iam_role_policy_attachment.eb_service_managed_updates will be destroyed
+  - resource "aws_iam_role_policy_attachment" "eb_service_managed_updates" {
+      - id         = "my-app-bluegreen-eb-service-role-20260828181649256300000003" -> null
+      - policy_arn = "arn:aws:iam::aws:policy/AWSElasticBeanstalkManagedUpdatesCustomerRolePolicy" -> null
+      - role       = "my-app-bluegreen-eb-service-role" -> null
+    }
+
+  # aws_iam_role_policy_attachment.eb_web_tier will be destroyed
+  - resource "aws_iam_role_policy_attachment" "eb_web_tier" {
+      - id         = "my-app-bluegreen-eb-ec2-role-20260828181649551500000005" -> null
+      - policy_arn = "arn:aws:iam::aws:policy/AWSElasticBeanstalkWebTier" -> null
+      - role       = "my-app-bluegreen-eb-ec2-role" -> null
+    }
+
+  # aws_iam_role_policy_attachment.eb_worker_tier will be destroyed
+  - resource "aws_iam_role_policy_attachment" "eb_worker_tier" {
+      - id         = "my-app-bluegreen-eb-ec2-role-20260828181649344600000004" -> null
+      - policy_arn = "arn:aws:iam::aws:policy/AWSElasticBeanstalkWorkerTier" -> null
+      - role       = "my-app-bluegreen-eb-ec2-role" -> null
+    }
+
+  # aws_s3_bucket.app_versions will be destroyed
+  - resource "aws_s3_bucket" "app_versions" {
+      - arn                         = "arn:aws:s3:::my-app-bluegreen-version-357715920231" -> null
+      - bucket                      = "my-app-bluegreen-version-357715920231" -> null
+      - bucket_domain_name          = "my-app-bluegreen-version-357715920231.s3.amazonaws.com" -> null
+      - bucket_regional_domain_name = "my-app-bluegreen-version-357715920231.s3.us-east-1.amazonaws.com" -> null
+      - force_destroy               = false -> null
+      - hosted_zone_id              = "Z3AQBSTGFYJSTF" -> null
+      - id                          = "my-app-bluegreen-version-357715920231" -> null
+      - object_lock_enabled         = false -> null
+      - region                      = "us-east-1" -> null
+      - request_payer               = "BucketOwner" -> null
+      - tags                        = {
+          - "Environment" = "Demo"
+          - "ManagedBy"   = "Terraform"
+          - "Owner"       = "Pranjello"
+          - "Project"     = "BlueGreenDeployment"
+        } -> null
+      - tags_all                    = {
+          - "Environment" = "Demo"
+          - "ManagedBy"   = "Terraform"
+          - "Owner"       = "Pranjello"
+          - "Project"     = "BlueGreenDeployment"
+        } -> null
+        # (3 unchanged attributes hidden)
+
+      - grant {
+          - id          = "b6b0245b93269cc6c2a5291edad6247715bee4f43aae6451ba7c64ead4747b1d" -> null
+          - permissions = [
+              - "FULL_CONTROL",
+            ] -> null
+          - type        = "CanonicalUser" -> null
+            # (1 unchanged attribute hidden)
+        }
+
+      - server_side_encryption_configuration {
+          - rule {
+              - bucket_key_enabled = false -> null
+
+              - apply_server_side_encryption_by_default {
+                  - sse_algorithm     = "AES256" -> null
+                    # (1 unchanged attribute hidden)
+                }
+            }
+        }
+
+      - versioning {
+          - enabled    = false -> null
+          - mfa_delete = false -> null
+        }
+    }
+
+  # aws_s3_bucket_public_access_block.app_versions will be destroyed
+  - resource "aws_s3_bucket_public_access_block" "app_versions" {
+      - block_public_acls       = true -> null
+      - block_public_policy     = true -> null
+      - bucket                  = "my-app-bluegreen-version-357715920231" -> null
+      - id                      = "my-app-bluegreen-version-357715920231" -> null
+      - ignore_public_acls      = true -> null
+      - restrict_public_buckets = true -> null
+    }
+
+  # aws_s3_object.app_v1 will be destroyed
+  - resource "aws_s3_object" "app_v1" {
+      - arn                           = "arn:aws:s3:::my-app-bluegreen-version-357715920231/app-v1.zip" -> null
+      - bucket                        = "my-app-bluegreen-version-357715920231" -> null
+      - bucket_key_enabled            = false -> null
+      - content_type                  = "application/octet-stream" -> null
+      - etag                          = "c1e45327a9f52d356f4b41a3e41c37db" -> null
+      - force_destroy                 = false -> null
+      - id                            = "app-v1.zip" -> null
+      - key                           = "app-v1.zip" -> null
+      - metadata                      = {} -> null
+      - server_side_encryption        = "AES256" -> null
+      - source                        = "./app-v1/app-v1.zip" -> null
+      - storage_class                 = "STANDARD" -> null
+      - tags                          = {
+          - "Environment" = "Demo"
+          - "ManagedBy"   = "Terraform"
+          - "Owner"       = "Pranjello"
+          - "Project"     = "BlueGreenDeployment"
+        } -> null
+      - tags_all                      = {
+          - "Environment" = "Demo"
+          - "ManagedBy"   = "Terraform"
+          - "Owner"       = "Pranjello"
+          - "Project"     = "BlueGreenDeployment"
+        } -> null
+        # (14 unchanged attributes hidden)
+    }
+
+  # aws_s3_object.app_v2 will be destroyed
+  - resource "aws_s3_object" "app_v2" {
+      - arn                           = "arn:aws:s3:::my-app-bluegreen-version-357715920231/app-v2.zip" -> null
+      - bucket                        = "my-app-bluegreen-version-357715920231" -> null
+      - bucket_key_enabled            = false -> null
+      - content_type                  = "application/octet-stream" -> null
+      - etag                          = "43d3cd140bfb71bf0030c2ec122f4a39" -> null
+      - force_destroy                 = false -> null
+      - id                            = "app-v2.zip" -> null
+      - key                           = "app-v2.zip" -> null
+      - metadata                      = {} -> null
+      - server_side_encryption        = "AES256" -> null
+      - source                        = "./app-v2/app-v2.zip" -> null
+      - storage_class                 = "STANDARD" -> null
+      - tags                          = {
+          - "Environment" = "Demo"
+          - "ManagedBy"   = "Terraform"
+          - "Owner"       = "Pranjello"
+          - "Project"     = "BlueGreenDeployment"
+        } -> null
+      - tags_all                      = {
+          - "Environment" = "Demo"
+          - "ManagedBy"   = "Terraform"
+          - "Owner"       = "Pranjello"
+          - "Project"     = "BlueGreenDeployment"
+        } -> null
+        # (14 unchanged attributes hidden)
+    }
+
+Plan: 0 to add, 0 to change, 15 to destroy.
+
+Changes to Outputs:
+  - application_name       = "my-app-bluegreen" -> null
+  - blue_environment_name  = "my-app-bluegreen-blue" -> null
+  - green_environment_name = "my-app-bluegreen-green" -> null
+  - s3_bucket              = "my-app-bluegreen-version-357715920231" -> null
+  - swap_command           = <<-EOT
+        aws elasticbeanstalk swap-environment-cnames \
+          --source-environment-name my-app-bluegreen-blue \
+          --destination-environment-name my-app-bluegreen-green \
+          --region us-east-1
+    EOT -> null
+aws_iam_role_policy_attachment.eb_worker_tier: Destroying... [id=my-app-bluegreen-eb-ec2-role-20260828181649344600000004]
+aws_iam_role_policy_attachment.eb_service_managed_updates: Destroying... [id=my-app-bluegreen-eb-service-role-20260828181649256300000003]
+aws_s3_bucket_public_access_block.app_versions: Destroying... [id=my-app-bluegreen-version-357715920231]
+aws_elastic_beanstalk_application_version.v1: Destroying... [id=my-app-bluegreen-v1]
+aws_iam_role_policy_attachment.eb_web_tier: Destroying... [id=my-app-bluegreen-eb-ec2-role-20260828181649551500000005]
+aws_iam_role_policy_attachment.eb_multicontainer_docker: Destroying... [id=my-app-bluegreen-eb-ec2-role-20260828181648968500000001]
+aws_iam_role_policy_attachment.eb_service_health: Destroying... [id=my-app-bluegreen-eb-service-role-20260828181649007600000002]
+aws_iam_instance_profile.eb_ec2_profile: Destroying... [id=my-app-bluegreen-eb-ec2-profile]
+aws_elastic_beanstalk_application_version.v2: Destroying... [id=my-app-bluegreen-v2]
+aws_iam_role_policy_attachment.eb_multicontainer_docker: Destruction complete after 1s
+aws_iam_role_policy_attachment.eb_worker_tier: Destruction complete after 1s
+aws_iam_role_policy_attachment.eb_web_tier: Destruction complete after 1s
+aws_iam_role_policy_attachment.eb_service_health: Destruction complete after 1s
+aws_iam_role_policy_attachment.eb_service_managed_updates: Destruction complete after 1s
+aws_iam_role.eb_service_role: Destroying... [id=my-app-bluegreen-eb-service-role]
+aws_s3_bucket_public_access_block.app_versions: Destruction complete after 1s
+aws_iam_instance_profile.eb_ec2_profile: Destruction complete after 2s
+aws_iam_role.eb_ec2_role: Destroying... [id=my-app-bluegreen-eb-ec2-role]
+aws_elastic_beanstalk_application_version.v2: Destruction complete after 2s
+aws_s3_object.app_v2: Destroying... [id=app-v2.zip]
+aws_elastic_beanstalk_application_version.v1: Destruction complete after 2s
+aws_elastic_beanstalk_application.app: Destroying... [id=my-app-bluegreen]
+aws_s3_object.app_v1: Destroying... [id=app-v1.zip]
+aws_s3_object.app_v2: Destruction complete after 0s
+aws_iam_role.eb_service_role: Destruction complete after 1s
+aws_s3_object.app_v1: Destruction complete after 0s
+aws_s3_bucket.app_versions: Destroying... [id=my-app-bluegreen-version-357715920231]
+aws_iam_role.eb_ec2_role: Destruction complete after 0s
+aws_s3_bucket.app_versions: Destruction complete after 1s
+aws_elastic_beanstalk_application.app: Destruction complete after 3s
+
+Destroy complete! Resources: 15 destroyed.
+
+   pwsh MEM: 62% | 8/13GB   17s 582ms  (base) 
+╭─ ♥ 23:56 |             Day17 
+╰─ 

@@ -1,0 +1,395 @@
+ terraform apply --auto-approve
+data.aws_caller_identity.current: Reading...
+aws_elastic_beanstalk_application.app: Refreshing state... [id=my-app-bluegreen]
+aws_iam_role.eb_ec2_role: Refreshing state... [id=my-app-bluegreen-eb-ec2-role]
+aws_iam_role.eb_service_role: Refreshing state... [id=my-app-bluegreen-eb-service-role]
+data.aws_caller_identity.current: Read complete after 0s [id=357715920231]
+aws_s3_bucket.app_versions: Refreshing state... [id=my-app-bluegreen-versions-357715920231]
+aws_iam_role_policy_attachment.eb_service_health: Refreshing state... [id=my-app-bluegreen-eb-service-role-20260829153201424500000002]
+aws_iam_role_policy_attachment.eb_service_managed_updates: Refreshing state... [id=my-app-bluegreen-eb-service-role-20260829153201424500000001]
+aws_s3_bucket_public_access_block.app_versions: Refreshing state... [id=my-app-bluegreen-versions-357715920231]
+aws_s3_object.app_v2: Refreshing state... [id=app-v2.zip]
+aws_s3_object.app_v1: Refreshing state... [id=app-v1.zip]
+aws_elastic_beanstalk_application_version.v2: Refreshing state... [id=my-app-bluegreen-v2]
+aws_elastic_beanstalk_application_version.v1: Refreshing state... [id=my-app-bluegreen-v1]
+
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # aws_elastic_beanstalk_environment.blue will be created
+  + resource "aws_elastic_beanstalk_environment" "blue" {
+      + all_settings           = (known after apply)
+      + application            = "my-app-bluegreen"
+      + arn                    = (known after apply)
+      + autoscaling_groups     = (known after apply)
+      + cname                  = (known after apply)
+      + cname_prefix           = (known after apply)
+      + endpoint_url           = (known after apply)
+      + id                     = (known after apply)
+      + instances              = (known after apply)
+      + launch_configurations  = (known after apply)
+      + load_balancers         = (known after apply)
+      + name                   = "my-app-bluegreen-blue"
+      + platform_arn           = (known after apply)
+      + queues                 = (known after apply)
+      + solution_stack_name    = "64bit Amazon Linux 2023 v6.11.7 running Node.js 22"
+      + tags                   = {
+          + "Environment" = "blue"
+          + "ManagedBy"   = "Terraform"
+          + "Project"     = "BlueGreenDeployment"
+          + "Role"        = "production"
+        }
+      + tags_all               = {
+          + "Environment" = "blue"
+          + "ManagedBy"   = "Terraform"
+          + "Project"     = "BlueGreenDeployment"
+          + "Role"        = "production"
+        }
+      + tier                   = "WebServer"
+      + triggers               = (known after apply)
+      + version_label          = "my-app-bluegreen-v1"
+      + wait_for_ready_timeout = "20m"
+
+      + setting {
+          + name      = "BatchSize"
+          + namespace = "aws:elasticbeanstalk:command"
+          + value     = "50"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "BatchSizeType"
+          + namespace = "aws:elasticbeanstalk:command"
+          + value     = "Percentage"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "DeploymentPolicy"
+          + namespace = "aws:elasticbeanstalk:command"
+          + value     = "Rolling"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "ENVIRONMENT"
+          + namespace = "aws:elasticbeanstalk:application:environment"
+          + value     = "blue"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "EnvironmentType"
+          + namespace = "aws:elasticbeanstalk:environment"
+          + value     = "LoadBalanced"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "HealthCheckPath"
+          + namespace = "aws:elasticbeanstalk:environment:process:default"
+          + value     = "/"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "IamInstanceProfile"
+          + namespace = "aws:autoscaling:launchconfiguration"
+          + value     = "my-app-bluegreen-eb-ec2-profile"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "InstanceType"
+          + namespace = "aws:autoscaling:launchconfiguration"
+          + value     = "t3.micro"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "LoadBalancerType"
+          + namespace = "aws:elasticbeanstalk:environment"
+          + value     = "application"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "ManagedActionsEnabled"
+          + namespace = "aws:elasticbeanstalk:managedactions"
+          + value     = "false"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "MaxSize"
+          + namespace = "aws:autoscaling:asg"
+          + value     = "2"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "MinSize"
+          + namespace = "aws:autoscaling:asg"
+          + value     = "1"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "Port"
+          + namespace = "aws:elasticbeanstalk:environment:process:default"
+          + value     = "8080"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "Protocol"
+          + namespace = "aws:elasticbeanstalk:environment:process:default"
+          + value     = "HTTP"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "ServiceRole"
+          + namespace = "aws:elasticbeanstalk:environment"
+          + value     = "my-app-bluegreen-eb-service-role"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "SystemType"
+          + namespace = "aws:elasticbeanstalk:healthreporting:system"
+          + value     = "enhanced"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "VERSION"
+          + namespace = "aws:elasticbeanstalk:application:environment"
+          + value     = "1.0"
+            # (1 unchanged attribute hidden)
+        }
+    }
+
+  # aws_elastic_beanstalk_environment.green will be created
+  + resource "aws_elastic_beanstalk_environment" "green" {
+      + all_settings           = (known after apply)
+      + application            = "my-app-bluegreen"
+      + arn                    = (known after apply)
+      + autoscaling_groups     = (known after apply)
+      + cname                  = (known after apply)
+      + cname_prefix           = (known after apply)
+      + endpoint_url           = (known after apply)
+      + id                     = (known after apply)
+      + instances              = (known after apply)
+      + launch_configurations  = (known after apply)
+      + load_balancers         = (known after apply)
+      + name                   = "my-app-bluegreen-green"
+      + platform_arn           = (known after apply)
+      + queues                 = (known after apply)
+      + solution_stack_name    = "64bit Amazon Linux 2023 v6.11.7 running Node.js 22"
+      + tags                   = {
+          + "Environment" = "green"
+          + "ManagedBy"   = "Terraform"
+          + "Project"     = "BlueGreenDeployment"
+          + "Role"        = "staging"
+        }
+      + tags_all               = {
+          + "Environment" = "green"
+          + "ManagedBy"   = "Terraform"
+          + "Project"     = "BlueGreenDeployment"
+          + "Role"        = "staging"
+        }
+      + tier                   = "WebServer"
+      + triggers               = (known after apply)
+      + version_label          = "my-app-bluegreen-v2"
+      + wait_for_ready_timeout = "20m"
+
+      + setting {
+          + name      = "BatchSize"
+          + namespace = "aws:elasticbeanstalk:command"
+          + value     = "50"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "BatchSizeType"
+          + namespace = "aws:elasticbeanstalk:command"
+          + value     = "Percentage"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "DeploymentPolicy"
+          + namespace = "aws:elasticbeanstalk:command"
+          + value     = "Rolling"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "ENVIRONMENT"
+          + namespace = "aws:elasticbeanstalk:application:environment"
+          + value     = "green"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "EnvironmentType"
+          + namespace = "aws:elasticbeanstalk:environment"
+          + value     = "LoadBalanced"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "HealthCheckPath"
+          + namespace = "aws:elasticbeanstalk:environment:process:default"
+          + value     = "/"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "IamInstanceProfile"
+          + namespace = "aws:autoscaling:launchconfiguration"
+          + value     = "my-app-bluegreen-eb-ec2-profile"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "InstanceType"
+          + namespace = "aws:autoscaling:launchconfiguration"
+          + value     = "t3.micro"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "LoadBalancerType"
+          + namespace = "aws:elasticbeanstalk:environment"
+          + value     = "application"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "ManagedActionsEnabled"
+          + namespace = "aws:elasticbeanstalk:managedactions"
+          + value     = "false"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "MaxSize"
+          + namespace = "aws:autoscaling:asg"
+          + value     = "2"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "MinSize"
+          + namespace = "aws:autoscaling:asg"
+          + value     = "1"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "Port"
+          + namespace = "aws:elasticbeanstalk:environment:process:default"
+          + value     = "8080"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "Protocol"
+          + namespace = "aws:elasticbeanstalk:environment:process:default"
+          + value     = "HTTP"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "ServiceRole"
+          + namespace = "aws:elasticbeanstalk:environment"
+          + value     = "my-app-bluegreen-eb-service-role"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "SystemType"
+          + namespace = "aws:elasticbeanstalk:healthreporting:system"
+          + value     = "enhanced"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "VERSION"
+          + namespace = "aws:elasticbeanstalk:application:environment"
+          + value     = "2.0"
+            # (1 unchanged attribute hidden)
+        }
+    }
+
+  # aws_iam_instance_profile.eb_ec2_profile will be created
+  + resource "aws_iam_instance_profile" "eb_ec2_profile" {
+      + arn         = (known after apply)
+      + create_date = (known after apply)
+      + id          = (known after apply)
+      + name        = "my-app-bluegreen-eb-ec2-profile"
+      + name_prefix = (known after apply)
+      + path        = "/"
+      + role        = "my-app-bluegreen-eb-ec2-role"
+      + tags        = {
+          + "Environment" = "Demo"
+          + "ManagedBy"   = "Terraform"
+          + "Project"     = "BlueGreenDeployment"
+        }
+      + tags_all    = {
+          + "Environment" = "Demo"
+          + "ManagedBy"   = "Terraform"
+          + "Project"     = "BlueGreenDeployment"
+        }
+      + unique_id   = (known after apply)
+    }
+
+  # aws_iam_role_policy_attachment.eb_multicontainer_docker will be created
+  + resource "aws_iam_role_policy_attachment" "eb_multicontainer_docker" {
+      + id         = (known after apply)
+      + policy_arn = "arn:aws:iam::aws:policy/AWSElasticBeanstalkMulticontainerDocker"
+      + role       = "my-app-bluegreen-eb-ec2-role"
+    }
+
+  # aws_iam_role_policy_attachment.eb_web_tier will be created
+  + resource "aws_iam_role_policy_attachment" "eb_web_tier" {
+      + id         = (known after apply)
+      + policy_arn = "arn:aws:iam::aws:policy/AWSElasticBeanstalkWebTier"
+      + role       = "my-app-bluegreen-eb-ec2-role"
+    }
+
+  # aws_iam_role_policy_attachment.eb_worker_tier will be created
+  + resource "aws_iam_role_policy_attachment" "eb_worker_tier" {
+      + id         = (known after apply)
+      + policy_arn = "arn:aws:iam::aws:policy/AWSElasticBeanstalkWorkerTier"
+      + role       = "my-app-bluegreen-eb-ec2-role"
+    }
+
+Plan: 6 to add, 0 to change, 0 to destroy.
+
+Changes to Outputs:
+  + blue_environment_cname  = (known after apply)
+  + blue_environment_name   = "my-app-bluegreen-blue"
+  + blue_environment_url    = (known after apply)
+  + green_environment_cname = (known after apply)
+  + green_environment_name  = "my-app-bluegreen-green"
+  + green_environment_url   = (known after apply)
+  + instructions            = (known after apply)
+  + swap_command            = <<-EOT
+        aws elasticbeanstalk swap-environment-cnames \
+          --source-environment-name my-app-bluegreen-blue \
+          --destination-environment-name my-app-bluegreen-green \
+          --region us-east-1
+    EOT
+aws_iam_role_policy_attachment.eb_web_tier: Creating...
+aws_iam_role_policy_attachment.eb_worker_tier: Creating...
+aws_iam_role_policy_attachment.eb_multicontainer_docker: Creating...
+aws_iam_instance_profile.eb_ec2_profile: Creating...
+aws_iam_role_policy_attachment.eb_multicontainer_docker: Creation complete after 2s [id=my-app-bluegreen-eb-ec2-role-20260829153713560800000001]
+aws_iam_role_policy_attachment.eb_web_tier: Creation complete after 2s [id=my-app-bluegreen-eb-ec2-role-20260829153713560800000002]
+aws_iam_role_policy_attachment.eb_worker_tier: Creation complete after 2s [id=my-app-bluegreen-eb-ec2-role-20260829153713615800000003]
+╷
+│ Error: creating IAM Instance Profile (my-app-bluegreen-eb-ec2-profile): operation error IAM: CreateInstanceProfile, https response error StatusCode: 409, RequestID: ce468c18-7a48-4dd6-9bee-a6d631803142, EntityAlreadyExists: Instance Profile my-app-bluegreen-eb-ec2-profile already exists.
+│ 
+│   with aws_iam_instance_profile.eb_ec2_profile,
+│   on main.tf line 54, in resource "aws_iam_instance_profile" "eb_ec2_profile":
+│   54: resource "aws_iam_instance_profile" "eb_ec2_profile" {
+│ 
+╵
+ terraform import aws_iam_instance_profile.eb_ec2_profile my-app-bluegreen-eb-ec2-profile
+data.aws_caller_identity.current: Reading...
+aws_iam_instance_profile.eb_ec2_profile: Importing from ID "my-app-bluegreen-eb-ec2-profile"...
+aws_iam_instance_profile.eb_ec2_profile: Import prepared!
+  Prepared aws_iam_instance_profile for import
+aws_iam_instance_profile.eb_ec2_profile: Refreshing state... [id=my-app-bluegreen-eb-ec2-profile]
+data.aws_caller_identity.current: Read complete after 1s [id=357715920231]
+
+Import successful!
+
+The resources that were imported are shown above. These resources are now in
+your Terraform state and will henceforth be managed by Terraform.
+
+ terraform import aws_iam_instance_profile.eb_ec2_profile my-app-bluegreen-eb-ec2-profile
+data.aws_caller_identity.current: Reading...
+aws_iam_instance_profile.eb_ec2_profile: Importing from ID "my-app-bluegreen-eb-ec2-profile"...
+aws_iam_instance_profile.eb_ec2_profile: Import prepared!
+  Prepared aws_iam_instance_profile for import
+data.aws_caller_identity.current: Read complete after 0s [id=357715920231]
+╷
+│ Error: Resource already managed by Terraform
+│ 
+│ Terraform is already managing a remote object for aws_iam_instance_profile.eb_ec2_profile. To import to this address you must first remove the existing
+│ object from the state.
+╵

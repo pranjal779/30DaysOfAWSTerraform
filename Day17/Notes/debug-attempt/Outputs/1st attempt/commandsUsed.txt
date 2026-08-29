@@ -1,0 +1,95 @@
+ aws elasticbeanstalk list-available-solution-stacks
+
+You must specify a region. You can also configure your region by running "aws configure".
+ aws configure get region
+ aws configure
+AWS Access Key ID [********************]: ****************
+AWS Secret Access Key [********************]: ****************
+Default region name [None]: ^X
+ aws elasticbeanstalk list-available-solution-stacks --region=ap-south-1
+{                                                                                                                                                                                                                             
+    "SolutionStacks": [
+        "64bit Windows Server Core 2022 v2.23.4 running IIS 10.0",
+        "64bit Windows Server 2025 v2.23.4 running IIS 10.0",
+        "64bit Windows Server Core 2016 v2.23.4 running IIS 10.0",
+        "64bit Windows Server 2019 v2.23.4 running IIS 10.0",
+        "64bit Windows Server Core 2019 v2.23.4 running IIS 10.0",
+        "64bit Windows Server Core 2025 v2.23.4 running IIS 10.0",
+        "64bit Windows Server 2016 v2.23.4 running IIS 10.0",
+        "64bit Windows Server 2022 v2.23.4 running IIS 10.0",
+        "64bit Amazon Linux 2023 v5.14.7 running Tomcat 10 Corretto 17",
+        "64bit Amazon Linux 2023 v5.14.7 running Tomcat 10 Corretto 21",
+        "64bit Amazon Linux 2023 v5.14.7 running Tomcat 11 Corretto 17",
+        "64bit Amazon Linux 2023 v5.14.7 running Tomcat 9 Corretto 8",
+        "64bit Amazon Linux 2023 v5.14.7 running Tomcat 9 Corretto 17",
+        "64bit Amazon Linux 2023 v4.14.7 running Ruby 3.4",                                                                                                                                                                   
+        "64bit Amazon Linux 2023 v5.14.7 running Tomcat 11 Corretto 21",                                                                                                                                                      
+        "64bit Amazon Linux 2023 v5.14.7 running Tomcat 9 Corretto 11",                                                                                                                                                       
+        "64bit Amazon Linux 2023 v5.14.7 running Tomcat 11 Corretto 25",                                                                                                                                                      
+        "64bit Amazon Linux 2023 v4.14.7 running Ruby 4.0",                                                                                                                                                                   
+        "64bit Amazon Linux 2023 v4.13.7 running Python 3.12",                                                                                                                                                                
+        "64bit Amazon Linux 2023 v4.13.7 running PHP 8.5",                                                                                                                                                                    
+        "64bit Amazon Linux 2023 v4.13.7 running PHP 8.3",                                                                                                                                                                    
+        "64bit Amazon Linux 2023 v4.14.7 running Ruby 3.3",                                                                                                                                                                   
+        "64bit Amazon Linux 2023 v4.13.7 running Python 3.14",                                                                                                                                                                
+        "64bit Amazon Linux 2023 v4.13.7 running Python 3.13",                                                                                                                                                                
+        "64bit Amazon Linux 2023 v4.13.7 running Python 3.11",                                                                                                                                                                
+        "64bit Amazon Linux 2023 v6.11.7 running Node.js 24",                                                                                                                                                                 
+        "64bit Amazon Linux 2023 v4.13.7 running PHP 8.2",                                                                                                                                                                    
+        "64bit Amazon Linux 2023 v6.11.7 running Node.js 22",
+-- More  -- 
+
+
+----------
+
+
+ aws elasticbeanstalk list-available-solution-stacks --region=us-east-1
+{                                                                                                                                                                                                                             
+    "SolutionStacks": [
+        "64bit Windows Server Core 2025 v2.23.4 running IIS 10.0",
+        "64bit Windows Server 2019 v2.23.4 running IIS 10.0",
+        "64bit Windows Server Core 2022 v2.23.4 running IIS 10.0",
+        "64bit Windows Server 2016 v2.23.4 running IIS 10.0",
+        "64bit Windows Server Core 2019 v2.23.4 running IIS 10.0",
+        "64bit Windows Server Core 2016 v2.23.4 running IIS 10.0",
+        "64bit Windows Server 2022 v2.23.4 running IIS 10.0",
+        "64bit Windows Server 2025 v2.23.4 running IIS 10.0",
+        "64bit Amazon Linux 2023 v5.14.7 running Tomcat 11 Corretto 25",
+        "64bit Amazon Linux 2023 v5.14.7 running Tomcat 11 Corretto 21",
+        "64bit Amazon Linux 2023 v5.14.7 running Tomcat 11 Corretto 17",
+        "64bit Amazon Linux 2023 v5.14.7 running Tomcat 10 Corretto 21",
+        "64bit Amazon Linux 2023 v4.14.7 running Ruby 3.4",
+        "64bit Amazon Linux 2023 v5.14.7 running Tomcat 9 Corretto 11",                                                                                                                                                       
+        "64bit Amazon Linux 2023 v4.13.7 running Python 3.14",                                                                                                                                                                
+        "64bit Amazon Linux 2023 v5.14.7 running Tomcat 9 Corretto 8",                                                                                                                                                        
+        "64bit Amazon Linux 2023 v5.14.7 running Tomcat 10 Corretto 17",                                                                                                                                                      
+        "64bit Amazon Linux 2023 v5.14.7 running Tomcat 9 Corretto 17",                                                                                                                                                       
+        "64bit Amazon Linux 2023 v4.14.7 running Ruby 3.3",                                                                                                                                                                   
+        "64bit Amazon Linux 2023 v4.14.7 running Ruby 4.0",                                                                                                                                                                   
+        "64bit Amazon Linux 2023 v4.13.7 running Python 3.12",                                                                                                                                                                
+        "64bit Amazon Linux 2023 v4.13.7 running Python 3.11",                                                                                                                                                                
+        "64bit Amazon Linux 2023 v4.13.7 running Python 3.13",                                                                                                                                                                
+        "64bit Amazon Linux 2023 v4.13.7 running PHP 8.4",                                                                                                                                                                    
+        "64bit Amazon Linux 2023 v4.13.7 running PHP 8.5",                                                                                                                                                                    
+        "64bit Amazon Linux 2023 v4.13.7 running PHP 8.3",                                                                                                                                                                    
+        "64bit Amazon Linux 2023 v4.13.7 running PHP 8.2",                                                                                                                                                                    
+        "64bit Amazon Linux 2023 v4.9.7 running Go 1",                                                                                                                                                                        
+        "64bit Amazon Linux 2023 v6.11.7 running Node.js 22",                                                                                                                                                                 
+        "64bit Amazon Linux 2023 v6.11.7 running Node.js 24",                                                                                                                                                                 
+        "64bit Amazon Linux 2023 v3.11.7 running .NET 8",                                                                                                                                                                     
+        "64bit Amazon Linux 2023 v4.12.7 running Corretto 17",                                                                                                                                                                
+        "64bit Amazon Linux 2023 v4.12.7 running Corretto 25",                                                                                                                                                                
+-- More  -- 
+
+
+--------
+
+ aws elasticbeanstalk list-available-solution-stacks `
+>   --query "SolutionStacks[?contains(@, 'Node.js')]" --region="us-east-1"
+[                                                                                                                                                                                                                             
+    "64bit Amazon Linux 2023 v6.11.7 running Node.js 22",
+    "64bit Amazon Linux 2023 v6.11.7 running Node.js 24",
+    "64bit Amazon Linux 2 v5.0.2 running Node.js 12",
+    "64bit Amazon Linux 2 v5.0.2 running Node.js 10",
+    "64bit Amazon Linux 2 v0.1.0 running Node.js 12 (BETA)"
+]

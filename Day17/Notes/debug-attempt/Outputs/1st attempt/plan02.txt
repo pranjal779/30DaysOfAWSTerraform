@@ -1,0 +1,472 @@
+# after making terraform.tfvars to terraform.tfvar.example
+
+ terraform plan
+aws_elastic_beanstalk_application.app: Refreshing state... [id=my-app-bluegreen]
+data.aws_caller_identity.current: Reading...
+aws_iam_role.eb_service_role: Refreshing state... [id=my-app-bluegreen-eb-service-role]
+aws_iam_role.eb_ec2_role: Refreshing state... [id=my-app-bluegreen-eb-ec2-role]
+data.aws_caller_identity.current: Read complete after 0s [id=357715920231]
+aws_s3_bucket.app_versions: Refreshing state... [id=my-app-bluegreen-versions-357715920231]
+aws_iam_role_policy_attachment.eb_service_managed_updates: Refreshing state... [id=my-app-bluegreen-eb-service-role-20260829140205052000000004]
+aws_iam_role_policy_attachment.eb_service_health: Refreshing state... [id=my-app-bluegreen-eb-service-role-20260829140205162800000005]
+aws_iam_role_policy_attachment.eb_web_tier: Refreshing state... [id=my-app-bluegreen-eb-ec2-role-20260829140204461500000001]
+aws_iam_role_policy_attachment.eb_worker_tier: Refreshing state... [id=my-app-bluegreen-eb-ec2-role-20260829140204949600000003]
+aws_iam_role_policy_attachment.eb_multicontainer_docker: Refreshing state... [id=my-app-bluegreen-eb-ec2-role-20260829140204590300000002]
+aws_iam_instance_profile.eb_ec2_profile: Refreshing state... [id=my-app-bluegreen-eb-ec2-profile]
+aws_s3_bucket_public_access_block.app_versions: Refreshing state... [id=my-app-bluegreen-versions-357715920231]
+aws_s3_object.app_v1: Refreshing state... [id=app-v1.zip]
+aws_s3_object.app_v2: Refreshing state... [id=app-v2.zip]
+aws_elastic_beanstalk_application_version.v2: Refreshing state... [id=my-app-bluegreen-v2]
+aws_elastic_beanstalk_application_version.v1: Refreshing state... [id=my-app-bluegreen-v1]
+
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+  + create
+  ~ update in-place
+
+Terraform will perform the following actions:
+
+  # aws_elastic_beanstalk_application.app will be updated in-place
+  ~ resource "aws_elastic_beanstalk_application" "app" {
+        id          = "my-app-bluegreen"
+        name        = "my-app-bluegreen"
+      ~ tags        = {
+            "Environment" = "Demo"
+            "ManagedBy"   = "Terraform"
+          - "Owner"       = "Pranjello" -> null
+            "Project"     = "BlueGreenDeployment"
+        }
+      ~ tags_all    = {
+          - "Owner"       = "Pranjello" -> null
+            # (3 unchanged elements hidden)
+        }
+        # (2 unchanged attributes hidden)
+    }
+
+  # aws_elastic_beanstalk_application_version.v1 will be updated in-place
+  ~ resource "aws_elastic_beanstalk_application_version" "v1" {
+        id           = "my-app-bluegreen-v1"
+        name         = "my-app-bluegreen-v1"
+      ~ tags         = {
+            "Environment" = "Demo"
+            "ManagedBy"   = "Terraform"
+          - "Owner"       = "Pranjello" -> null
+            "Project"     = "BlueGreenDeployment"
+        }
+      ~ tags_all     = {
+          - "Owner"       = "Pranjello" -> null
+            # (3 unchanged elements hidden)
+        }
+        # (7 unchanged attributes hidden)
+    }
+
+  # aws_elastic_beanstalk_application_version.v2 will be updated in-place
+  ~ resource "aws_elastic_beanstalk_application_version" "v2" {
+        id           = "my-app-bluegreen-v2"
+        name         = "my-app-bluegreen-v2"
+      ~ tags         = {
+            "Environment" = "Demo"
+            "ManagedBy"   = "Terraform"
+          - "Owner"       = "Pranjello" -> null
+            "Project"     = "BlueGreenDeployment"
+        }
+      ~ tags_all     = {
+          - "Owner"       = "Pranjello" -> null
+            # (3 unchanged elements hidden)
+        }
+        # (7 unchanged attributes hidden)
+    }
+
+  # aws_elastic_beanstalk_environment.blue will be created
+  + resource "aws_elastic_beanstalk_environment" "blue" {
+      + all_settings           = (known after apply)
+      + application            = "my-app-bluegreen"
+      + arn                    = (known after apply)
+      + autoscaling_groups     = (known after apply)
+      + cname                  = (known after apply)
+      + cname_prefix           = (known after apply)
+      + endpoint_url           = (known after apply)
+      + id                     = (known after apply)
+      + instances              = (known after apply)
+      + launch_configurations  = (known after apply)
+      + load_balancers         = (known after apply)
+      + name                   = "my-app-bluegreen-blue"
+      + platform_arn           = (known after apply)
+      + queues                 = (known after apply)
+      + solution_stack_name    = "64bit Amazon Linux 2023 v6.6.8 running Node.js 20"
+      + tags                   = {
+          + "Environment" = "blue"
+          + "ManagedBy"   = "Terraform"
+          + "Project"     = "BlueGreenDeployment"
+          + "Role"        = "production"
+        }
+      + tags_all               = {
+          + "Environment" = "blue"
+          + "ManagedBy"   = "Terraform"
+          + "Project"     = "BlueGreenDeployment"
+          + "Role"        = "production"
+        }
+      + tier                   = "WebServer"
+      + triggers               = (known after apply)
+      + version_label          = "my-app-bluegreen-v1"
+      + wait_for_ready_timeout = "20m"
+
+      + setting {
+          + name      = "BatchSize"
+          + namespace = "aws:elasticbeanstalk:command"
+          + value     = "50"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "BatchSizeType"
+          + namespace = "aws:elasticbeanstalk:command"
+          + value     = "Percentage"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "DeploymentPolicy"
+          + namespace = "aws:elasticbeanstalk:command"
+          + value     = "Rolling"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "ENVIRONMENT"
+          + namespace = "aws:elasticbeanstalk:application:environment"
+          + value     = "blue"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "EnvironmentType"
+          + namespace = "aws:elasticbeanstalk:environment"
+          + value     = "LoadBalanced"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "HealthCheckPath"
+          + namespace = "aws:elasticbeanstalk:environment:process:default"
+          + value     = "/"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "IamInstanceProfile"
+          + namespace = "aws:autoscaling:launchconfiguration"
+          + value     = "my-app-bluegreen-eb-ec2-profile"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "InstanceType"
+          + namespace = "aws:autoscaling:launchconfiguration"
+          + value     = "t3.micro"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "LoadBalancerType"
+          + namespace = "aws:elasticbeanstalk:environment"
+          + value     = "application"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "ManagedActionsEnabled"
+          + namespace = "aws:elasticbeanstalk:managedactions"
+          + value     = "false"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "MaxSize"
+          + namespace = "aws:autoscaling:asg"
+          + value     = "2"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "MinSize"
+          + namespace = "aws:autoscaling:asg"
+          + value     = "1"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "Port"
+          + namespace = "aws:elasticbeanstalk:environment:process:default"
+          + value     = "8080"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "Protocol"
+          + namespace = "aws:elasticbeanstalk:environment:process:default"
+          + value     = "HTTP"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "ServiceRole"
+          + namespace = "aws:elasticbeanstalk:environment"
+          + value     = "my-app-bluegreen-eb-service-role"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "SystemType"
+          + namespace = "aws:elasticbeanstalk:healthreporting:system"
+          + value     = "enhanced"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "VERSION"
+          + namespace = "aws:elasticbeanstalk:application:environment"
+          + value     = "1.0"
+            # (1 unchanged attribute hidden)
+        }
+    }
+
+  # aws_elastic_beanstalk_environment.green will be created
+  + resource "aws_elastic_beanstalk_environment" "green" {
+      + all_settings           = (known after apply)
+      + application            = "my-app-bluegreen"
+      + arn                    = (known after apply)
+      + autoscaling_groups     = (known after apply)
+      + cname                  = (known after apply)
+      + cname_prefix           = (known after apply)
+      + endpoint_url           = (known after apply)
+      + id                     = (known after apply)
+      + instances              = (known after apply)
+      + launch_configurations  = (known after apply)
+      + load_balancers         = (known after apply)
+      + name                   = "my-app-bluegreen-green"
+      + platform_arn           = (known after apply)
+      + queues                 = (known after apply)
+      + solution_stack_name    = "64bit Amazon Linux 2023 v6.6.8 running Node.js 20"
+      + tags                   = {
+          + "Environment" = "green"
+          + "ManagedBy"   = "Terraform"
+          + "Project"     = "BlueGreenDeployment"
+          + "Role"        = "staging"
+        }
+      + tags_all               = {
+          + "Environment" = "green"
+          + "ManagedBy"   = "Terraform"
+          + "Project"     = "BlueGreenDeployment"
+          + "Role"        = "staging"
+        }
+      + tier                   = "WebServer"
+      + triggers               = (known after apply)
+      + version_label          = "my-app-bluegreen-v2"
+      + wait_for_ready_timeout = "20m"
+
+      + setting {
+          + name      = "BatchSize"
+          + namespace = "aws:elasticbeanstalk:command"
+          + value     = "50"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "BatchSizeType"
+          + namespace = "aws:elasticbeanstalk:command"
+          + value     = "Percentage"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "DeploymentPolicy"
+          + namespace = "aws:elasticbeanstalk:command"
+          + value     = "Rolling"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "ENVIRONMENT"
+          + namespace = "aws:elasticbeanstalk:application:environment"
+          + value     = "green"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "EnvironmentType"
+          + namespace = "aws:elasticbeanstalk:environment"
+          + value     = "LoadBalanced"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "HealthCheckPath"
+          + namespace = "aws:elasticbeanstalk:environment:process:default"
+          + value     = "/"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "IamInstanceProfile"
+          + namespace = "aws:autoscaling:launchconfiguration"
+          + value     = "my-app-bluegreen-eb-ec2-profile"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "InstanceType"
+          + namespace = "aws:autoscaling:launchconfiguration"
+          + value     = "t3.micro"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "LoadBalancerType"
+          + namespace = "aws:elasticbeanstalk:environment"
+          + value     = "application"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "ManagedActionsEnabled"
+          + namespace = "aws:elasticbeanstalk:managedactions"
+          + value     = "false"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "MaxSize"
+          + namespace = "aws:autoscaling:asg"
+          + value     = "2"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "MinSize"
+          + namespace = "aws:autoscaling:asg"
+          + value     = "1"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "Port"
+          + namespace = "aws:elasticbeanstalk:environment:process:default"
+          + value     = "8080"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "Protocol"
+          + namespace = "aws:elasticbeanstalk:environment:process:default"
+          + value     = "HTTP"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "ServiceRole"
+          + namespace = "aws:elasticbeanstalk:environment"
+          + value     = "my-app-bluegreen-eb-service-role"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "SystemType"
+          + namespace = "aws:elasticbeanstalk:healthreporting:system"
+          + value     = "enhanced"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "VERSION"
+          + namespace = "aws:elasticbeanstalk:application:environment"
+          + value     = "2.0"
+            # (1 unchanged attribute hidden)
+        }
+    }
+
+  # aws_iam_instance_profile.eb_ec2_profile will be updated in-place
+  ~ resource "aws_iam_instance_profile" "eb_ec2_profile" {
+        id          = "my-app-bluegreen-eb-ec2-profile"
+        name        = "my-app-bluegreen-eb-ec2-profile"
+      ~ tags        = {
+            "Environment" = "Demo"
+            "ManagedBy"   = "Terraform"
+          - "Owner"       = "Pranjello" -> null
+            "Project"     = "BlueGreenDeployment"
+        }
+      ~ tags_all    = {
+          - "Owner"       = "Pranjello" -> null
+            # (3 unchanged elements hidden)
+        }
+        # (6 unchanged attributes hidden)
+    }
+
+  # aws_iam_role.eb_ec2_role will be updated in-place
+  ~ resource "aws_iam_role" "eb_ec2_role" {
+        id                    = "my-app-bluegreen-eb-ec2-role"
+        name                  = "my-app-bluegreen-eb-ec2-role"
+      ~ tags                  = {
+            "Environment" = "Demo"
+            "ManagedBy"   = "Terraform"
+          - "Owner"       = "Pranjello" -> null
+            "Project"     = "BlueGreenDeployment"
+        }
+      ~ tags_all              = {
+          - "Owner"       = "Pranjello" -> null
+            # (3 unchanged elements hidden)
+        }
+        # (11 unchanged attributes hidden)
+    }
+
+  # aws_iam_role.eb_service_role will be updated in-place
+  ~ resource "aws_iam_role" "eb_service_role" {
+        id                    = "my-app-bluegreen-eb-service-role"
+        name                  = "my-app-bluegreen-eb-service-role"
+      ~ tags                  = {
+            "Environment" = "Demo"
+            "ManagedBy"   = "Terraform"
+          - "Owner"       = "Pranjello" -> null
+            "Project"     = "BlueGreenDeployment"
+        }
+      ~ tags_all              = {
+          - "Owner"       = "Pranjello" -> null
+            # (3 unchanged elements hidden)
+        }
+        # (11 unchanged attributes hidden)
+    }
+
+  # aws_s3_bucket.app_versions will be updated in-place
+  ~ resource "aws_s3_bucket" "app_versions" {
+        id                          = "my-app-bluegreen-versions-357715920231"
+      ~ tags                        = {
+            "Environment" = "Demo"
+            "ManagedBy"   = "Terraform"
+          - "Owner"       = "Pranjello" -> null
+            "Project"     = "BlueGreenDeployment"
+        }
+      ~ tags_all                    = {
+          - "Owner"       = "Pranjello" -> null
+            # (3 unchanged elements hidden)
+        }
+        # (12 unchanged attributes hidden)
+
+        # (3 unchanged blocks hidden)
+    }
+
+  # aws_s3_object.app_v1 will be updated in-place
+  ~ resource "aws_s3_object" "app_v1" {
+        id                            = "app-v1.zip"
+      ~ tags                          = {
+            "Environment" = "Demo"
+            "ManagedBy"   = "Terraform"
+          - "Owner"       = "Pranjello" -> null
+            "Project"     = "BlueGreenDeployment"
+        }
+      ~ tags_all                      = {
+          - "Owner"       = "Pranjello" -> null
+            # (3 unchanged elements hidden)
+        }
+        # (25 unchanged attributes hidden)
+    }
+
+  # aws_s3_object.app_v2 will be updated in-place
+  ~ resource "aws_s3_object" "app_v2" {
+        id                            = "app-v2.zip"
+      ~ tags                          = {
+            "Environment" = "Demo"
+            "ManagedBy"   = "Terraform"
+          - "Owner"       = "Pranjello" -> null
+            "Project"     = "BlueGreenDeployment"
+        }
+      ~ tags_all                      = {
+          - "Owner"       = "Pranjello" -> null
+            # (3 unchanged elements hidden)
+        }
+        # (25 unchanged attributes hidden)
+    }
+
+Plan: 2 to add, 9 to change, 0 to destroy.
+
+Changes to Outputs:
+  + blue_environment_cname  = (known after apply)
+  + blue_environment_url    = (known after apply)
+  + green_environment_cname = (known after apply)
+  + green_environment_url   = (known after apply)
+  + instructions            = (known after apply)
+
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+Note: You didn't use the -out option to save this plan, so Terraform can't guarantee to take exactly these actions if you run "terraform apply" now.
+
+   pwsh MEM: 70% | 9/13GB   9s 734ms  (base) 
+╭─ ♥ 19:46 |             Day17 
+╰─ 
+

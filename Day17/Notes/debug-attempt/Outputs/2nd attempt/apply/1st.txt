@@ -1,0 +1,679 @@
+ terraform apply --auto-approve
+data.aws_caller_identity.current: Reading...
+data.aws_caller_identity.current: Read complete after 0s [id=357715920231]
+
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # aws_elastic_beanstalk_application.app will be created
+  + resource "aws_elastic_beanstalk_application" "app" {
+      + arn         = (known after apply)
+      + description = "Blue-Green Deployment Demo Application"
+      + id          = (known after apply)
+      + name        = "my-app-bluegreen"
+      + tags        = {
+          + "Environment" = "Demo"
+          + "ManagedBy"   = "Terraform"
+          + "Project"     = "BlueGreenDeployment"
+        }
+      + tags_all    = {
+          + "Environment" = "Demo"
+          + "ManagedBy"   = "Terraform"
+          + "Project"     = "BlueGreenDeployment"
+        }
+    }
+
+  # aws_elastic_beanstalk_application_version.v1 will be created
+  + resource "aws_elastic_beanstalk_application_version" "v1" {
+      + application  = "my-app-bluegreen"
+      + arn          = (known after apply)
+      + bucket       = (known after apply)
+      + description  = "Application Version 1.0 - Initial Release"
+      + force_delete = false
+      + id           = (known after apply)
+      + key          = (known after apply)
+      + name         = "my-app-bluegreen-v1"
+      + process      = false
+      + tags         = {
+          + "Environment" = "Demo"
+          + "ManagedBy"   = "Terraform"
+          + "Project"     = "BlueGreenDeployment"
+        }
+      + tags_all     = {
+          + "Environment" = "Demo"
+          + "ManagedBy"   = "Terraform"
+          + "Project"     = "BlueGreenDeployment"
+        }
+    }
+
+  # aws_elastic_beanstalk_application_version.v2 will be created
+  + resource "aws_elastic_beanstalk_application_version" "v2" {
+      + application  = "my-app-bluegreen"
+      + arn          = (known after apply)
+      + bucket       = (known after apply)
+      + description  = "Application Version 2.0 - New Feature Release"
+      + force_delete = false
+      + id           = (known after apply)
+      + key          = (known after apply)
+      + name         = "my-app-bluegreen-v2"
+      + process      = false
+      + tags         = {
+          + "Environment" = "Demo"
+          + "ManagedBy"   = "Terraform"
+          + "Project"     = "BlueGreenDeployment"
+        }
+      + tags_all     = {
+          + "Environment" = "Demo"
+          + "ManagedBy"   = "Terraform"
+          + "Project"     = "BlueGreenDeployment"
+        }
+    }
+
+  # aws_elastic_beanstalk_environment.blue will be created
+  + resource "aws_elastic_beanstalk_environment" "blue" {
+      + all_settings           = (known after apply)
+      + application            = "my-app-bluegreen"
+      + arn                    = (known after apply)
+      + autoscaling_groups     = (known after apply)
+      + cname                  = (known after apply)
+      + cname_prefix           = (known after apply)
+      + endpoint_url           = (known after apply)
+      + id                     = (known after apply)
+      + instances              = (known after apply)
+      + launch_configurations  = (known after apply)
+      + load_balancers         = (known after apply)
+      + name                   = "my-app-bluegreen-blue"
+      + platform_arn           = (known after apply)
+      + queues                 = (known after apply)
+      + solution_stack_name    = "64bit Amazon Linux 2023 v6.11.7 running Node.js 22"
+      + tags                   = {
+          + "Environment" = "blue"
+          + "ManagedBy"   = "Terraform"
+          + "Project"     = "BlueGreenDeployment"
+          + "Role"        = "production"
+        }
+      + tags_all               = {
+          + "Environment" = "blue"
+          + "ManagedBy"   = "Terraform"
+          + "Project"     = "BlueGreenDeployment"
+          + "Role"        = "production"
+        }
+      + tier                   = "WebServer"
+      + triggers               = (known after apply)
+      + version_label          = "my-app-bluegreen-v1"
+      + wait_for_ready_timeout = "20m"
+
+      + setting {
+          + name      = "BatchSize"
+          + namespace = "aws:elasticbeanstalk:command"
+          + value     = "50"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "BatchSizeType"
+          + namespace = "aws:elasticbeanstalk:command"
+          + value     = "Percentage"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "DeploymentPolicy"
+          + namespace = "aws:elasticbeanstalk:command"
+          + value     = "Rolling"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "ENVIRONMENT"
+          + namespace = "aws:elasticbeanstalk:application:environment"
+          + value     = "blue"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "EnvironmentType"
+          + namespace = "aws:elasticbeanstalk:environment"
+          + value     = "LoadBalanced"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "HealthCheckPath"
+          + namespace = "aws:elasticbeanstalk:environment:process:default"
+          + value     = "/"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "IamInstanceProfile"
+          + namespace = "aws:autoscaling:launchconfiguration"
+          + value     = "my-app-bluegreen-eb-ec2-profile"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "InstanceType"
+          + namespace = "aws:autoscaling:launchconfiguration"
+          + value     = "t3.micro"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "LoadBalancerType"
+          + namespace = "aws:elasticbeanstalk:environment"
+          + value     = "application"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "ManagedActionsEnabled"
+          + namespace = "aws:elasticbeanstalk:managedactions"
+          + value     = "false"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "MaxSize"
+          + namespace = "aws:autoscaling:asg"
+          + value     = "2"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "MinSize"
+          + namespace = "aws:autoscaling:asg"
+          + value     = "1"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "Port"
+          + namespace = "aws:elasticbeanstalk:environment:process:default"
+          + value     = "8080"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "Protocol"
+          + namespace = "aws:elasticbeanstalk:environment:process:default"
+          + value     = "HTTP"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "ServiceRole"
+          + namespace = "aws:elasticbeanstalk:environment"
+          + value     = "my-app-bluegreen-eb-service-role"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "SystemType"
+          + namespace = "aws:elasticbeanstalk:healthreporting:system"
+          + value     = "enhanced"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "VERSION"
+          + namespace = "aws:elasticbeanstalk:application:environment"
+          + value     = "1.0"
+            # (1 unchanged attribute hidden)
+        }
+    }
+
+  # aws_elastic_beanstalk_environment.green will be created
+  + resource "aws_elastic_beanstalk_environment" "green" {
+      + all_settings           = (known after apply)
+      + application            = "my-app-bluegreen"
+      + arn                    = (known after apply)
+      + autoscaling_groups     = (known after apply)
+      + cname                  = (known after apply)
+      + cname_prefix           = (known after apply)
+      + endpoint_url           = (known after apply)
+      + id                     = (known after apply)
+      + instances              = (known after apply)
+      + launch_configurations  = (known after apply)
+      + load_balancers         = (known after apply)
+      + name                   = "my-app-bluegreen-green"
+      + platform_arn           = (known after apply)
+      + queues                 = (known after apply)
+      + solution_stack_name    = "64bit Amazon Linux 2023 v6.11.7 running Node.js 22"
+      + tags                   = {
+          + "Environment" = "green"
+          + "ManagedBy"   = "Terraform"
+          + "Project"     = "BlueGreenDeployment"
+          + "Role"        = "staging"
+        }
+      + tags_all               = {
+          + "Environment" = "green"
+          + "ManagedBy"   = "Terraform"
+          + "Project"     = "BlueGreenDeployment"
+          + "Role"        = "staging"
+        }
+      + tier                   = "WebServer"
+      + triggers               = (known after apply)
+      + version_label          = "my-app-bluegreen-v2"
+      + wait_for_ready_timeout = "20m"
+
+      + setting {
+          + name      = "BatchSize"
+          + namespace = "aws:elasticbeanstalk:command"
+          + value     = "50"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "BatchSizeType"
+          + namespace = "aws:elasticbeanstalk:command"
+          + value     = "Percentage"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "DeploymentPolicy"
+          + namespace = "aws:elasticbeanstalk:command"
+          + value     = "Rolling"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "ENVIRONMENT"
+          + namespace = "aws:elasticbeanstalk:application:environment"
+          + value     = "green"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "EnvironmentType"
+          + namespace = "aws:elasticbeanstalk:environment"
+          + value     = "LoadBalanced"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "HealthCheckPath"
+          + namespace = "aws:elasticbeanstalk:environment:process:default"
+          + value     = "/"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "IamInstanceProfile"
+          + namespace = "aws:autoscaling:launchconfiguration"
+          + value     = "my-app-bluegreen-eb-ec2-profile"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "InstanceType"
+          + namespace = "aws:autoscaling:launchconfiguration"
+          + value     = "t3.micro"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "LoadBalancerType"
+          + namespace = "aws:elasticbeanstalk:environment"
+          + value     = "application"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "ManagedActionsEnabled"
+          + namespace = "aws:elasticbeanstalk:managedactions"
+          + value     = "false"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "MaxSize"
+          + namespace = "aws:autoscaling:asg"
+          + value     = "2"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "MinSize"
+          + namespace = "aws:autoscaling:asg"
+          + value     = "1"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "Port"
+          + namespace = "aws:elasticbeanstalk:environment:process:default"
+          + value     = "8080"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "Protocol"
+          + namespace = "aws:elasticbeanstalk:environment:process:default"
+          + value     = "HTTP"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "ServiceRole"
+          + namespace = "aws:elasticbeanstalk:environment"
+          + value     = "my-app-bluegreen-eb-service-role"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "SystemType"
+          + namespace = "aws:elasticbeanstalk:healthreporting:system"
+          + value     = "enhanced"
+            # (1 unchanged attribute hidden)
+        }
+      + setting {
+          + name      = "VERSION"
+          + namespace = "aws:elasticbeanstalk:application:environment"
+          + value     = "2.0"
+            # (1 unchanged attribute hidden)
+        }
+    }
+
+  # aws_iam_instance_profile.eb_ec2_profile will be created
+  + resource "aws_iam_instance_profile" "eb_ec2_profile" {
+      + arn         = (known after apply)
+      + create_date = (known after apply)
+      + id          = (known after apply)
+      + name        = "my-app-bluegreen-eb-ec2-profile"
+      + name_prefix = (known after apply)
+      + path        = "/"
+      + role        = "my-app-bluegreen-eb-ec2-role"
+      + tags        = {
+          + "Environment" = "Demo"
+          + "ManagedBy"   = "Terraform"
+          + "Project"     = "BlueGreenDeployment"
+        }
+      + tags_all    = {
+          + "Environment" = "Demo"
+          + "ManagedBy"   = "Terraform"
+          + "Project"     = "BlueGreenDeployment"
+        }
+      + unique_id   = (known after apply)
+    }
+
+  # aws_iam_role.eb_ec2_role will be created
+  + resource "aws_iam_role" "eb_ec2_role" {
+      + arn                   = (known after apply)
+      + assume_role_policy    = jsonencode(
+            {
+              + Statement = [
+                  + {
+                      + Action    = "sts:AssumeRole"
+                      + Effect    = "Allow"
+                      + Principal = {
+                          + Service = "ec2.amazonaws.com"
+                        }
+                    },
+                ]
+              + Version   = "2012-10-17"
+            }
+        )
+      + create_date           = (known after apply)
+      + force_detach_policies = false
+      + id                    = (known after apply)
+      + managed_policy_arns   = (known after apply)
+      + max_session_duration  = 3600
+      + name                  = "my-app-bluegreen-eb-ec2-role"
+      + name_prefix           = (known after apply)
+      + path                  = "/"
+      + tags                  = {
+          + "Environment" = "Demo"
+          + "ManagedBy"   = "Terraform"
+          + "Project"     = "BlueGreenDeployment"
+        }
+      + tags_all              = {
+          + "Environment" = "Demo"
+          + "ManagedBy"   = "Terraform"
+          + "Project"     = "BlueGreenDeployment"
+        }
+      + unique_id             = (known after apply)
+
+      + inline_policy (known after apply)
+    }
+
+  # aws_iam_role.eb_service_role will be created
+  + resource "aws_iam_role" "eb_service_role" {
+      + arn                   = (known after apply)
+      + assume_role_policy    = jsonencode(
+            {
+              + Statement = [
+                  + {
+                      + Action    = "sts:AssumeRole"
+                      + Effect    = "Allow"
+                      + Principal = {
+                          + Service = "elasticbeanstalk.amazonaws.com"
+                        }
+                    },
+                ]
+              + Version   = "2012-10-17"
+            }
+        )
+      + create_date           = (known after apply)
+      + force_detach_policies = false
+      + id                    = (known after apply)
+      + managed_policy_arns   = (known after apply)
+      + max_session_duration  = 3600
+      + name                  = "my-app-bluegreen-eb-service-role"
+      + name_prefix           = (known after apply)
+      + path                  = "/"
+      + tags                  = {
+          + "Environment" = "Demo"
+          + "ManagedBy"   = "Terraform"
+          + "Project"     = "BlueGreenDeployment"
+        }
+      + tags_all              = {
+          + "Environment" = "Demo"
+          + "ManagedBy"   = "Terraform"
+          + "Project"     = "BlueGreenDeployment"
+        }
+      + unique_id             = (known after apply)
+
+      + inline_policy (known after apply)
+    }
+
+  # aws_iam_role_policy_attachment.eb_multicontainer_docker will be created
+  + resource "aws_iam_role_policy_attachment" "eb_multicontainer_docker" {
+      + id         = (known after apply)
+      + policy_arn = "arn:aws:iam::aws:policy/AWSElasticBeanstalkMulticontainerDocker"
+      + role       = "my-app-bluegreen-eb-ec2-role"
+    }
+
+  # aws_iam_role_policy_attachment.eb_service_health will be created
+  + resource "aws_iam_role_policy_attachment" "eb_service_health" {
+      + id         = (known after apply)
+      + policy_arn = "arn:aws:iam::aws:policy/service-role/AWSElasticBeanstalkEnhancedHealth"
+      + role       = "my-app-bluegreen-eb-service-role"
+    }
+
+  # aws_iam_role_policy_attachment.eb_service_managed_updates will be created
+  + resource "aws_iam_role_policy_attachment" "eb_service_managed_updates" {
+      + id         = (known after apply)
+      + policy_arn = "arn:aws:iam::aws:policy/AWSElasticBeanstalkManagedUpdatesCustomerRolePolicy"
+      + role       = "my-app-bluegreen-eb-service-role"
+    }
+
+  # aws_iam_role_policy_attachment.eb_web_tier will be created
+  + resource "aws_iam_role_policy_attachment" "eb_web_tier" {
+      + id         = (known after apply)
+      + policy_arn = "arn:aws:iam::aws:policy/AWSElasticBeanstalkWebTier"
+      + role       = "my-app-bluegreen-eb-ec2-role"
+    }
+
+  # aws_iam_role_policy_attachment.eb_worker_tier will be created
+  + resource "aws_iam_role_policy_attachment" "eb_worker_tier" {
+      + id         = (known after apply)
+      + policy_arn = "arn:aws:iam::aws:policy/AWSElasticBeanstalkWorkerTier"
+      + role       = "my-app-bluegreen-eb-ec2-role"
+    }
+
+  # aws_s3_bucket.app_versions will be created
+  + resource "aws_s3_bucket" "app_versions" {
+      + acceleration_status         = (known after apply)
+      + acl                         = (known after apply)
+      + arn                         = (known after apply)
+      + bucket                      = "my-app-bluegreen-versions-357715920231"
+      + bucket_domain_name          = (known after apply)
+      + bucket_prefix               = (known after apply)
+      + bucket_regional_domain_name = (known after apply)
+      + force_destroy               = false
+      + hosted_zone_id              = (known after apply)
+      + id                          = (known after apply)
+      + object_lock_enabled         = (known after apply)
+      + policy                      = (known after apply)
+      + region                      = (known after apply)
+      + request_payer               = (known after apply)
+      + tags                        = {
+          + "Environment" = "Demo"
+          + "ManagedBy"   = "Terraform"
+          + "Project"     = "BlueGreenDeployment"
+        }
+      + tags_all                    = {
+          + "Environment" = "Demo"
+          + "ManagedBy"   = "Terraform"
+          + "Project"     = "BlueGreenDeployment"
+        }
+      + website_domain              = (known after apply)
+      + website_endpoint            = (known after apply)
+
+      + cors_rule (known after apply)
+
+      + grant (known after apply)
+
+      + lifecycle_rule (known after apply)
+
+      + logging (known after apply)
+
+      + object_lock_configuration (known after apply)
+
+      + replication_configuration (known after apply)
+
+      + server_side_encryption_configuration (known after apply)
+
+      + versioning (known after apply)
+
+      + website (known after apply)
+    }
+
+  # aws_s3_bucket_public_access_block.app_versions will be created
+  + resource "aws_s3_bucket_public_access_block" "app_versions" {
+      + block_public_acls       = true
+      + block_public_policy     = true
+      + bucket                  = (known after apply)
+      + id                      = (known after apply)
+      + ignore_public_acls      = true
+      + restrict_public_buckets = true
+    }
+
+  # aws_s3_object.app_v1 will be created
+  + resource "aws_s3_object" "app_v1" {
+      + acl                    = (known after apply)
+      + arn                    = (known after apply)
+      + bucket                 = (known after apply)
+      + bucket_key_enabled     = (known after apply)
+      + checksum_crc32         = (known after apply)
+      + checksum_crc32c        = (known after apply)
+      + checksum_crc64nvme     = (known after apply)
+      + checksum_sha1          = (known after apply)
+      + checksum_sha256        = (known after apply)
+      + content_type           = (known after apply)
+      + etag                   = "c1e45327a9f52d356f4b41a3e41c37db"
+      + force_destroy          = false
+      + id                     = (known after apply)
+      + key                    = "app-v1.zip"
+      + kms_key_id             = (known after apply)
+      + server_side_encryption = (known after apply)
+      + source                 = "./app-v1/app-v1.zip"
+      + storage_class          = (known after apply)
+      + tags                   = {
+          + "Environment" = "Demo"
+          + "ManagedBy"   = "Terraform"
+          + "Project"     = "BlueGreenDeployment"
+        }
+      + tags_all               = {
+          + "Environment" = "Demo"
+          + "ManagedBy"   = "Terraform"
+          + "Project"     = "BlueGreenDeployment"
+        }
+      + version_id             = (known after apply)
+    }
+
+  # aws_s3_object.app_v2 will be created
+  + resource "aws_s3_object" "app_v2" {
+      + acl                    = (known after apply)
+      + arn                    = (known after apply)
+      + bucket                 = (known after apply)
+      + bucket_key_enabled     = (known after apply)
+      + checksum_crc32         = (known after apply)
+      + checksum_crc32c        = (known after apply)
+      + checksum_crc64nvme     = (known after apply)
+      + checksum_sha1          = (known after apply)
+      + checksum_sha256        = (known after apply)
+      + content_type           = (known after apply)
+      + etag                   = "43d3cd140bfb71bf0030c2ec122f4a39"
+      + force_destroy          = false
+      + id                     = (known after apply)
+      + key                    = "app-v2.zip"
+      + kms_key_id             = (known after apply)
+      + server_side_encryption = (known after apply)
+      + source                 = "./app-v2/app-v2.zip"
+      + storage_class          = (known after apply)
+      + tags                   = {
+          + "Environment" = "Demo"
+          + "ManagedBy"   = "Terraform"
+          + "Project"     = "BlueGreenDeployment"
+        }
+      + tags_all               = {
+          + "Environment" = "Demo"
+          + "ManagedBy"   = "Terraform"
+          + "Project"     = "BlueGreenDeployment"
+        }
+      + version_id             = (known after apply)
+    }
+
+Plan: 17 to add, 0 to change, 0 to destroy.
+
+Changes to Outputs:
+  + application_name        = "my-app-bluegreen"
+  + blue_environment_cname  = (known after apply)
+  + blue_environment_name   = "my-app-bluegreen-blue"
+  + blue_environment_url    = (known after apply)
+  + green_environment_cname = (known after apply)
+  + green_environment_name  = "my-app-bluegreen-green"
+  + green_environment_url   = (known after apply)
+  + instructions            = (known after apply)
+  + s3_bucket               = (known after apply)
+  + swap_command            = <<-EOT
+        aws elasticbeanstalk swap-environment-cnames \
+          --source-environment-name my-app-bluegreen-blue \
+          --destination-environment-name my-app-bluegreen-green \
+          --region us-east-1
+    EOT
+aws_elastic_beanstalk_application.app: Creating...
+aws_iam_role.eb_ec2_role: Creating...
+aws_iam_role.eb_service_role: Creating...
+aws_s3_bucket.app_versions: Creating...
+aws_iam_role.eb_service_role: Creation complete after 2s [id=my-app-bluegreen-eb-service-role]
+aws_iam_role_policy_attachment.eb_service_health: Creating...
+aws_iam_role_policy_attachment.eb_service_managed_updates: Creating...
+aws_elastic_beanstalk_application.app: Creation complete after 2s [id=my-app-bluegreen]
+aws_iam_role_policy_attachment.eb_service_health: Creation complete after 1s [id=my-app-bluegreen-eb-service-role-20260829153201424500000002]
+aws_iam_role_policy_attachment.eb_service_managed_updates: Creation complete after 1s [id=my-app-bluegreen-eb-service-role-20260829153201424500000001]
+aws_s3_bucket.app_versions: Creation complete after 6s [id=my-app-bluegreen-versions-357715920231]
+aws_s3_bucket_public_access_block.app_versions: Creating...
+aws_s3_object.app_v2: Creating...
+aws_s3_object.app_v1: Creating...
+aws_s3_bucket_public_access_block.app_versions: Creation complete after 2s [id=my-app-bluegreen-versions-357715920231]
+aws_s3_object.app_v2: Creation complete after 2s [id=app-v2.zip]
+aws_elastic_beanstalk_application_version.v2: Creating...
+aws_s3_object.app_v1: Creation complete after 2s [id=app-v1.zip]
+aws_elastic_beanstalk_application_version.v1: Creating...
+aws_elastic_beanstalk_application_version.v2: Creation complete after 1s [id=my-app-bluegreen-v2]
+aws_elastic_beanstalk_application_version.v1: Creation complete after 1s [id=my-app-bluegreen-v1]
+╷
+│ Error: creating IAM Role (my-app-bluegreen-eb-ec2-role): operation error IAM: CreateRole, https response error StatusCode: 409, RequestID: 696515e4-aa05-427d-a65b-9881d8d9e291, EntityAlreadyExists: Role with name my-app-bluegreen-eb-ec2-role already exists.
+│ 
+│   with aws_iam_role.eb_ec2_role,
+│   on main.tf line 16, in resource "aws_iam_role" "eb_ec2_role":
+│   16: resource "aws_iam_role" "eb_ec2_role" {
+│ 
+╵
+ terraform import aws_iam_role.eb_ec2_role my-app-bluegreen-eb-ec2-role
+aws_iam_role.eb_ec2_role: Importing from ID "my-app-bluegreen-eb-ec2-role"...
+data.aws_caller_identity.current: Reading...
+aws_iam_role.eb_ec2_role: Import prepared!
+  Prepared aws_iam_role for import
+aws_iam_role.eb_ec2_role: Refreshing state... [id=my-app-bluegreen-eb-ec2-role]
+data.aws_caller_identity.current: Read complete after 0s [id=357715920231]
+
+Import successful!
+
+The resources that were imported are shown above. These resources are now in
+your Terraform state and will henceforth be managed by Terraform.
+
+
+   pwsh MEM: 82% | 11/13GB   5s 262ms  (base) 
+╭─ ♥ 21:05 |             Day17 
+╰─ 
+
+ terraform validate
+Success! The configuration is valid.
+
+
