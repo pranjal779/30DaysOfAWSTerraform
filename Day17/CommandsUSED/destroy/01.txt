@@ -1,0 +1,1026 @@
+                # (1 unchanged attribute hidden)
+            },
+          - {
+              - name      = "HealthCheckInterval"
+              - namespace = "aws:elasticbeanstalk:environment:process:default"
+              - value     = "15"
+                # (1 unchanged attribute hidden)
+            },
+          - {
+              - name      = "HealthCheckPath"
+              - namespace = "aws:elasticbeanstalk:environment:process:default"
+              - value     = "/"
+                # (1 unchanged attribute hidden)
+            },
+          - {
+              - name      = "HealthCheckSuccessThreshold"
+              - namespace = "aws:elasticbeanstalk:healthreporting:system"
+              - value     = "Ok"
+                # (1 unchanged attribute hidden)
+            },
+          - {
+              - name      = "HealthCheckTimeout"
+              - namespace = "aws:elasticbeanstalk:environment:process:default"
+              - value     = "5"
+                # (1 unchanged attribute hidden)
+            },
+          - {
+              - name      = "HealthStreamingEnabled"
+              - namespace = "aws:elasticbeanstalk:cloudwatch:logs:health"
+              - value     = "false"
+                # (1 unchanged attribute hidden)
+            },
+          - {
+              - name      = "HealthyThresholdCount"
+              - namespace = "aws:elasticbeanstalk:environment:process:default"
+              - value     = "3"
+                # (1 unchanged attribute hidden)
+            },
+          - {
+              - name      = "HooksPkgUrl"
+              - namespace = "aws:cloudformation:template:parameter"
+              - value     = "https://elasticbeanstalk-platform-assets-us-east-1.s3.amazonaws.com/stalks/eb_nodejs22_amazon_linux_2023_1.0.3142.0_20260821134645/lib/hooks.tar.gz"
+                # (1 unchanged attribute hidden)
+            },
+          - {
+              - name      = "IamInstanceProfile"
+              - namespace = "aws:autoscaling:launchconfiguration"
+              - value     = "my-app-bluegreen-eb-ec2-profile"
+                # (1 unchanged attribute hidden)
+            },
+          - {
+              - name      = "IdleTimeout"
+              - namespace = "aws:elbv2:loadbalancer"
+                # (2 unchanged attributes hidden)
+            },
+          - {
+              - name      = "IgnoreHealthCheck"
+              - namespace = "aws:elasticbeanstalk:command"
+              - value     = "false"
+                # (1 unchanged attribute hidden)
+            },
+          - {
+              - name      = "ImageId"
+              - namespace = "aws:autoscaling:launchconfiguration"
+              - value     = "ami-01d184485e956d1c5"
+                # (1 unchanged attribute hidden)
+            },
+          - {
+              - name      = "InstancePort"
+              - namespace = "aws:cloudformation:template:parameter"
+              - value     = "80"
+                # (1 unchanged attribute hidden)
+            },
+          - {
+              - name      = "InstanceRefreshEnabled"
+              - namespace = "aws:elasticbeanstalk:managedactions:platformupdate"
+              - value     = "false"
+                # (1 unchanged attribute hidden)
+            },
+          - {
+              - name      = "InstanceType"
+              - namespace = "aws:autoscaling:launchconfiguration"
+              - value     = "t3.micro"
+                # (1 unchanged attribute hidden)
+            },
+          - {
+              - name      = "InstanceTypeFamily"
+              - namespace = "aws:cloudformation:template:parameter"
+              - value     = "t3"
+                # (1 unchanged attribute hidden)
+            },
+          - {
+              - name      = "InstanceTypes"
+              - namespace = "aws:ec2:instances"
+              - value     = "t3.micro"
+                # (1 unchanged attribute hidden)
+            },
+          - {
+              - name      = "IpAddressType"
+              - namespace = "aws:elbv2:loadbalancer"
+              - value     = "ipv4"
+                # (1 unchanged attribute hidden)
+            },
+          - {
+              - name      = "LaunchTemplateTagPropagationEnabled"
+              - namespace = "aws:autoscaling:launchconfiguration"
+                # (2 unchanged attributes hidden)
+            },
+          - {
+              - name      = "LaunchTimeout"
+              - namespace = "aws:elasticbeanstalk:control"
+              - value     = "0"
+                # (1 unchanged attribute hidden)
+            },
+          - {
+              - name      = "LaunchType"
+              - namespace = "aws:elasticbeanstalk:control"
+              - value     = "Migration"
+                # (1 unchanged attribute hidden)
+            },
+          - {
+              - name      = "ListenerEnabled"
+              - namespace = "aws:elbv2:listener:default"
+              - value     = "true"
+                # (1 unchanged attribute hidden)
+            },
+          - {
+              - name      = "LoadBalancerIsShared"
+              - namespace = "aws:elasticbeanstalk:environment"
+              - value     = "false"
+                # (1 unchanged attribute hidden)
+            },
+          - {
+              - name      = "LoadBalancerType"
+              - namespace = "aws:elasticbeanstalk:environment"
+              - value     = "application"
+                # (1 unchanged attribute hidden)
+            },
+          - {
+              - name      = "LogPublicationControl"
+              - namespace = "aws:elasticbeanstalk:hostmanager"
+              - value     = "false"
+                # (1 unchanged attribute hidden)
+            },
+          - {
+              - name      = "LowerBreachScaleIncrement"
+              - namespace = "aws:autoscaling:trigger"
+              - value     = "-1"
+                # (1 unchanged attribute hidden)
+            },
+          - {
+              - name      = "LowerThreshold"
+              - namespace = "aws:autoscaling:trigger"
+              - value     = "2000000"
+                # (1 unchanged attribute hidden)
+            },
+          - {
+              - name      = "ManagedActionsEnabled"
+              - namespace = "aws:elasticbeanstalk:managedactions"
+              - value     = "false"
+                # (1 unchanged attribute hidden)
+            },
+          - {
+              - name      = "MatcherHTTPCode"
+              - namespace = "aws:elasticbeanstalk:environment:process:default"
+                # (2 unchanged attributes hidden)
+            },
+          - {
+              - name      = "MaxBatchSize"
+              - namespace = "aws:autoscaling:updatepolicy:rollingupdate"
+                # (2 unchanged attributes hidden)
+            },
+          - {
+              - name      = "MaxSize"
+              - namespace = "aws:autoscaling:asg"
+              - value     = "2"
+                # (1 unchanged attribute hidden)
+            },
+          - {
+              - name      = "MeasureName"
+              - namespace = "aws:autoscaling:trigger"
+              - value     = "NetworkOut"
+                # (1 unchanged attribute hidden)
+            },
+          - {
+              - name      = "MinInstancesInService"
+              - namespace = "aws:autoscaling:updatepolicy:rollingupdate"
+                # (2 unchanged attributes hidden)
+            },
+          - {
+              - name      = "MinSize"
+              - namespace = "aws:autoscaling:asg"
+              - value     = "1"
+                # (1 unchanged attribute hidden)
+            },
+          - {
+              - name      = "MonitoringInterval"
+              - namespace = "aws:autoscaling:launchconfiguration"
+              - value     = "5 minute"
+                # (1 unchanged attribute hidden)
+            },
+          - {
+              - name      = "NewVersionPercent"
+              - namespace = "aws:elasticbeanstalk:trafficsplitting"
+                # (2 unchanged attributes hidden)
+            },
+          - {
+              - name      = "Notification Endpoint"
+              - namespace = "aws:elasticbeanstalk:sns:topics"
+                # (2 unchanged attributes hidden)
+            },
+          - {
+              - name      = "Notification Protocol"
+              - namespace = "aws:elasticbeanstalk:sns:topics"
+              - value     = "email"
+                # (1 unchanged attribute hidden)
+            },
+          - {
+              - name      = "Notification Topic ARN"
+              - namespace = "aws:elasticbeanstalk:sns:topics"
+                # (2 unchanged attributes hidden)
+            },
+          - {
+              - name      = "Notification Topic Name"
+              - namespace = "aws:elasticbeanstalk:sns:topics"
+                # (2 unchanged attributes hidden)
+            },
+          - {
+              - name      = "PauseTime"
+              - namespace = "aws:autoscaling:updatepolicy:rollingupdate"
+                # (2 unchanged attributes hidden)
+            },
+          - {
+              - name      = "Period"
+              - namespace = "aws:autoscaling:trigger"
+              - value     = "5"
+                # (1 unchanged attribute hidden)
+            },
+          - {
+              - name      = "Port"
+              - namespace = "aws:elasticbeanstalk:environment:process:default"
+              - value     = "8080"
+                # (1 unchanged attribute hidden)
+            },
+          - {
+              - name      = "PreferredStartTime"
+              - namespace = "aws:elasticbeanstalk:managedactions"
+                # (2 unchanged attributes hidden)
+            },
+          - {
+              - name      = "Protocol"
+              - namespace = "aws:elasticbeanstalk:environment:process:default"
+              - value     = "HTTP"
+                # (1 unchanged attribute hidden)
+            },
+          - {
+              - name      = "Protocol"
+              - namespace = "aws:elbv2:listener:default"
+              - value     = "HTTP"
+                # (1 unchanged attribute hidden)
+            },
+          - {
+              - name      = "ProxyServer"
+              - namespace = "aws:elasticbeanstalk:environment:proxy"
+              - value     = "nginx"
+                # (1 unchanged attribute hidden)
+            },
+          - {
+              - name      = "RetentionInDays"
+              - namespace = "aws:elasticbeanstalk:cloudwatch:logs"
+              - value     = "7"
+                # (1 unchanged attribute hidden)
+            },
+          - {
+              - name      = "RetentionInDays"
+              - namespace = "aws:elasticbeanstalk:cloudwatch:logs:health"
+              - value     = "7"
+                # (1 unchanged attribute hidden)
+            },
+          - {
+              - name      = "RollbackLaunchOnFailure"
+              - namespace = "aws:elasticbeanstalk:control"
+              - value     = "false"
+                # (1 unchanged attribute hidden)
+            },
+          - {
+              - name      = "RollingUpdateEnabled"
+              - namespace = "aws:autoscaling:updatepolicy:rollingupdate"
+              - value     = "false"
+                # (1 unchanged attribute hidden)
+            },
+          - {
+              - name      = "RollingUpdateType"
+              - namespace = "aws:autoscaling:updatepolicy:rollingupdate"
+              - value     = "Time"
+                # (1 unchanged attribute hidden)
+            },
+          - {
+              - name      = "RootVolumeIOPS"
+              - namespace = "aws:autoscaling:launchconfiguration"
+                # (2 unchanged attributes hidden)
+            },
+          - {
+              - name      = "RootVolumeSize"
+              - namespace = "aws:autoscaling:launchconfiguration"
+                # (2 unchanged attributes hidden)
+            },
+          - {
+              - name      = "RootVolumeThroughput"
+              - namespace = "aws:autoscaling:launchconfiguration"
+                # (2 unchanged attributes hidden)
+            },
+          - {
+              - name      = "RootVolumeType"
+              - namespace = "aws:autoscaling:launchconfiguration"
+                # (2 unchanged attributes hidden)
+            },
+          - {
+              - name      = "Rules"
+              - namespace = "aws:elbv2:listener:default"
+                # (2 unchanged attributes hidden)
+            },
+          - {
+              - name      = "SSHSourceRestriction"
+              - namespace = "aws:autoscaling:launchconfiguration"
+              - value     = "tcp,22,22,0.0.0.0/0"
+                # (1 unchanged attribute hidden)
+            },
+          - {
+              - name      = "SSLCertificateArns"
+              - namespace = "aws:elbv2:listener:default"
+                # (2 unchanged attributes hidden)
+            },
+          - {
+              - name      = "SSLPolicy"
+              - namespace = "aws:elbv2:listener:default"
+                # (2 unchanged attributes hidden)
+            },
+          - {
+              - name      = "SecurityGroups"
+              - namespace = "aws:autoscaling:launchconfiguration"
+              - value     = "awseb-e-u4vsutqppy-stack-AWSEBSecurityGroup-snbmklYYl8RB"
+                # (1 unchanged attribute hidden)
+            },
+          - {
+              - name      = "SecurityGroups"
+              - namespace = "aws:elbv2:loadbalancer"
+                # (2 unchanged attributes hidden)
+            },
+          - {
+              - name      = "ServiceRole"
+              - namespace = "aws:elasticbeanstalk:environment"
+              - value     = "my-app-bluegreen-eb-service-role"
+                # (1 unchanged attribute hidden)
+            },
+          - {
+              - name      = "ServiceRoleForManagedUpdates"
+              - namespace = "aws:elasticbeanstalk:managedactions"
+              - value     = "my-app-bluegreen-eb-service-role"
+                # (1 unchanged attribute hidden)
+            },
+          - {
+              - name      = "SpotAllocationStrategy"
+              - namespace = "aws:ec2:instances"
+              - value     = "capacity-optimized"
+                # (1 unchanged attribute hidden)
+            },
+          - {
+              - name      = "SpotFleetOnDemandAboveBasePercentage"
+              - namespace = "aws:ec2:instances"
+              - value     = "70"
+                # (1 unchanged attribute hidden)
+            },
+          - {
+              - name      = "SpotFleetOnDemandBase"
+              - namespace = "aws:ec2:instances"
+              - value     = "0"
+                # (1 unchanged attribute hidden)
+            },
+          - {
+              - name      = "SpotMaxPrice"
+              - namespace = "aws:ec2:instances"
+                # (2 unchanged attributes hidden)
+            },
+          - {
+              - name      = "StaticFiles"
+              - namespace = "aws:cloudformation:template:parameter"
+                # (2 unchanged attributes hidden)
+            },
+          - {
+              - name      = "Statistic"
+              - namespace = "aws:autoscaling:trigger"
+              - value     = "Average"
+                # (1 unchanged attribute hidden)
+            },
+          - {
+              - name      = "StickinessEnabled"
+              - namespace = "aws:elasticbeanstalk:environment:process:default"
+              - value     = "false"
+                # (1 unchanged attribute hidden)
+            },
+          - {
+              - name      = "StickinessLBCookieDuration"
+              - namespace = "aws:elasticbeanstalk:environment:process:default"
+              - value     = "86400"
+                # (1 unchanged attribute hidden)
+            },
+          - {
+              - name      = "StickinessType"
+              - namespace = "aws:elasticbeanstalk:environment:process:default"
+              - value     = "lb_cookie"
+                # (1 unchanged attribute hidden)
+            },
+          - {
+              - name      = "StreamLogs"
+              - namespace = "aws:elasticbeanstalk:cloudwatch:logs"
+              - value     = "false"
+                # (1 unchanged attribute hidden)
+            },
+          - {
+              - name      = "Subnets"
+              - namespace = "aws:ec2:vpc"
+                # (2 unchanged attributes hidden)
+            },
+          - {
+              - name      = "SupportedArchitectures"
+              - namespace = "aws:ec2:instances"
+              - value     = "x86_64"
+                # (1 unchanged attribute hidden)
+            },
+          - {
+              - name      = "SystemType"
+              - namespace = "aws:elasticbeanstalk:healthreporting:system"
+              - value     = "enhanced"
+                # (1 unchanged attribute hidden)
+            },
+          - {
+              - name      = "Timeout"
+              - namespace = "aws:autoscaling:updatepolicy:rollingupdate"
+              - value     = "PT30M"
+                # (1 unchanged attribute hidden)
+            },
+          - {
+              - name      = "Timeout"
+              - namespace = "aws:elasticbeanstalk:command"
+              - value     = "600"
+                # (1 unchanged attribute hidden)
+            },
+          - {
+              - name      = "UnhealthyThresholdCount"
+              - namespace = "aws:elasticbeanstalk:environment:process:default"
+              - value     = "5"
+                # (1 unchanged attribute hidden)
+            },
+          - {
+              - name      = "Unit"
+              - namespace = "aws:autoscaling:trigger"
+              - value     = "Bytes"
+                # (1 unchanged attribute hidden)
+            },
+          - {
+              - name      = "UpdateLevel"
+              - namespace = "aws:elasticbeanstalk:managedactions:platformupdate"
+                # (2 unchanged attributes hidden)
+            },
+          - {
+              - name      = "UpperBreachScaleIncrement"
+              - namespace = "aws:autoscaling:trigger"
+              - value     = "1"
+                # (1 unchanged attribute hidden)
+            },
+          - {
+              - name      = "UpperThreshold"
+              - namespace = "aws:autoscaling:trigger"
+              - value     = "6000000"
+                # (1 unchanged attribute hidden)
+            },
+          - {
+              - name      = "VERSION"
+              - namespace = "aws:elasticbeanstalk:application:environment"
+              - value     = "2.0"
+                # (1 unchanged attribute hidden)
+            },
+          - {
+              - name      = "VPCId"
+              - namespace = "aws:ec2:vpc"
+                # (2 unchanged attributes hidden)
+            },
+          - {
+              - name      = "XRayEnabled"
+              - namespace = "aws:elasticbeanstalk:xray"
+              - value     = "false"
+                # (1 unchanged attribute hidden)
+            },
+        ] -> null
+      - application            = "my-app-bluegreen" -> null
+      - arn                    = "arn:aws:elasticbeanstalk:us-east-1:357715920231:environment/my-app-bluegreen/my-app-bluegreen-green" -> null
+      - autoscaling_groups     = [
+          - "awseb-e-u4vsutqppy-stack-AWSEBAutoScalingGroup-SZXYsKqv5FwZ",
+        ] -> null
+      - cname                  = "my-app-bluegreen-blue.eba-hbkt8evq.us-east-1.elasticbeanstalk.com" -> null
+      - endpoint_url           = "awseb--AWSEB-wCiUlod1Iciq-2045414141.us-east-1.elb.amazonaws.com" -> null
+      - id                     = "e-u4vsutqppy" -> null
+      - instances              = [
+          - "i-04a988602cd63f3a9",
+        ] -> null
+      - launch_configurations  = [] -> null
+      - load_balancers         = [
+          - "arn:aws:elasticloadbalancing:us-east-1:357715920231:loadbalancer/app/awseb--AWSEB-wCiUlod1Iciq/8fc9f7b1ccf9a499",
+        ] -> null
+      - name                   = "my-app-bluegreen-green" -> null
+      - platform_arn           = "arn:aws:elasticbeanstalk:us-east-1::platform/Node.js 22 running on 64bit Amazon Linux 2023/6.11.7" -> null
+      - queues                 = [] -> null
+      - solution_stack_name    = "64bit Amazon Linux 2023 v6.11.7 running Node.js 22" -> null
+      - tags                   = {
+          - "Environment" = "green"
+          - "ManagedBy"   = "Terraform"
+          - "Project"     = "BlueGreenDeployment"
+          - "Role"        = "staging"
+        } -> null
+      - tags_all               = {
+          - "Environment" = "green"
+          - "ManagedBy"   = "Terraform"
+          - "Project"     = "BlueGreenDeployment"
+          - "Role"        = "staging"
+        } -> null
+      - tier                   = "WebServer" -> null
+      - triggers               = [] -> null
+      - version_label          = "my-app-bluegreen-v2" -> null
+      - wait_for_ready_timeout = "20m" -> null
+        # (2 unchanged attributes hidden)
+
+      - setting {
+          - name      = "BatchSize" -> null
+          - namespace = "aws:elasticbeanstalk:command" -> null
+          - value     = "50" -> null
+            # (1 unchanged attribute hidden)
+        }
+      - setting {
+          - name      = "BatchSizeType" -> null
+          - namespace = "aws:elasticbeanstalk:command" -> null
+          - value     = "Percentage" -> null
+            # (1 unchanged attribute hidden)
+        }
+      - setting {
+          - name      = "DeploymentPolicy" -> null
+          - namespace = "aws:elasticbeanstalk:command" -> null
+          - value     = "Rolling" -> null
+            # (1 unchanged attribute hidden)
+        }
+      - setting {
+          - name      = "ENVIRONMENT" -> null
+          - namespace = "aws:elasticbeanstalk:application:environment" -> null
+          - value     = "green" -> null
+            # (1 unchanged attribute hidden)
+        }
+      - setting {
+          - name      = "EnvironmentType" -> null
+          - namespace = "aws:elasticbeanstalk:environment" -> null
+          - value     = "LoadBalanced" -> null
+            # (1 unchanged attribute hidden)
+        }
+      - setting {
+          - name      = "HealthCheckPath" -> null
+          - namespace = "aws:elasticbeanstalk:environment:process:default" -> null
+          - value     = "/" -> null
+            # (1 unchanged attribute hidden)
+        }
+      - setting {
+          - name      = "IamInstanceProfile" -> null
+          - namespace = "aws:autoscaling:launchconfiguration" -> null
+          - value     = "my-app-bluegreen-eb-ec2-profile" -> null
+            # (1 unchanged attribute hidden)
+        }
+      - setting {
+          - name      = "InstanceType" -> null
+          - namespace = "aws:autoscaling:launchconfiguration" -> null
+          - value     = "t3.micro" -> null
+            # (1 unchanged attribute hidden)
+        }
+      - setting {
+          - name      = "LoadBalancerType" -> null
+          - namespace = "aws:elasticbeanstalk:environment" -> null
+          - value     = "application" -> null
+            # (1 unchanged attribute hidden)
+        }
+      - setting {
+          - name      = "ManagedActionsEnabled" -> null
+          - namespace = "aws:elasticbeanstalk:managedactions" -> null
+          - value     = "false" -> null
+            # (1 unchanged attribute hidden)
+        }
+      - setting {
+          - name      = "MaxSize" -> null
+          - namespace = "aws:autoscaling:asg" -> null
+          - value     = "2" -> null
+            # (1 unchanged attribute hidden)
+        }
+      - setting {
+          - name      = "MinSize" -> null
+          - namespace = "aws:autoscaling:asg" -> null
+          - value     = "1" -> null
+            # (1 unchanged attribute hidden)
+        }
+      - setting {
+          - name      = "Port" -> null
+          - namespace = "aws:elasticbeanstalk:environment:process:default" -> null
+          - value     = "8080" -> null
+            # (1 unchanged attribute hidden)
+        }
+      - setting {
+          - name      = "Protocol" -> null
+          - namespace = "aws:elasticbeanstalk:environment:process:default" -> null
+          - value     = "HTTP" -> null
+            # (1 unchanged attribute hidden)
+        }
+      - setting {
+          - name      = "ServiceRole" -> null
+          - namespace = "aws:elasticbeanstalk:environment" -> null
+          - value     = "my-app-bluegreen-eb-service-role" -> null
+            # (1 unchanged attribute hidden)
+        }
+      - setting {
+          - name      = "SystemType" -> null
+          - namespace = "aws:elasticbeanstalk:healthreporting:system" -> null
+          - value     = "enhanced" -> null
+            # (1 unchanged attribute hidden)
+        }
+      - setting {
+          - name      = "VERSION" -> null
+          - namespace = "aws:elasticbeanstalk:application:environment" -> null
+          - value     = "2.0" -> null
+            # (1 unchanged attribute hidden)
+        }
+    }
+
+  # aws_iam_instance_profile.eb_ec2_profile will be destroyed
+  - resource "aws_iam_instance_profile" "eb_ec2_profile" {
+      - arn         = "arn:aws:iam::357715920231:instance-profile/my-app-bluegreen-eb-ec2-profile" -> null
+      - create_date = "2026-08-30T08:27:53Z" -> null
+      - id          = "my-app-bluegreen-eb-ec2-profile" -> null
+      - name        = "my-app-bluegreen-eb-ec2-profile" -> null
+      - path        = "/" -> null
+      - role        = "my-app-bluegreen-eb-ec2-role" -> null
+      - tags        = {
+          - "Environment" = "Demo"
+          - "ManagedBy"   = "Terraform"
+          - "Project"     = "BlueGreenDeployment"
+        } -> null
+      - tags_all    = {
+          - "Environment" = "Demo"
+          - "ManagedBy"   = "Terraform"
+          - "Project"     = "BlueGreenDeployment"
+        } -> null
+      - unique_id   = "AIPAVGSMHYVTWIWSUSJ6C" -> null
+        # (1 unchanged attribute hidden)
+    }
+
+  # aws_iam_role.eb_ec2_role will be destroyed
+  - resource "aws_iam_role" "eb_ec2_role" {
+      - arn                   = "arn:aws:iam::357715920231:role/my-app-bluegreen-eb-ec2-role" -> null
+      - assume_role_policy    = jsonencode(
+            {
+              - Statement = [
+                  - {
+                      - Action    = "sts:AssumeRole"
+                      - Effect    = "Allow"
+                      - Principal = {
+                          - Service = "ec2.amazonaws.com"
+                        }
+                    },
+                ]
+              - Version   = "2012-10-17"
+            }
+        ) -> null
+      - create_date           = "2026-08-30T08:27:51Z" -> null
+      - force_detach_policies = false -> null
+      - id                    = "my-app-bluegreen-eb-ec2-role" -> null
+      - managed_policy_arns   = [
+          - "arn:aws:iam::aws:policy/AWSElasticBeanstalkMulticontainerDocker",
+          - "arn:aws:iam::aws:policy/AWSElasticBeanstalkWebTier",
+          - "arn:aws:iam::aws:policy/AWSElasticBeanstalkWorkerTier",
+        ] -> null
+      - max_session_duration  = 3600 -> null
+      - name                  = "my-app-bluegreen-eb-ec2-role" -> null
+      - path                  = "/" -> null
+      - tags                  = {
+          - "Environment" = "Demo"
+          - "ManagedBy"   = "Terraform"
+          - "Project"     = "BlueGreenDeployment"
+        } -> null
+      - tags_all              = {
+          - "Environment" = "Demo"
+          - "ManagedBy"   = "Terraform"
+          - "Project"     = "BlueGreenDeployment"
+        } -> null
+      - unique_id             = "AROAVGSMHYVTRMIWZ6QMZ" -> null
+        # (3 unchanged attributes hidden)
+    }
+
+  # aws_iam_role.eb_service_role will be destroyed
+  - resource "aws_iam_role" "eb_service_role" {
+      - arn                   = "arn:aws:iam::357715920231:role/my-app-bluegreen-eb-service-role" -> null
+      - assume_role_policy    = jsonencode(
+            {
+              - Statement = [
+                  - {
+                      - Action    = "sts:AssumeRole"
+                      - Effect    = "Allow"
+                      - Principal = {
+                          - Service = "elasticbeanstalk.amazonaws.com"
+                        }
+                    },
+                ]
+              - Version   = "2012-10-17"
+            }
+        ) -> null
+      - create_date           = "2026-08-30T08:27:51Z" -> null
+      - force_detach_policies = false -> null
+      - id                    = "my-app-bluegreen-eb-service-role" -> null
+      - managed_policy_arns   = [
+          - "arn:aws:iam::aws:policy/AWSElasticBeanstalkManagedUpdatesCustomerRolePolicy",
+          - "arn:aws:iam::aws:policy/service-role/AWSElasticBeanstalkEnhancedHealth",
+        ] -> null
+      - max_session_duration  = 3600 -> null
+      - name                  = "my-app-bluegreen-eb-service-role" -> null
+      - path                  = "/" -> null
+      - tags                  = {
+          - "Environment" = "Demo"
+          - "ManagedBy"   = "Terraform"
+          - "Project"     = "BlueGreenDeployment"
+        } -> null
+      - tags_all              = {
+          - "Environment" = "Demo"
+          - "ManagedBy"   = "Terraform"
+          - "Project"     = "BlueGreenDeployment"
+        } -> null
+      - unique_id             = "AROAVGSMHYVT5BZGK6WDN" -> null
+        # (3 unchanged attributes hidden)
+    }
+
+  # aws_iam_role_policy_attachment.eb_multicontainer_docker will be destroyed
+  - resource "aws_iam_role_policy_attachment" "eb_multicontainer_docker" {
+      - id         = "my-app-bluegreen-eb-ec2-role-20260830082752638200000002" -> null
+      - policy_arn = "arn:aws:iam::aws:policy/AWSElasticBeanstalkMulticontainerDocker" -> null
+      - role       = "my-app-bluegreen-eb-ec2-role" -> null
+    }
+
+  # aws_iam_role_policy_attachment.eb_service_health will be destroyed
+  - resource "aws_iam_role_policy_attachment" "eb_service_health" {
+      - id         = "my-app-bluegreen-eb-service-role-20260830082753102100000004" -> null
+      - policy_arn = "arn:aws:iam::aws:policy/service-role/AWSElasticBeanstalkEnhancedHealth" -> null
+      - role       = "my-app-bluegreen-eb-service-role" -> null
+    }
+
+  # aws_iam_role_policy_attachment.eb_service_managed_updates will be destroyed
+  - resource "aws_iam_role_policy_attachment" "eb_service_managed_updates" {
+      - id         = "my-app-bluegreen-eb-service-role-20260830082753250500000005" -> null
+      - policy_arn = "arn:aws:iam::aws:policy/AWSElasticBeanstalkManagedUpdatesCustomerRolePolicy" -> null
+      - role       = "my-app-bluegreen-eb-service-role" -> null
+    }
+
+  # aws_iam_role_policy_attachment.eb_web_tier will be destroyed
+  - resource "aws_iam_role_policy_attachment" "eb_web_tier" {
+      - id         = "my-app-bluegreen-eb-ec2-role-20260830082752805300000003" -> null
+      - policy_arn = "arn:aws:iam::aws:policy/AWSElasticBeanstalkWebTier" -> null
+      - role       = "my-app-bluegreen-eb-ec2-role" -> null
+    }
+
+  # aws_iam_role_policy_attachment.eb_worker_tier will be destroyed
+  - resource "aws_iam_role_policy_attachment" "eb_worker_tier" {
+      - id         = "my-app-bluegreen-eb-ec2-role-20260830082752509800000001" -> null
+      - policy_arn = "arn:aws:iam::aws:policy/AWSElasticBeanstalkWorkerTier" -> null
+      - role       = "my-app-bluegreen-eb-ec2-role" -> null
+    }
+
+  # aws_s3_bucket.app_versions will be destroyed
+  - resource "aws_s3_bucket" "app_versions" {
+      - arn                         = "arn:aws:s3:::my-app-bluegreen-versions-357715920231" -> null
+      - bucket                      = "my-app-bluegreen-versions-357715920231" -> null
+      - bucket_domain_name          = "my-app-bluegreen-versions-357715920231.s3.amazonaws.com" -> null
+      - bucket_regional_domain_name = "my-app-bluegreen-versions-357715920231.s3.us-east-1.amazonaws.com" -> null
+      - force_destroy               = false -> null
+      - hosted_zone_id              = "Z3AQBSTGFYJSTF" -> null
+      - id                          = "my-app-bluegreen-versions-357715920231" -> null
+      - object_lock_enabled         = false -> null
+      - region                      = "us-east-1" -> null
+      - request_payer               = "BucketOwner" -> null
+      - tags                        = {
+          - "Environment" = "Demo"
+          - "ManagedBy"   = "Terraform"
+          - "Project"     = "BlueGreenDeployment"
+        } -> null
+      - tags_all                    = {
+          - "Environment" = "Demo"
+          - "ManagedBy"   = "Terraform"
+          - "Project"     = "BlueGreenDeployment"
+        } -> null
+        # (3 unchanged attributes hidden)
+
+      - grant {
+          - id          = "b6b0245b93269cc6c2a5291edad6247715bee4f43aae6451ba7c64ead4747b1d" -> null
+          - permissions = [
+              - "FULL_CONTROL",
+            ] -> null
+          - type        = "CanonicalUser" -> null
+            # (1 unchanged attribute hidden)
+        }
+
+      - server_side_encryption_configuration {
+          - rule {
+              - bucket_key_enabled = false -> null
+
+              - apply_server_side_encryption_by_default {
+                  - sse_algorithm     = "AES256" -> null
+                    # (1 unchanged attribute hidden)
+                }
+            }
+        }
+
+      - versioning {
+          - enabled    = false -> null
+          - mfa_delete = false -> null
+        }
+    }
+
+  # aws_s3_bucket_public_access_block.app_versions will be destroyed
+  - resource "aws_s3_bucket_public_access_block" "app_versions" {
+      - block_public_acls       = true -> null
+      - block_public_policy     = true -> null
+      - bucket                  = "my-app-bluegreen-versions-357715920231" -> null
+      - id                      = "my-app-bluegreen-versions-357715920231" -> null
+      - ignore_public_acls      = true -> null
+      - restrict_public_buckets = true -> null
+    }
+
+  # aws_s3_object.app_v1 will be destroyed
+  - resource "aws_s3_object" "app_v1" {
+      - arn                           = "arn:aws:s3:::my-app-bluegreen-versions-357715920231/app-v1.zip" -> null
+      - bucket                        = "my-app-bluegreen-versions-357715920231" -> null
+      - bucket_key_enabled            = false -> null
+      - content_type                  = "application/octet-stream" -> null
+      - etag                          = "be7933c60ddc88a1ba9fd23612e048d8" -> null
+      - force_destroy                 = false -> null
+      - id                            = "app-v1.zip" -> null
+      - key                           = "app-v1.zip" -> null
+      - metadata                      = {} -> null
+      - server_side_encryption        = "AES256" -> null
+      - source                        = "./app-v1/app-v1.zip" -> null
+      - storage_class                 = "STANDARD" -> null
+      - tags                          = {
+          - "Environment" = "Demo"
+          - "ManagedBy"   = "Terraform"
+          - "Project"     = "BlueGreenDeployment"
+        } -> null
+      - tags_all                      = {
+          - "Environment" = "Demo"
+          - "ManagedBy"   = "Terraform"
+          - "Project"     = "BlueGreenDeployment"
+        } -> null
+        # (14 unchanged attributes hidden)
+    }
+
+  # aws_s3_object.app_v2 will be destroyed
+  - resource "aws_s3_object" "app_v2" {
+      - arn                           = "arn:aws:s3:::my-app-bluegreen-versions-357715920231/app-v2.zip" -> null
+      - bucket                        = "my-app-bluegreen-versions-357715920231" -> null
+      - bucket_key_enabled            = false -> null
+      - content_type                  = "application/octet-stream" -> null
+      - etag                          = "f663524fe131ddd5e2c36e8b419bbbd2" -> null
+      - force_destroy                 = false -> null
+      - id                            = "app-v2.zip" -> null
+      - key                           = "app-v2.zip" -> null
+      - metadata                      = {} -> null
+      - server_side_encryption        = "AES256" -> null
+      - source                        = "./app-v2/app-v2.zip" -> null
+      - storage_class                 = "STANDARD" -> null
+      - tags                          = {
+          - "Environment" = "Demo"
+          - "ManagedBy"   = "Terraform"
+          - "Project"     = "BlueGreenDeployment"
+        } -> null
+      - tags_all                      = {
+          - "Environment" = "Demo"
+          - "ManagedBy"   = "Terraform"
+          - "Project"     = "BlueGreenDeployment"
+        } -> null
+        # (14 unchanged attributes hidden)
+    }
+
+Plan: 0 to add, 0 to change, 17 to destroy.
+
+Changes to Outputs:
+  - application_name        = "my-app-bluegreen" -> null
+  - blue_environment_cname  = "my-app-bluegreen-green.eba-hbkt8evq.us-east-1.elasticbeanstalk.com" -> null
+  - blue_environment_name   = "my-app-bluegreen-blue" -> null
+  - blue_environment_url    = "http://my-app-bluegreen-green.eba-hbkt8evq.us-east-1.elasticbeanstalk.com" -> null
+  - green_environment_cname = "my-app-bluegreen-blue.eba-hbkt8evq.us-east-1.elasticbeanstalk.com" -> null
+  - green_environment_name  = "my-app-bluegreen-green" -> null
+  - green_environment_url   = "http://my-app-bluegreen-blue.eba-hbkt8evq.us-east-1.elasticbeanstalk.com" -> null
+  - instructions            = <<-EOT
+        ========================================
+        Blue-Green Deployment Demo Instructions
+        ========================================
+            
+        1. VERIFY BLUE ENVIRONMENT (Production - v1.0):
+           Visit: my-app-bluegreen-green.eba-hbkt8evq.us-east-1.elasticbeanstalk.com
+           Expected: "Welcome to Version 1.0 - Blue Environment"
+            
+        2. VERIFY GREEN ENVIRONMENT (Staging - v2.0):
+           Visit: my-app-bluegreen-blue.eba-hbkt8evq.us-east-1.elasticbeanstalk.com
+           Expected: "Welcome to Version 2.0 - Green Environment"
+            
+        3. PERFORM THE SWAP:
+           Run this AWS CLI command to swap the CNAMEs:
+               
+           aws elasticbeanstalk swap-environment-cnames \
+             --source-environment-name my-app-bluegreen-blue \
+             --destination-environment-name my-app-bluegreen-green \
+             --region us-east-1
+            
+        4. VERIFY THE SWAP:
+           After the swap completes (takes ~1-2 minutes):
+               
+           Blue URL now shows v2.0:
+           Visit: my-app-bluegreen-green.eba-hbkt8evq.us-east-1.elasticbeanstalk.com
+           Expected: "Welcome to Version 2.0 - Green Environment"
+               
+           Green URL now shows v1.0:
+           Visit: my-app-bluegreen-blue.eba-hbkt8evq.us-east-1.elasticbeanstalk.com
+           Expected: "Welcome to Version 1.0 - Blue Environment"
+            
+        5. ROLLBACK (if needed):
+           Simply swap again using the same command to revert!
+            
+        ========================================
+    EOT -> null
+  - s3_bucket               = "my-app-bluegreen-versions-357715920231" -> null
+  - swap_command            = <<-EOT
+        aws elasticbeanstalk swap-environment-cnames \
+          --source-environment-name my-app-bluegreen-blue \
+          --destination-environment-name my-app-bluegreen-green \
+          --region us-east-1
+    EOT -> null
+aws_iam_role_policy_attachment.eb_service_health: Destroying... [id=my-app-bluegreen-eb-service-role-20260830082753102100000004]
+aws_s3_bucket_public_access_block.app_versions: Destroying... [id=my-app-bluegreen-versions-357715920231]
+aws_iam_role_policy_attachment.eb_worker_tier: Destroying... [id=my-app-bluegreen-eb-ec2-role-20260830082752509800000001]
+aws_iam_role_policy_attachment.eb_web_tier: Destroying... [id=my-app-bluegreen-eb-ec2-role-20260830082752805300000003]
+aws_iam_role_policy_attachment.eb_multicontainer_docker: Destroying... [id=my-app-bluegreen-eb-ec2-role-20260830082752638200000002]
+aws_iam_role_policy_attachment.eb_service_managed_updates: Destroying... [id=my-app-bluegreen-eb-service-role-20260830082753250500000005]
+aws_elastic_beanstalk_environment.green: Destroying... [id=e-u4vsutqppy]
+aws_elastic_beanstalk_environment.blue: Destroying... [id=e-jaxwy9dvvw]
+aws_iam_role_policy_attachment.eb_worker_tier: Destruction complete after 2s
+aws_iam_role_policy_attachment.eb_service_managed_updates: Destruction complete after 2s
+aws_s3_bucket_public_access_block.app_versions: Destruction complete after 2s
+aws_iam_role_policy_attachment.eb_web_tier: Destruction complete after 2s
+aws_iam_role_policy_attachment.eb_service_health: Destruction complete after 2s
+aws_iam_role_policy_attachment.eb_multicontainer_docker: Destruction complete after 2s
+aws_elastic_beanstalk_environment.green: Still destroying... [id=e-u4vsutqppy, 00m10s elapsed]
+aws_elastic_beanstalk_environment.blue: Still destroying... [id=e-jaxwy9dvvw, 00m10s elapsed]
+aws_elastic_beanstalk_environment.green: Still destroying... [id=e-u4vsutqppy, 00m20s elapsed]
+aws_elastic_beanstalk_environment.blue: Still destroying... [id=e-jaxwy9dvvw, 00m20s elapsed]
+aws_elastic_beanstalk_environment.green: Still destroying... [id=e-u4vsutqppy, 00m30s elapsed]
+aws_elastic_beanstalk_environment.blue: Still destroying... [id=e-jaxwy9dvvw, 00m30s elapsed]
+aws_elastic_beanstalk_environment.green: Still destroying... [id=e-u4vsutqppy, 00m40s elapsed]
+aws_elastic_beanstalk_environment.blue: Still destroying... [id=e-jaxwy9dvvw, 00m40s elapsed]
+aws_elastic_beanstalk_environment.green: Still destroying... [id=e-u4vsutqppy, 00m50s elapsed]
+aws_elastic_beanstalk_environment.blue: Still destroying... [id=e-jaxwy9dvvw, 00m50s elapsed]
+aws_elastic_beanstalk_environment.green: Still destroying... [id=e-u4vsutqppy, 01m00s elapsed]
+aws_elastic_beanstalk_environment.blue: Still destroying... [id=e-jaxwy9dvvw, 01m00s elapsed]
+aws_elastic_beanstalk_environment.green: Still destroying... [id=e-u4vsutqppy, 01m10s elapsed]
+aws_elastic_beanstalk_environment.blue: Still destroying... [id=e-jaxwy9dvvw, 01m10s elapsed]
+aws_elastic_beanstalk_environment.green: Still destroying... [id=e-u4vsutqppy, 01m20s elapsed]
+aws_elastic_beanstalk_environment.blue: Still destroying... [id=e-jaxwy9dvvw, 01m20s elapsed]
+aws_elastic_beanstalk_environment.green: Still destroying... [id=e-u4vsutqppy, 01m30s elapsed]
+aws_elastic_beanstalk_environment.blue: Still destroying... [id=e-jaxwy9dvvw, 01m30s elapsed]
+aws_elastic_beanstalk_environment.green: Still destroying... [id=e-u4vsutqppy, 01m40s elapsed]
+aws_elastic_beanstalk_environment.blue: Still destroying... [id=e-jaxwy9dvvw, 01m40s elapsed]
+aws_elastic_beanstalk_environment.green: Still destroying... [id=e-u4vsutqppy, 01m50s elapsed]
+aws_elastic_beanstalk_environment.blue: Still destroying... [id=e-jaxwy9dvvw, 01m50s elapsed]
+aws_elastic_beanstalk_environment.green: Still destroying... [id=e-u4vsutqppy, 02m00s elapsed]
+aws_elastic_beanstalk_environment.blue: Still destroying... [id=e-jaxwy9dvvw, 02m00s elapsed]
+aws_elastic_beanstalk_environment.green: Still destroying... [id=e-u4vsutqppy, 02m10s elapsed]
+aws_elastic_beanstalk_environment.blue: Still destroying... [id=e-jaxwy9dvvw, 02m10s elapsed]
+aws_elastic_beanstalk_environment.green: Still destroying... [id=e-u4vsutqppy, 02m20s elapsed]
+aws_elastic_beanstalk_environment.blue: Still destroying... [id=e-jaxwy9dvvw, 02m20s elapsed]
+aws_elastic_beanstalk_environment.green: Still destroying... [id=e-u4vsutqppy, 02m30s elapsed]
+aws_elastic_beanstalk_environment.blue: Still destroying... [id=e-jaxwy9dvvw, 02m30s elapsed]
+aws_elastic_beanstalk_environment.green: Still destroying... [id=e-u4vsutqppy, 02m40s elapsed]
+aws_elastic_beanstalk_environment.blue: Still destroying... [id=e-jaxwy9dvvw, 02m40s elapsed]
+aws_elastic_beanstalk_environment.green: Still destroying... [id=e-u4vsutqppy, 02m50s elapsed]
+aws_elastic_beanstalk_environment.blue: Still destroying... [id=e-jaxwy9dvvw, 02m50s elapsed]
+aws_elastic_beanstalk_environment.green: Still destroying... [id=e-u4vsutqppy, 03m00s elapsed]
+aws_elastic_beanstalk_environment.blue: Still destroying... [id=e-jaxwy9dvvw, 03m00s elapsed]
+aws_elastic_beanstalk_environment.green: Still destroying... [id=e-u4vsutqppy, 03m10s elapsed]
+aws_elastic_beanstalk_environment.blue: Still destroying... [id=e-jaxwy9dvvw, 03m10s elapsed]
+aws_elastic_beanstalk_environment.green: Still destroying... [id=e-u4vsutqppy, 03m20s elapsed]
+aws_elastic_beanstalk_environment.blue: Still destroying... [id=e-jaxwy9dvvw, 03m20s elapsed]
+aws_elastic_beanstalk_environment.green: Still destroying... [id=e-u4vsutqppy, 03m30s elapsed]
+aws_elastic_beanstalk_environment.blue: Still destroying... [id=e-jaxwy9dvvw, 03m30s elapsed]
+aws_elastic_beanstalk_environment.green: Destruction complete after 3m39s
+aws_elastic_beanstalk_environment.blue: Destruction complete after 3m39s
+aws_iam_instance_profile.eb_ec2_profile: Destroying... [id=my-app-bluegreen-eb-ec2-profile]
+aws_iam_role.eb_service_role: Destroying... [id=my-app-bluegreen-eb-service-role]
+aws_elastic_beanstalk_application_version.v1: Destroying... [id=my-app-bluegreen-v1]
+aws_elastic_beanstalk_application_version.v2: Destroying... [id=my-app-bluegreen-v2]
+aws_elastic_beanstalk_application_version.v2: Destruction complete after 1s
+aws_s3_object.app_v2: Destroying... [id=app-v2.zip]
+aws_elastic_beanstalk_application_version.v1: Destruction complete after 1s
+aws_s3_object.app_v1: Destroying... [id=app-v1.zip]
+aws_elastic_beanstalk_application.app: Destroying... [id=my-app-bluegreen]
+aws_iam_instance_profile.eb_ec2_profile: Destruction complete after 2s
+aws_iam_role.eb_ec2_role: Destroying... [id=my-app-bluegreen-eb-ec2-role]
+aws_s3_object.app_v2: Destruction complete after 1s
+aws_iam_role.eb_service_role: Destruction complete after 2s
+aws_s3_object.app_v1: Destruction complete after 1s
+aws_s3_bucket.app_versions: Destroying... [id=my-app-bluegreen-versions-357715920231]
+aws_iam_role.eb_ec2_role: Destruction complete after 0s
+aws_elastic_beanstalk_application.app: Destruction complete after 1s
+aws_s3_bucket.app_versions: Destruction complete after 1s
+
+Destroy complete! Resources: 17 destroyed.
+
+   pwsh MEM: 68% | 9/13GB   4m 3s 370ms  (base) 
+╭─ ♥ 14:49 |             Day17 
+╰─ 

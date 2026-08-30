@@ -1,0 +1,110 @@
+          --region us-east-1
+    EOT
+aws_iam_role.eb_ec2_role: Creating...
+aws_iam_role.eb_service_role: Creating...
+aws_elastic_beanstalk_application.app: Creating...
+aws_s3_bucket.app_versions: Creating...
+aws_iam_role.eb_ec2_role: Creation complete after 2s [id=my-app-bluegreen-eb-ec2-role]
+aws_iam_role_policy_attachment.eb_multicontainer_docker: Creating...
+aws_iam_role_policy_attachment.eb_worker_tier: Creating...
+aws_iam_role_policy_attachment.eb_web_tier: Creating...
+aws_iam_instance_profile.eb_ec2_profile: Creating...
+aws_iam_role.eb_service_role: Creation complete after 2s [id=my-app-bluegreen-eb-service-role]
+aws_iam_role_policy_attachment.eb_service_health: Creating...
+aws_iam_role_policy_attachment.eb_service_managed_updates: Creating...
+aws_elastic_beanstalk_application.app: Creation complete after 3s [id=my-app-bluegreen]
+aws_iam_role_policy_attachment.eb_worker_tier: Creation complete after 1s [id=my-app-bluegreen-eb-ec2-role-20260830082752509800000001]
+aws_iam_role_policy_attachment.eb_multicontainer_docker: Creation complete after 1s [id=my-app-bluegreen-eb-ec2-role-20260830082752638200000002]
+aws_iam_role_policy_attachment.eb_web_tier: Creation complete after 1s [id=my-app-bluegreen-eb-ec2-role-20260830082752805300000003]
+aws_iam_role_policy_attachment.eb_service_health: Creation complete after 1s [id=my-app-bluegreen-eb-service-role-20260830082753102100000004]
+aws_iam_role_policy_attachment.eb_service_managed_updates: Creation complete after 2s [id=my-app-bluegreen-eb-service-role-20260830082753250500000005]
+aws_s3_bucket.app_versions: Creation complete after 6s [id=my-app-bluegreen-versions-357715920231]
+aws_s3_bucket_public_access_block.app_versions: Creating...
+aws_s3_object.app_v1: Creating...
+aws_s3_object.app_v2: Creating...
+aws_s3_bucket_public_access_block.app_versions: Creation complete after 1s [id=my-app-bluegreen-versions-357715920231]
+aws_s3_object.app_v1: Creation complete after 1s [id=app-v1.zip]
+aws_elastic_beanstalk_application_version.v1: Creating...
+aws_s3_object.app_v2: Creation complete after 1s [id=app-v2.zip]
+aws_elastic_beanstalk_application_version.v2: Creating...
+aws_elastic_beanstalk_application_version.v1: Creation complete after 1s [id=my-app-bluegreen-v1]
+aws_elastic_beanstalk_application_version.v2: Creation complete after 2s [id=my-app-bluegreen-v2]
+aws_iam_instance_profile.eb_ec2_profile: Creation complete after 8s [id=my-app-bluegreen-eb-ec2-profile]
+aws_elastic_beanstalk_environment.green: Creating...
+aws_elastic_beanstalk_environment.blue: Creating...
+╷
+│ Error: creating Elastic Beanstalk Environment (my-app-bluegreen-blue): operation error Elastic Beanstalk: CreateEnvironment, https response error StatusCode: 400, RequestID: 04ed941d-5358-4ba4-a83f-d6b826661a71, api error InvalidParameterValue: No Solution Stack named '64bit Amazon Linux 2023 v6.6.8 running Node.js 20' found.
+│ 
+│   with aws_elastic_beanstalk_environment.blue,
+│   on blue-environment.tf line 22, in resource "aws_elastic_beanstalk_environment" "blue":
+│   22: resource "aws_elastic_beanstalk_environment" "blue" {
+│ 
+╵
+╷
+│ Error: creating Elastic Beanstalk Environment (my-app-bluegreen-green): operation error Elastic Beanstalk: CreateEnvironment, https response error StatusCode: 400, RequestID: 88978654-1415-4f52-956c-3e1232c60059, api error InvalidParameterValue: No Solution Stack named '64bit Amazon Linux 2023 v6.6.8 running Node.js 20' found.
+│ 
+│   with aws_elastic_beanstalk_environment.green,
+│   on green-environment.tf line 22, in resource "aws_elastic_beanstalk_environment" "green":
+│   22: resource "aws_elastic_beanstalk_environment" "green" {
+│ 
+
+
+
+------
+
+
+ aws elasticbeanstalk list-available-solution-stacks --region us-east-1
+{                                                                                                                                                                                                               
+    "SolutionStacks": [
+        "64bit Windows Server Core 2025 v2.23.4 running IIS 10.0",
+        "64bit Windows Server 2019 v2.23.4 running IIS 10.0",
+        "64bit Windows Server Core 2022 v2.23.4 running IIS 10.0",
+        "64bit Windows Server 2016 v2.23.4 running IIS 10.0",
+        "64bit Windows Server Core 2019 v2.23.4 running IIS 10.0",
+        "64bit Windows Server Core 2016 v2.23.4 running IIS 10.0",
+        "64bit Windows Server 2022 v2.23.4 running IIS 10.0",
+        "64bit Windows Server 2025 v2.23.4 running IIS 10.0",
+        "64bit Amazon Linux 2023 v5.14.7 running Tomcat 11 Corretto 25",
+        "64bit Amazon Linux 2023 v5.14.7 running Tomcat 11 Corretto 21",
+        "64bit Amazon Linux 2023 v5.14.7 running Tomcat 11 Corretto 17",
+        "64bit Amazon Linux 2023 v5.14.7 running Tomcat 10 Corretto 21",
+        "64bit Amazon Linux 2023 v4.14.7 running Ruby 3.4",
+        "64bit Amazon Linux 2023 v5.14.7 running Tomcat 9 Corretto 11",
+        "64bit Amazon Linux 2023 v4.13.7 running Python 3.14",
+        "64bit Amazon Linux 2023 v5.14.7 running Tomcat 9 Corretto 8",
+        "64bit Amazon Linux 2023 v5.14.7 running Tomcat 10 Corretto 17",
+        "64bit Amazon Linux 2023 v5.14.7 running Tomcat 9 Corretto 17",
+        "64bit Amazon Linux 2023 v4.14.7 running Ruby 3.3",                                                                                                                                                     
+        "64bit Amazon Linux 2023 v4.14.7 running Ruby 4.0",                                                                                                                                                     
+        "64bit Amazon Linux 2023 v4.13.7 running Python 3.12",                                                                                                                                                  
+        "64bit Amazon Linux 2023 v4.13.7 running Python 3.11",                                                                                                                                                  
+        "64bit Amazon Linux 2023 v4.13.7 running Python 3.13",                                                                                                                                                  
+        "64bit Amazon Linux 2023 v4.13.7 running PHP 8.4",                                                                                                                                                      
+        "64bit Amazon Linux 2023 v4.13.7 running PHP 8.5",                                                                                                                                                      
+        "64bit Amazon Linux 2023 v4.13.7 running PHP 8.3",                                                                                                                                                      
+        "64bit Amazon Linux 2023 v4.13.7 running PHP 8.2",                                                                                                                                                      
+        "64bit Amazon Linux 2023 v4.9.7 running Go 1",                                                                                                                                                          
+        "64bit Amazon Linux 2023 v6.11.7 running Node.js 22",                                                                                                                                                   
+        "64bit Amazon Linux 2023 v6.11.7 running Node.js 24",                                                                                                                                                   
+        "64bit Amazon Linux 2023 v3.11.7 running .NET 8",                                                                                                                                                       
+        "64bit Amazon Linux 2023 v4.12.7 running Corretto 17",                                                                                                                                                  
+        "64bit Amazon Linux 2023 v4.12.7 running Corretto 25",                                                                                                                                                  
+        "64bit Amazon Linux 2023 v4.12.7 running Corretto 21",                                                                                                                                                  
+        "64bit Amazon Linux 2023 v4.7.7 running ECS",                                                                                                                                                           
+        "64bit Amazon Linux 2023 v4.12.7 running Corretto 8",                                                                                                                                                   
+        "64bit Amazon Linux 2023 v4.13.7 running Docker",                                                                                                                                                       
+        "64bit Amazon Linux 2023 v3.11.7 running .NET 9",                                                                                                                                                       
+        "64bit Amazon Linux 2023 v3.11.7 running .NET 10",                                                                                                                                                      
+        "64bit Amazon Linux 2023 v4.12.7 running Corretto 11",                                                                                                                                                  
+        "64bit Amazon Linux 2 v3.3.14 running Python 3.8",                                                                                                                                                      
+        "64bit Amazon Linux 2 v5.0.2 running Node.js 12",                                                                                                                                                       
+        "64bit Amazon Linux 2 v5.0.2 running Node.js 10",                                                                                                                                                       
+        "64bit Amazon Linux 2 v0.1.0 running Node.js 12 (BETA)",                                                                                                                                                
+        "64bit Amazon Linux 2018.03 v2.6.33 running Packer 1.0.3"                                                                                                                                               
+    ],                                                                                                                                                                                                          
+^C                 
+
+
+----
+
+
