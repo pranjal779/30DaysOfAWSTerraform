@@ -1,0 +1,29 @@
+ history
+
+  Id     Duration CommandLine
+  --     -------- -----------
+   1        0.154 try { . "c:\Users\pranj\AppData\Local\Programs\Microsoft VS Code\08d4889f9e\resources\app\out\vs\workbench\contrib\terminal\common\scripts\…
+   2        0.084 ls
+   3        2.714 git clone --filter=blob:none --no-checkout https://github.com/piyushsachdeva/Terraform-Full-Course-Aws.git Piyush-Terraform
+   4        0.019 cd .\Piyush-Terraform\
+   5        0.079 git sparse-checkout init --cone
+   6        0.071 git sparse-checkout set lessons/day17
+   7        0.003 ls
+   8        0.160 ls -la
+   9        0.021 get-ChildItem
+  10        0.024 Get-ChildItem
+  11        0.540 git status
+  12        0.013 clear
+  13        0.026 GET-ChildItem -Force
+  14        0.377 git branch
+  15        0.070 git sparse-checkout list
+  16        0.071 git ls-tree --name-only HEAD lessons/day17
+  17        1.284 git checkout main
+  18        0.089 git sparse-checkout reapply
+  19        0.021 Get-ChildItem
+  20        0.059 Get-ChildItem .\lessons\day17
+
+
+   pwsh MEM: 79% | 11/13GB   50ms 
+╭─ ♥ 00:37 |   
+╰─ 

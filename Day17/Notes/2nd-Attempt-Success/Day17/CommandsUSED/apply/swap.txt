@@ -1,0 +1,15 @@
+╭─ ♥ 14:05 |             Day17 
+╰─ aws elasticbeanstalk swap-environment-cnames \
+>      --source-environment-name my-app-bluegreen-blue \
+>      --destination-environment-name my-app-bluegreen-green \
+>      --region us-east-1
+ParserError: 
+Line |
+   2 |       --source-environment-name my-app-bluegreen-blue \
+     |         ~
+     | Missing expression after unary operator '--'.
+
+   pwsh MEM: 87% | 12/13GB   1ms  (base) 
+╭─ ♥ 14:12 |             Day17 
+╰─ 
+
