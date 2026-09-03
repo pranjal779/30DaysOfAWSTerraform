@@ -1,0 +1,88 @@
+ get-childitem
+
+        Directory: C:\Users\pranj\Desktop\my code\30 Days of AWS Terraform\Day15
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a---         3/21/2026   8:56 PM            153   backend.tf
+-a---          6/2/2026  12:33 PM             65   local.tf
+-a---         6/15/2026   1:59 PM              2   main.tf
+-a---         3/16/2026   4:00 PM              2   output.tf
+-a---         6/15/2026   1:57 PM            320   providers.tf
+-a---         6/13/2026  11:12 PM            154 󰪷  README.md
+-a---         3/26/2026   1:21 PM             74   terraform.tfvars
+-a---         6/15/2026   1:52 PM           4126   variables.tf
+
+ aws ec2 create-key-pair --key-name vpc-peering-demo --region us-east-1 'KeyMaterial' --output text > vpc-peering-demo.pem
+
+# 41:29 file name changed to vpc-peering-demo-east.pem 
+
+usage: aws [options] <command> <subcommand> [<subcommand> ...] [parameters]
+To see help text, you can run:
+
+  aws help
+  aws <command> help
+  aws <command> <subcommand> help
+
+Unknown options: KeyMaterial
+
+ aws ec2 create-key-pair --key-name vpc-peering-demo --region us-west-2 --query 'KeyMaterial' --output text > vpc-peering-demo-west.pem
+
+   pwsh MEM: 77% | 10/13GB   3s 194ms  (base) 
+╭─ ♥ 23:49 |             Day15 
+╰─ 
+
+
+ get-childitem
+
+        Directory: C:\Users\pranj\Desktop\my code\30 Days of AWS Terraform\Day15
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d----         6/15/2026  11:50 PM                  terminal output
+-a---         3/21/2026   8:56 PM            153   backend.tf
+-a---          6/2/2026  12:33 PM             65   local.tf
+-a---         6/15/2026   1:59 PM              2   main.tf
+-a---         3/16/2026   4:00 PM              2   output.tf
+-a---         6/15/2026   1:57 PM            320   providers.tf
+-a---         6/13/2026  11:12 PM            154 󰪷  README.md
+-a---         3/26/2026   1:21 PM             74   terraform.tfvars
+-a---         6/15/2026   1:52 PM           4126   variables.tf
+-a---         6/15/2026  11:49 PM           1706   vpc-peering-demo-west.pem
+-a---         6/15/2026  11:45 PM              0   vpc-peering-demo.pem
+
+
+   pwsh MEM: 73% | 10/13GB   30ms  (base) 
+╭─ ♥ 23:50 |             Day15 
+╰─ 
+
+
+
+
+#### Error for StatusCode400 InvalidKeyPair.NotFound: The key pair 'vpc-peering-demo-west' does not exist in tfvars file
+**[45:05](https://youtu.be/WGt000THDmQ?si=xA9_tO5oWVzXY1pL&t=2705)**
+
+
+# 45:26
+I did not had the keys in both locations only in us-west-2 maybe because of the name?
+
+# 45:55
+the first key pair command did not run as --query subcommand tag was missing
+
+ aws ec2 create-key-pair --key-name vpc-peering-demo --region us-east-1 'KeyMaterial' --output text > vpc-peering-demo-east.pem
+
+usage: aws [options] <command> <subcommand> [<subcommand> ...] [parameters]
+To see help text, you can run:
+
+  aws help
+  aws <command> help
+  aws <command> <subcommand> help
+
+Unknown options: KeyMaterial
+
+ aws ec2 create-key-pair --key-name vpc-peering-demo --region us-east-1 --query 'KeyMaterial' --output text > vpc-peering-demo-east.pem
+
+
+

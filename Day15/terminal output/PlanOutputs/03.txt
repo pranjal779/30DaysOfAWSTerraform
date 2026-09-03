@@ -1,0 +1,417 @@
+# from route table
+
+╭─ ♥ 20:09 |             Day15 
+╰─ 
+ *  History restored 
+
+ terraform plan
+data.aws_ami.primary_ami: Reading...
+data.aws_availability_zones.primary: Reading...
+data.aws_availability_zones.secondary: Reading...
+data.aws_ami.secondary_ami: Reading...
+data.aws_availability_zones.primary: Read complete after 2s [id=us-east-1]
+data.aws_availability_zones.secondary: Read complete after 1s [id=us-west-2]
+data.aws_ami.primary_ami: Read complete after 2s [id=ami-0f8a61b66d1accaee]
+data.aws_ami.secondary_ami: Read complete after 1s [id=ami-096f5760b00bcd95c]
+
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # aws_internet_gateway.primary_igw will be created
+  + resource "aws_internet_gateway" "primary_igw" {
+      + arn      = (known after apply)
+      + id       = (known after apply)
+      + owner_id = (known after apply)
+      + region   = "us-east-1"
+      + tags     = {
+          + "Environment" = "Day15"
+          + "Name"        = "Primary-IGW-us-east-1"
+        }
+      + tags_all = {
+          + "Environment" = "Day15"
+          + "Name"        = "Primary-IGW-us-east-1"
+        }
+      + vpc_id   = (known after apply)
+    }
+
+  # aws_internet_gateway.secondary_igw will be created
+  + resource "aws_internet_gateway" "secondary_igw" {
+      + arn      = (known after apply)
+      + id       = (known after apply)
+      + owner_id = (known after apply)
+      + region   = "us-west-2"
+      + tags     = {
+          + "Environment" = "Day15"
+          + "Name"        = "Seconday-IGW-us-west-2"
+        }
+      + tags_all = {
+          + "Environment" = "Day15"
+          + "Name"        = "Seconday-IGW-us-west-2"
+        }
+      + vpc_id   = (known after apply)
+    }
+
+  # aws_route_table.primary_rt will be created
+  + resource "aws_route_table" "primary_rt" {
+      + arn              = (known after apply)
+      + id               = (known after apply)
+      + owner_id         = (known after apply)
+      + propagating_vgws = (known after apply)
+      + region           = "us-east-1"
+      + route            = [
+          + {
+              + cidr_block                 = "0.0.0.0/0"
+              + gateway_id                 = (known after apply)
+                # (12 unchanged attributes hidden)
+            },
+        ]
+      + tags_all         = (known after apply)
+      + vpc_id           = (known after apply)
+    }
+
+  # aws_subnet.primary_subnet will be created
+  + resource "aws_subnet" "primary_subnet" {
+      + arn                                            = (known after apply)
+      + assign_ipv6_address_on_creation                = false
+      + availability_zone                              = "us-east-1a"
+      + availability_zone_id                           = (known after apply)
+      + cidr_block                                     = "10.0.0.0/16"
+      + enable_dns64                                   = false
+      + enable_resource_name_dns_a_record_on_launch    = false
+      + enable_resource_name_dns_aaaa_record_on_launch = false
+      + id                                             = (known after apply)
+      + ipv6_cidr_block                                = (known after apply)
+      + ipv6_cidr_block_association_id                 = (known after apply)
+      + ipv6_native                                    = false
+      + map_public_ip_on_launch                        = true
+      + owner_id                                       = (known after apply)
+      + private_dns_hostname_type_on_launch            = (known after apply)
+      + region                                         = "us-east-1"
+      + tags                                           = {
+          + "Environment" = "Day15"
+          + "Name"        = "Primary-Subnet-us-east-1"
+        }
+      + tags_all                                       = {
+          + "Environment" = "Day15"
+          + "Name"        = "Primary-Subnet-us-east-1"
+        }
+      + vpc_id                                         = (known after apply)
+    }
+
+  # aws_subnet.secondary_subnet will be created
+  + resource "aws_subnet" "secondary_subnet" {
+      + arn                                            = (known after apply)
+      + assign_ipv6_address_on_creation                = false
+      + availability_zone                              = "us-west-2a"
+      + availability_zone_id                           = (known after apply)
+      + cidr_block                                     = "10.1.0.0/16"
+      + enable_dns64                                   = false
+      + enable_resource_name_dns_a_record_on_launch    = false
+      + enable_resource_name_dns_aaaa_record_on_launch = false
+      + id                                             = (known after apply)
+      + ipv6_cidr_block                                = (known after apply)
+      + ipv6_cidr_block_association_id                 = (known after apply)
+      + ipv6_native                                    = false
+      + map_public_ip_on_launch                        = true
+      + owner_id                                       = (known after apply)
+      + private_dns_hostname_type_on_launch            = (known after apply)
+      + region                                         = "us-west-2"
+      + tags                                           = {
+          + "Environment" = "Day15"
+          + "Name"        = "Secondary-Subnet-us-west-2"
+        }
+      + tags_all                                       = {
+          + "Environment" = "Day15"
+          + "Name"        = "Secondary-Subnet-us-west-2"
+        }
+      + vpc_id                                         = (known after apply)
+    }
+
+  # aws_vpc.primary_vpc will be created
+  + resource "aws_vpc" "primary_vpc" {
+      + arn                                  = (known after apply)
+      + cidr_block                           = "10.0.0.0/16"
+      + default_network_acl_id               = (known after apply)
+      + default_route_table_id               = (known after apply)
+      + default_security_group_id            = (known after apply)
+      + dhcp_options_id                      = (known after apply)
+      + enable_dns_hostnames                 = true
+      + enable_dns_support                   = true
+      + enable_network_address_usage_metrics = (known after apply)
+      + id                                   = (known after apply)
+      + instance_tenancy                     = "default"
+      + ipv6_association_id                  = (known after apply)
+      + ipv6_cidr_block                      = (known after apply)
+      + ipv6_cidr_block_network_border_group = (known after apply)
+      + main_route_table_id                  = (known after apply)
+      + owner_id                             = (known after apply)
+      + region                               = "us-east-1"
+      + tags                                 = {
+          + "Name" = "Primary-VPC-us-east-1"
+        }
+      + tags_all                             = {
+          + "Name" = "Primary-VPC-us-east-1"
+        }
+    }
+
+  # aws_vpc.secondary_vpc will be created
+  + resource "aws_vpc" "secondary_vpc" {
+      + arn                                  = (known after apply)
+      + cidr_block                           = "10.1.0.0/16"
+      + default_network_acl_id               = (known after apply)
+      + default_route_table_id               = (known after apply)
+      + default_security_group_id            = (known after apply)
+      + dhcp_options_id                      = (known after apply)
+      + enable_dns_hostnames                 = true
+      + enable_dns_support                   = true
+      + enable_network_address_usage_metrics = (known after apply)
+      + id                                   = (known after apply)
+      + instance_tenancy                     = "default"
+      + ipv6_association_id                  = (known after apply)
+      + ipv6_cidr_block                      = (known after apply)
+      + ipv6_cidr_block_network_border_group = (known after apply)
+      + main_route_table_id                  = (known after apply)
+      + owner_id                             = (known after apply)
+      + region                               = "us-west-2"
+      + tags                                 = {
+          + "Name" = "Secondary-VPC-us-west-2"
+        }
+      + tags_all                             = {
+          + "Name" = "Secondary-VPC-us-west-2"
+        }
+    }
+
+Plan: 7 to add, 0 to change, 0 to destroy.
+
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+Note: You didn't use the -out option to save this plan, so Terraform can't guarantee to take exactly these actions if you run "terraform apply" now.
+
+   pwsh MEM: 83% | 11/13GB   8s 971ms  (base) 
+╭─ ♥ 23:35 |             Day15 
+╰─ 
+
+
+ terraform plan
+data.aws_availability_zones.primary: Reading...
+data.aws_ami.primary_ami: Reading...
+data.aws_availability_zones.secondary: Reading...
+data.aws_ami.secondary_ami: Reading...
+data.aws_availability_zones.primary: Read complete after 1s [id=us-east-1]
+data.aws_ami.primary_ami: Read complete after 1s [id=ami-0f8a61b66d1accaee]
+data.aws_availability_zones.secondary: Read complete after 1s [id=us-west-2]
+data.aws_ami.secondary_ami: Read complete after 2s [id=ami-096f5760b00bcd95c]
+
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # aws_internet_gateway.primary_igw will be created
+  + resource "aws_internet_gateway" "primary_igw" {
+      + arn      = (known after apply)
+      + id       = (known after apply)
+      + owner_id = (known after apply)
+      + region   = "us-east-1"
+      + tags     = {
+          + "Environment" = "Day15"
+          + "Name"        = "Primary-IGW-us-east-1"
+        }
+      + tags_all = {
+          + "Environment" = "Day15"
+          + "Name"        = "Primary-IGW-us-east-1"
+        }
+      + vpc_id   = (known after apply)
+    }
+
+  # aws_internet_gateway.secondary_igw will be created
+  + resource "aws_internet_gateway" "secondary_igw" {
+      + arn      = (known after apply)
+      + id       = (known after apply)
+      + owner_id = (known after apply)
+      + region   = "us-west-2"
+      + tags     = {
+          + "Environment" = "Day15"
+          + "Name"        = "Seconday-IGW-us-west-2"
+        }
+      + tags_all = {
+          + "Environment" = "Day15"
+          + "Name"        = "Seconday-IGW-us-west-2"
+        }
+      + vpc_id   = (known after apply)
+    }
+
+  # aws_route_table.primary_rt will be created
+  + resource "aws_route_table" "primary_rt" {
+      + arn              = (known after apply)
+      + id               = (known after apply)
+      + owner_id         = (known after apply)
+      + propagating_vgws = (known after apply)
+      + region           = "us-east-1"
+      + route            = [
+          + {
+              + cidr_block                 = "0.0.0.0/0"
+              + gateway_id                 = (known after apply)
+                # (12 unchanged attributes hidden)
+            },
+        ]
+      + tags             = {
+          + "Environment" = "Day15"
+          + "Name"        = "Primary-Route-Table"
+        }
+      + tags_all         = {
+          + "Environment" = "Day15"
+          + "Name"        = "Primary-Route-Table"
+        }
+      + vpc_id           = (known after apply)
+    }
+
+  # aws_route_table.secondary_rt will be created
+  + resource "aws_route_table" "secondary_rt" {
+      + arn              = (known after apply)
+      + id               = (known after apply)
+      + owner_id         = (known after apply)
+      + propagating_vgws = (known after apply)
+      + region           = "us-west-2"
+      + route            = [
+          + {
+              + cidr_block                 = "0.0.0.0/0"
+              + gateway_id                 = (known after apply)
+                # (12 unchanged attributes hidden)
+            },
+        ]
+      + tags             = {
+          + "Environment" = "Day15"
+          + "Name"        = "Secondary-Route-Table"
+        }
+      + tags_all         = {
+          + "Environment" = "Day15"
+          + "Name"        = "Secondary-Route-Table"
+        }
+      + vpc_id           = (known after apply)
+    }
+
+  # aws_subnet.primary_subnet will be created
+  + resource "aws_subnet" "primary_subnet" {
+      + arn                                            = (known after apply)
+      + assign_ipv6_address_on_creation                = false
+      + availability_zone                              = "us-east-1a"
+      + availability_zone_id                           = (known after apply)
+      + cidr_block                                     = "10.0.0.0/16"
+      + enable_dns64                                   = false
+      + enable_resource_name_dns_a_record_on_launch    = false
+      + enable_resource_name_dns_aaaa_record_on_launch = false
+      + id                                             = (known after apply)
+      + ipv6_cidr_block                                = (known after apply)
+      + ipv6_cidr_block_association_id                 = (known after apply)
+      + ipv6_native                                    = false
+      + map_public_ip_on_launch                        = true
+      + owner_id                                       = (known after apply)
+      + private_dns_hostname_type_on_launch            = (known after apply)
+      + region                                         = "us-east-1"
+      + tags                                           = {
+          + "Environment" = "Day15"
+          + "Name"        = "Primary-Subnet-us-east-1"
+        }
+      + tags_all                                       = {
+          + "Environment" = "Day15"
+          + "Name"        = "Primary-Subnet-us-east-1"
+        }
+      + vpc_id                                         = (known after apply)
+    }
+
+  # aws_subnet.secondary_subnet will be created
+  + resource "aws_subnet" "secondary_subnet" {
+      + arn                                            = (known after apply)
+      + assign_ipv6_address_on_creation                = false
+      + availability_zone                              = "us-west-2a"
+      + availability_zone_id                           = (known after apply)
+      + cidr_block                                     = "10.1.0.0/16"
+      + enable_dns64                                   = false
+      + enable_resource_name_dns_a_record_on_launch    = false
+      + enable_resource_name_dns_aaaa_record_on_launch = false
+      + id                                             = (known after apply)
+      + ipv6_cidr_block                                = (known after apply)
+      + ipv6_cidr_block_association_id                 = (known after apply)
+      + ipv6_native                                    = false
+      + map_public_ip_on_launch                        = true
+      + owner_id                                       = (known after apply)
+      + private_dns_hostname_type_on_launch            = (known after apply)
+      + region                                         = "us-west-2"
+      + tags                                           = {
+          + "Environment" = "Day15"
+          + "Name"        = "Secondary-Subnet-us-west-2"
+        }
+      + tags_all                                       = {
+          + "Environment" = "Day15"
+          + "Name"        = "Secondary-Subnet-us-west-2"
+        }
+      + vpc_id                                         = (known after apply)
+    }
+
+  # aws_vpc.primary_vpc will be created
+  + resource "aws_vpc" "primary_vpc" {
+      + arn                                  = (known after apply)
+      + cidr_block                           = "10.0.0.0/16"
+      + default_network_acl_id               = (known after apply)
+      + default_route_table_id               = (known after apply)
+      + default_security_group_id            = (known after apply)
+      + dhcp_options_id                      = (known after apply)
+      + enable_dns_hostnames                 = true
+      + enable_dns_support                   = true
+      + enable_network_address_usage_metrics = (known after apply)
+      + id                                   = (known after apply)
+      + instance_tenancy                     = "default"
+      + ipv6_association_id                  = (known after apply)
+      + ipv6_cidr_block                      = (known after apply)
+      + ipv6_cidr_block_network_border_group = (known after apply)
+      + main_route_table_id                  = (known after apply)
+      + owner_id                             = (known after apply)
+      + region                               = "us-east-1"
+      + tags                                 = {
+          + "Name" = "Primary-VPC-us-east-1"
+        }
+      + tags_all                             = {
+          + "Name" = "Primary-VPC-us-east-1"
+        }
+    }
+
+  # aws_vpc.secondary_vpc will be created
+  + resource "aws_vpc" "secondary_vpc" {
+      + arn                                  = (known after apply)
+      + cidr_block                           = "10.1.0.0/16"
+      + default_network_acl_id               = (known after apply)
+      + default_route_table_id               = (known after apply)
+      + default_security_group_id            = (known after apply)
+      + dhcp_options_id                      = (known after apply)
+      + enable_dns_hostnames                 = true
+      + enable_dns_support                   = true
+      + enable_network_address_usage_metrics = (known after apply)
+      + id                                   = (known after apply)
+      + instance_tenancy                     = "default"
+      + ipv6_association_id                  = (known after apply)
+      + ipv6_cidr_block                      = (known after apply)
+      + ipv6_cidr_block_network_border_group = (known after apply)
+      + main_route_table_id                  = (known after apply)
+      + owner_id                             = (known after apply)
+      + region                               = "us-west-2"
+      + tags                                 = {
+          + "Name" = "Secondary-VPC-us-west-2"
+        }
+      + tags_all                             = {
+          + "Name" = "Secondary-VPC-us-west-2"
+        }
+    }
+
+Plan: 8 to add, 0 to change, 0 to destroy.
+
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+Note: You didn't use the -out option to save this plan, so Terraform can't guarantee to take exactly these actions if you run "terraform apply" now.
+
+   pwsh MEM: 82% | 11/13GB   8s 676ms  (base) 
+╭─ ♥ 23:50 |             Day15 
+╰─ 
+
