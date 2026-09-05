@@ -11,6 +11,7 @@
 <img width="2542" height="1410" alt="image" src="https://github.com/user-attachments/assets/40b777cd-5823-42f0-b371-03ffd6172323" />
 <img width="2532" height="1402" alt="image" src="https://github.com/user-attachments/assets/2df1fc86-0d5e-4d1a-8117-c27c618da36b" />
 <img width="2527" height="1386" alt="image" src="https://github.com/user-attachments/assets/26cf0489-c2ed-48c4-b3f6-e5613e351be6" />
+**Imp - 5:28 Why we are using internet gateway**
 <img width="2535" height="1412" alt="image" src="https://github.com/user-attachments/assets/be3bdc13-ffc0-411b-9032-6278da01c5c4" />
 <img width="2542" height="1407" alt="image" src="https://github.com/user-attachments/assets/7e651b6c-265d-46f5-b991-9067138a6e50" />
 <img width="2527" height="1410" alt="image" src="https://github.com/user-attachments/assets/e48694cd-ad14-40b4-9625-5ce38634cd8c" />
