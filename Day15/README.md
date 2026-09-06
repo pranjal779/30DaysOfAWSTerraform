@@ -10,6 +10,12 @@
 [Terraform Data Sources – How They Are Utilized](https://spacelift.io/blog/terraform-data-sources-how-they-are-utilised)
 [How to Use Data Sources for Availability Zone Discovery in Terraform](https://oneuptime.com/blog/post/2026-02-23-terraform-availability-zone-discovery/view)
 
+
+### 52:08 - 52:25
+The conflict was caused by an **overlapping IP address range** (CIDR block) between the new VPCs being created and an existing VPC in the same account (52:08-52:25). This conflict affected the ability of the instances to communicate privately, which the speaker suspected was the reason for the failed `ping` and `curl` tests earlier in the demonstration. 
+
+Specifically, the speaker was unable to **establish successful private connectivity** between the VPCs because of this address collision. To resolve the issue, the speaker identified the pre-existing, conflicting VPC and **deleted it entirely** from the AWS environment (52:26-52:38). After removing the conflicting resource and re-running the configuration, the networking functioned as expected, and the instances were able to communicate via their private IP addresses (55:40-56:10).
+
 ## Additional Resources
 
 - [AWS VPC Peering Documentation](https://docs.aws.amazon.com/vpc/latest/peering/)
