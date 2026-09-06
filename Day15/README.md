@@ -4,11 +4,11 @@
 
 
 ### 23:56
-[reference 1 for Data Source for AZ](https://github.com/hashicorp/terraform-provider-aws/blob/main/website/docs/d/availability_zones.html.markdown)
-[reference 2 for Data Source for AZ](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/availability_zones)
-[Data Source: aws_availability_zones](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/availability_zones)
-[Terraform Data Sources – How They Are Utilized](https://spacelift.io/blog/terraform-data-sources-how-they-are-utilised)
-[How to Use Data Sources for Availability Zone Discovery in Terraform](https://oneuptime.com/blog/post/2026-02-23-terraform-availability-zone-discovery/view)
+[reference 1 for Data Source for AZ](https://github.com/hashicorp/terraform-provider-aws/blob/main/website/docs/d/availability_zones.html.markdown)  
+[reference 2 for Data Source for AZ](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/availability_zones)  
+[Data Source: aws_availability_zones](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/availability_zones)  
+[Terraform Data Sources – How They Are Utilized](https://spacelift.io/blog/terraform-data-sources-how-they-are-utilised)  
+[How to Use Data Sources for Availability Zone Discovery in Terraform](https://oneuptime.com/blog/post/2026-02-23-terraform-availability-zone-discovery/view)  
 
 
 ### 52:08 - 52:25
