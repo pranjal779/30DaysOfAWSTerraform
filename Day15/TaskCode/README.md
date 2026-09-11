@@ -1,5 +1,58 @@
+# Created the KeyPairs
+
+```pwsh
+ aws ec2 describe-key-pairs --region us-east-1 --query "KeyPairs[*].KeyName" --output table
+-------------------------------------                                                                                                                                                                               
+|         DescribeKeyPairs          |
++-----------------------------------+
+|  vpc-peering-task-region-primary  |
++-----------------------------------+
 
 
+ aws ec2 describe-key-pairs --region us-west-1 --query "KeyPairs[*].KeyName" --output table
+---------------------------------------                                                                                                                                                                             
+|          DescribeKeyPairs           |
++-------------------------------------+
+|  vpc-peering-task-region-secondary  |
++-------------------------------------+
+
+
+ aws ec2 describe-key-pairs --region us-east-2 --query "KeyPairs[*].KeyName" --output table
+-----------------------------------                                                                                                                                                                                 
+|        DescribeKeyPairs         |
++---------------------------------+
+|  vpc-peering-task-region-third  |
++---------------------------------+
+
+
+
+```
+
+<img width="1510" height="392" alt="Screenshot 2026-09-10 224229" src="https://github.com/user-attachments/assets/24984bfa-f47d-4e8a-b68c-ed54899fffc2" />
+<img width="1602" height="417" alt="Screenshot 2026-09-10 224312" src="https://github.com/user-attachments/assets/3c5debb6-6d0a-4a48-8377-4d8baf9e7e39" />
+<img width="1612" height="671" alt="Screenshot 2026-09-10 224326" src="https://github.com/user-attachments/assets/de316278-9038-4ef3-9c2c-9a25bbbfa20d" />
+
+---
+
+## Before the VPC peering was added for Region C (Demonstrated that VPC peering is non-transitive)
+
+<img width="870" height="687" alt="Screenshot 2026-09-10 232001" src="https://github.com/user-attachments/assets/d27b829f-b1a8-4bac-bfe4-316222133a4e" />
+<img width="1136" height="512" alt="Screenshot 2026-09-10 231338" src="https://github.com/user-attachments/assets/66a21b5e-d647-410f-95ee-7d6b34eaafdc" />
+<img width="1270" height="887" alt="Screenshot 2026-09-10 231417" src="https://github.com/user-attachments/assets/06407c19-7e98-44c8-ac4c-2fb707429757" />
+<img width="1065" height="747" alt="Screenshot 2026-09-10 231451" src="https://github.com/user-attachments/assets/301de7f9-60b2-4593-9abd-b25a1a3a0834" />
+<img width="810" height="567" alt="Screenshot 2026-09-10 231620" src="https://github.com/user-attachments/assets/e1918ef2-c0a4-412f-bc91-f884c0ee7ba1" />
+<img width="890" height="510" alt="Screenshot 2026-09-10 231859" src="https://github.com/user-attachments/assets/f649e09b-ab85-45ab-b571-66359c6fd1a3" />
+
+## After Adding the VPC Peering for Region C 
+
+<img width="740" height="236" alt="Screenshot 2026-09-11 013839" src="https://github.com/user-attachments/assets/283210ff-b09c-44c7-a3b4-074b02dbb436" />
+<img width="925" height="712" alt="Screenshot 2026-09-11 012909" src="https://github.com/user-attachments/assets/ce92ddbe-f12e-4049-a175-2485efe538f6" />
+<img width="1087" height="967" alt="Screenshot 2026-09-11 013103" src="https://github.com/user-attachments/assets/e5283bd6-5355-4e07-99f1-320d2ca04346" />
+<img width="1157" height="1055" alt="Screenshot 2026-09-11 013436" src="https://github.com/user-attachments/assets/bbe471c7-07ac-4918-97a9-49cce03064a0" />
+
+---
+
+---
 
 
 ```pwsh
