@@ -1,3 +1,8 @@
+# Diagram
+<img width="1536" height="1024" alt="Project Diagram" src="https://github.com/user-attachments/assets/275b4b6c-c2cf-4d12-9055-d3a487dd9fc0" />
+
+
+
 # Created the KeyPairs
 
 ```pwsh
