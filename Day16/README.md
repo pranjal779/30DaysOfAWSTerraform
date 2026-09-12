@@ -1,30 +1,26 @@
 🚀 Day 16 of #30DaysofAWSTerraform — AWS IAM User Management with Terraform
 
-For Day 16, I worked on automating AWS IAM user management using Terraform.
+I worked on automating AWS IAM user management using Terraform.
 
 The goal of this project was not just to create IAM users, but to understand how Terraform can take structured user information and turn it into repeatable AWS identity infrastructure.
 
-🏗️ What I built
+🏗️ What I built:  
 I used a CSV file as the source of user information and used Terraform to:
 
-✅ Read user data using csvdecode()
-✅ Create IAM users dynamically with for_each
-✅ Generate usernames from user attributes
-✅ Apply tags such as Department and Job Title
-✅ Create IAM groups for Education, Managers, and Engineers
-✅ Assign users to groups based on their attributes
-✅ Create IAM login profiles
-✅ Use Terraform lifecycle rules for selected login-profile attributes
+- Read user data using csvdecode()
+- Create IAM users dynamically with for_each
+- Generate usernames from user attributes
+- Apply tags such as Department and Job Title
+- Create IAM groups for Education, Managers, and Engineers
+- Assign users to groups based on their attributes
+- Create IAM login profiles
+- Use Terraform lifecycle rules for selected login-profile attributes
 
 One part I particularly liked was using the data itself to determine group membership rather than manually maintaining a list of users.
 
 For example, users could be selected based on attributes such as:
 
-Department → Education / Engineering
-
-and
-
-Job Title → Manager / CEO
+Department → Education / Engineering and Job Title → Manager / CEO
 
 This made the configuration more data-driven and reusable.
 
