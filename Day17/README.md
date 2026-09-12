@@ -25,18 +25,18 @@ The project includes:
 - Terraform outputs for environment information
 - PowerShell automation for the environment swap
 
-Both environments use a load-balanced Elastic Beanstalk configuration with Auto Scaling between 1 and 2 instances.
+Both environments use a load-balanced Elastic Beanstalk configuration with Auto Scaling between 1 and 2 instances.  
 
-🔵🟢 How the Blue-Green deployment works
-The initial state: Users -->🔵Blue Environment Production v1.0
-I then deployed the new application version separately: 
-Users -->🔵Blue Environment Production v1.0, and
-🟢Green Environment Staging v2.0
+🔵🟢 How the Blue-Green deployment works  
+The initial state: Users -->🔵Blue Environment Production v1.0  
+I then deployed the new application version separately:   
+Users -->🔵Blue Environment Production v1.0, and  
+🟢Green Environment Staging v2.0  
 
 The Green environment can be validated independently before promoting it to production.
-Once the new version is ready, the deployment process swaps the CNAMEs of the two environments:
-Before: Production CNAME --> 🔵 Blue --> v1.0 
-After: Production CNAME--> 🟢 Green --> v2.0
+Once the new version is ready, the deployment process swaps the CNAMEs of the two environments:  
+Before: Production CNAME --> 🔵 Blue --> v1.0   
+After: Production CNAME--> 🟢 Green --> v2.0   
 
 I automated this swap using the AWS Elastic Beanstalk swap-environment-cnames operation through a PowerShell script.
 
