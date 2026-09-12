@@ -1,6 +1,6 @@
 🚀 Day 14 of hashtag#30daysofawsterraform Piyush sachdeva
 
-Hosting a Static Website with Amazon S3 & CloudFront
+# Hosting a Static Website with Amazon S3 & CloudFront
 
 [<img width="907" height="171" alt="image" src="https://github.com/user-attachments/assets/dc2506d7-9e05-4c99-bf35-1c85d2dc2c0d" />](https://youtu.be/bK6RimAv2nQ?si=FRP50bM6ylX8OHLo)
 
