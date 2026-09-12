@@ -1,7 +1,72 @@
+# 🚀 Day 15 of hashtag#30DaysofAWSTerraform @Piyush_sachdeva
+
+# Multi-Region VPC Peering with Terraform
+
 # Diagram
 <img width="1536" height="1024" alt="Project Diagram" src="https://github.com/user-attachments/assets/275b4b6c-c2cf-4d12-9055-d3a487dd9fc0" />
 
+[<img width="853" height="161" alt="image" src="https://github.com/user-attachments/assets/a659e21e-a37f-40fb-a46e-32ee5054b671" />](https://youtu.be/WGt000THDmQ?si=ptvBxGJTrSgID_YS)
 
+
+In this hands-on exercise, I worked on building and testing a multi-region AWS VPC Peering architecture using Terraform.
+
+Instead of only implementing the basic two-VPC example, I extended the exercise to three VPCs across three AWS regions to understand how VPC peering behaves in a real networking scenario.
+
+🏗️ Architecture:
+```
+VPC A: us-east-1 with CIDR: 10.0.0.0/16
+VPC B: us-west-1 with CIDR: 10.1.0.0/16
+VPC C: us-east-2 with CIDR: 10.2.0.0/16
+```
+Using Terraform, I provisioned:
+1) 3 VPCs 
+2) Subnets 
+3) Internet Gateways 
+4) Route Tables 
+5) Security Groups 
+6) EC2 instances 
+7) Multi-region AWS provider aliases 
+8) VPC Peering connections 
+9) AWS data sources for Availability Zones and AMIs
+
+🔍 🕵 The interesting part: testing non-transitive peering
+ 
+I first created: VPC A ↔ VPC B ↔ VPC C
+
+Then I tested connectivity between the EC2 instances. 
+✅ A → B worked
+✅ B → C worked
+❌ A → C failed
+
+At first glance, it might seem that VPC A should be able to use VPC B as a path to VPC C.
+ 
+But this exposed an important AWS networking concept: VPC Peering is non-transitive.
+VPC B does not automatically act as a transit point between VPC A and VPC C.
+ 
+🛠️ Fix:
+To establish direct connectivity, I added: VPC A ↔ VPC C and configured the corresponding route-table and security-group rules.
+ 
+The final topology became:
+
+▫️▫️VPC A
+▫️▫️| ▫️▫️\
+▫️▫️| ▫️▫️ \
+▫️ VPC B ---- VPC C
+
+
+I also got practical experience with:
+ 
+- Terraform provider aliases for multi-region deployments
+- Terraform dependencies and depends_on
+- AWS route-table configuration
+- Security-group rules for cross-VPC traffic
+- Terraform data sources
+- Troubleshooting connectivity instead of assuming the architecture works just because terraform apply succeeds
+
+My biggest takeaway for: A successful Terraform deployment does not necessarily mean a successful network design. Testing and troubleshooting are part of infrastructure engineering.
+
+Continuing to build, break, troubleshoot, and learn. 🚀
+ 
 
 # Created the KeyPairs
 
