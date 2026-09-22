@@ -1,5 +1,8 @@
 # Day 18: Serverless Image Processing with AWS Lambda, S3 & Terraform
 
+[<img width="926" height="150" alt="image" src="https://github.com/user-attachments/assets/50941087-937d-45c6-af75-ec05f75bcceb" />](https://youtu.be/l0RYCxczgyk?si=-Y4V3Jfe24PsUhcm)
+[Link](https://youtu.be/l0RYCxczgyk?si=RlutAFwEPjlrWM_5)
+
 - **Developed an event-driven serverless image-processing pipeline** using Terraform, Amazon S3 and AWS Lambda to automatically process uploaded images through S3 `ObjectCreated` events.
 - **Implemented Python-based image processing with the Pillow library and a Lambda Layer**, generating five image variants: compressed JPEG, low-quality JPEG, WebP, PNG and 200×200 thumbnails.
 - **Automated AWS infrastructure provisioning and deployment** with Terraform and shell scripts, incorporating S3 encryption, versioning, public access blocking, IAM permissions and CloudWatch logging
@@ -7,6 +10,8 @@
 A serverless image-processing backend that automatically processes images uploaded to Amazon S3 using AWS Lambda and the Pillow library. Terraform is used to provision and configure the required AWS infrastructure.
 
 ## Project Overview
+
+<img width="1774" height="887" alt="image" src="https://github.com/user-attachments/assets/77816f22-f8a4-466c-8c83-fd4ea1f0d2d4" />
 
 This project implements an event-driven image-processing pipeline.
 
