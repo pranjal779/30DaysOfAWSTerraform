@@ -1,5 +1,7 @@
 🚀 Day 16 of #30DaysofAWSTerraform — AWS IAM User Management with Terraform
 
+[<img width="797" height="162" alt="image" src="https://github.com/user-attachments/assets/433b5177-c302-43ee-8334-3affb7a29abe" />](https://youtu.be/33dWo4esH1U?si=zFr0M0SxbPpm8fZ8)
+
 I worked on automating AWS IAM user management using Terraform.
 
 The goal of this project was not just to create IAM users, but to understand how Terraform can take structured user information and turn it into repeatable AWS identity infrastructure.
