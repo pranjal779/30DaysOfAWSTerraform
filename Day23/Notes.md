@@ -80,6 +80,26 @@
 
 
 **17:10**
+## Metric Filter: Lambda Errors
+
+<img width="2496" height="1035" alt="image" src="https://github.com/user-attachments/assets/5e3bbd81-7541-4a63-87dc-e19d93a45852" />
+
+**Image Processing Time**
+<img width="2516" height="1036" alt="image" src="https://github.com/user-attachments/assets/75dc6de0-7581-471c-a02c-069fbbd51c93" />
+<img width="2512" height="1031" alt="image" src="https://github.com/user-attachments/assets/c5a31b02-f720-4e46-9cba-8c89573f5e5b" />
+<img width="2488" height="1037" alt="image" src="https://github.com/user-attachments/assets/0b174a6a-c7f1-4f4a-919d-e5b54f160490" />
+<img width="2473" height="1015" alt="image" src="https://github.com/user-attachments/assets/84289b65-3da4-4461-aae0-70ed3e49b370" />
+<img width="2510" height="1015" alt="image" src="https://github.com/user-attachments/assets/7183dab6-9342-4bca-a4e6-42bf21c43065" />
+<img width="2497" height="1066" alt="image" src="https://github.com/user-attachments/assets/bd4aa3ed-cc08-4c12-ba4d-ea2024548b89" />
+<img width="2473" height="1068" alt="image" src="https://github.com/user-attachments/assets/436050cc-6729-451d-aad3-50d90f0ef6fb" />
+<img width="2495" height="1028" alt="image" src="https://github.com/user-attachments/assets/2ffeb582-d003-442b-9c31-54f474c518cc" />
+<img width="2507" height="1102" alt="image" src="https://github.com/user-attachments/assets/38d155f4-8da4-4fc2-88d3-f8064050f8f9" />
+<img width="2490" height="1045" alt="image" src="https://github.com/user-attachments/assets/fe12104a-e0ed-47e6-abab-21fe0ac0dc9d" />
+<img width="2535" height="1052" alt="image" src="https://github.com/user-attachments/assets/7737e990-f5c4-4e93-bb71-5201ab84b280" />
+<img width="2502" height="1062" alt="image" src="https://github.com/user-attachments/assets/cd127ec1-bcf8-43bc-b9c3-1e387032fda7" />
+<img width="2455" height="1037" alt="image" src="https://github.com/user-attachments/assets/ccdcf25b-3b04-4775-a5f6-e69ba54ebe92" />
+
+
 
 
 
